@@ -1,0 +1,4 @@
+node_modules/
+_tmp_vid/
+.playwright-mcp/
+.git/

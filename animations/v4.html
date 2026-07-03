@@ -1,0 +1,181 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0}body{background:#000;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c" width="960" height="540"></canvas>
+<script>
+const cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=960,H=540;
+const FPS=30,DUR=8,TOT=FPS*DUR;
+let f=0;
+const O='#F5821F',T='#00D4FF',G='#25D366',WA='#25D366';
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function easeOut(t){return 1-Math.pow(clamp(t,0,1)-1,3)}
+function ease(t){t=clamp(t,0,1);return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+function fade(t,s,e){return easeOut(clamp((t-s)/(e-s),0,1))}
+function glow(c,b){ctx.shadowColor=c;ctx.shadowBlur=b}
+function noGlow(){ctx.shadowBlur=0;ctx.shadowColor='transparent'}
+function txt(s,x,y,sz,c,a='center',w='900'){ctx.font=`${w} ${sz}px Inter,Arial Black,sans-serif`;ctx.fillStyle=c;ctx.textAlign=a;ctx.fillText(s,x,y)}
+
+const msgs=[
+  {from:'client',text:'Our server crashed! Production stopped!',time:'15:02',t:1.0},
+  {from:'bot',text:'🤖 AGS AI: Issue detected. Connecting to your system now....',time:'15:02',t:2.0},
+  {from:'bot',text:'✅ Remote diagnosis complete. Root cause identified.',time:'15:03',t:3.2},
+  {from:'bot',text:'🔧 Applying fix remotely. ETA: 90 seconds.',time:'15:03',t:4.2},
+  {from:'client',text:'Wow, that was fast! System is back online!',time:'15:04',t:5.4},
+  {from:'bot',text:'✓ All systems nominal. Report sent to your CRM.',time:'15:04',t:6.2},
+];
+
+function drawPhone(x,y,w,h,alpha){
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle='#111';ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=3;
+  ctx.beginPath();ctx.roundRect(x,y,w,h,24);ctx.fill();ctx.stroke();
+  // Screen
+  ctx.fillStyle='#0d1f0d';ctx.beginPath();ctx.roundRect(x+6,y+10,w-12,h-20,18);ctx.fill();
+  // Notch
+  ctx.fillStyle='#111';ctx.beginPath();ctx.roundRect(x+w/2-30,y+10,60,18,10);ctx.fill();
+  ctx.globalAlpha=1;
+}
+function drawWAHeader(x,y,w,alpha){
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle=WA;ctx.beginPath();ctx.roundRect(x,y,w,52,0);ctx.fill();
+  // Back arrow + avatar
+  ctx.fillStyle='rgba(255,255,255,0.3)';ctx.beginPath();ctx.arc(x+46,y+26,18,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#fff';ctx.font='700 10px Arial';ctx.textAlign='center';ctx.fillText('AGS',x+46,y+30);
+  ctx.fillStyle='#fff';ctx.font='700 13px Arial';ctx.textAlign='left';ctx.fillText('AGS Support AI',x+72,y+22);
+  ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='400 10px Arial';ctx.fillText('🟢 Online · 24/7 Active',x+72,y+38);
+  ctx.globalAlpha=1;
+}
+function drawBubble(msg,x,y,w,alpha,progress){
+  const isBot=msg.from==='bot';
+  const bx=isBot?x+8:x+w-280-8;
+  const bw=Math.min(260,w-20);
+  ctx.globalAlpha=alpha*progress;
+  ctx.fillStyle=isBot?'#1f3c1f':'#1e2d3d';
+  ctx.strokeStyle=isBot?`rgba(37,211,102,0.3)`:`rgba(0,212,255,0.3)`;
+  ctx.lineWidth=1;
+  ctx.beginPath();ctx.roundRect(bx,y,bw,46,12);ctx.fill();ctx.stroke();
+  ctx.fillStyle=isBot?'#b8ffb8':'#c8e8ff';
+  ctx.font=`400 11px Inter,Arial,sans-serif`;ctx.textAlign='left';
+  // Word wrap simple
+  ctx.fillText(msg.text,bx+10,y+20,bw-20);
+  ctx.fillStyle=isBot?'rgba(37,211,102,0.5)':'rgba(0,212,255,0.4)';
+  ctx.font='400 9px Arial';ctx.fillText(msg.time,bx+10,y+38);
+  if(isBot){glow(WA,6);ctx.fillStyle=WA;ctx.beginPath();ctx.arc(bx-8,y+23,5,0,Math.PI*2);ctx.fill();noGlow();}
+  ctx.globalAlpha=1;
+}
+
+let typingDots=0;
+function drawTyping(x,y,w,alpha){
+  typingDots=(typingDots+0.1)%3;
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle='#1f3c1f';ctx.strokeStyle='rgba(37,211,102,0.2)';ctx.lineWidth=1;
+  ctx.beginPath();ctx.roundRect(x+8,y,100,34,10);ctx.fill();ctx.stroke();
+  for(let i=0;i<3;i++){
+    const dy=Math.sin(Date.now()*.005+i)*3;
+    ctx.fillStyle=`rgba(37,211,102,${i<Math.floor(typingDots)+1?0.9:0.3})`;
+    ctx.beginPath();ctx.arc(x+26+i*20,y+17+dy,4,0,Math.PI*2);ctx.fill();
+  }
+  ctx.globalAlpha=1;
+}
+
+function drawTimer(seconds,alpha){
+  ctx.globalAlpha=alpha;
+  const pct=1-seconds/60;
+  glow(seconds<30?G:O,15);
+  ctx.strokeStyle=seconds<30?G:O;ctx.lineWidth=5;
+  ctx.beginPath();ctx.arc(W-80,H-80,40,-Math.PI/2,-Math.PI/2+Math.PI*2*pct);ctx.stroke();
+  noGlow();
+  ctx.fillStyle=seconds<30?G:O;ctx.font='700 18px Arial';ctx.textAlign='center';ctx.fillText(seconds+'s',W-80,H-75);
+  ctx.fillStyle='#666';ctx.font='400 9px Arial';ctx.fillText('RESPONSE',W-80,H-58);
+  ctx.globalAlpha=1;
+}
+
+function draw(){
+  const t=f/FPS;
+  
+  // BG
+  ctx.fillStyle='#050b18';ctx.fillRect(0,0,W,H);
+  
+  // Tech grid
+  ctx.strokeStyle='rgba(0,212,255,0.04)';ctx.lineWidth=1;
+  for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+
+  // PHASE 0 (0-1s): Intro hook
+  if(t<1.2){
+    const p=fade(t,0,.3);
+    ctx.globalAlpha=p;
+    txt('Your system just crashed.',W/2,H/2-30,32,'#fff');
+    txt('Your engineer is unreachable.',W/2,H/2+20,22,'#888','center','500');
+    txt("AGS AI is already on it.",W/2,H/2+60,22,G,'center','700');
+    ctx.globalAlpha=1;
+  }
+
+  // PHONE + CHAT (0.8s onward)
+  if(t>0.8){
+    const pa=fade(t,.8,1.5);
+    const pw=360,ph=480,px=W/2-pw/2,py=(H-ph)/2;
+    drawPhone(px,py,pw,ph,pa);
+    drawWAHeader(px+6,py+10,pw-12,pa);
+    
+    // Messages
+    const chatY=py+75;
+    const visH=ph-90;
+    const msgH=54;
+    const totalMsgH=msgs.length*msgH;
+    const scrollOffset=Math.max(0,totalMsgH-visH+10);
+    
+    ctx.save();
+    ctx.beginPath();ctx.roundRect(px+6,py+62,pw-12,ph-72,0);ctx.clip();
+    
+    msgs.forEach((msg,i)=>{
+      if(t<msg.t) return;
+      const ma=fade(t,msg.t,msg.t+.4);
+      const my=chatY+i*msgH-Math.min(scrollOffset,ease(clamp(t-4.5,0,1))*scrollOffset);
+      drawBubble(msg,px+6,my,pw-12,pa,ma);
+    });
+    
+    // Typing indicator between messages
+    if(t>1.4&&t<2.1){drawTyping(px+6,chatY+msgH,pw-12,pa)}
+    if(t>3.6&&t<4.3){drawTyping(px+6,chatY+2*msgH,pw-12,pa)}
+    if(t>5.8&&t<6.3){drawTyping(px+6,chatY+4*msgH,pw-12,pa)}
+    
+    ctx.restore();
+
+    // Timer countdown
+    if(t>2&&t<5.5){
+      const elapsed=t-2;
+      const remaining=Math.max(0,Math.round(90-elapsed*18));
+      drawTimer(remaining,fade(t,2,2.5)*fade(5.5,t,5));
+    }
+  }
+
+  // PHASE FINAL (6.8-8s): AGS branding
+  if(t>6.8){
+    const p=fade(t,6.8,7.5);
+    ctx.fillStyle=`rgba(5,11,24,${p*.85})`;ctx.fillRect(0,0,W,H);
+    
+    const gr=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,300*p);
+    gr.addColorStop(0,`rgba(37,211,102,${p*.12})`);gr.addColorStop(1,'transparent');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+
+    ctx.globalAlpha=p;
+    glow(G,20);txt('< 60 SECOND RESPONSE',W/2,H/2-60,30,G);noGlow();
+    txt('AI-Powered WhatsApp Support + CRM',W/2,H/2-14,18,'#aaa','center','500');
+    
+    const ba=fade(t,7.2,7.8);
+    ctx.globalAlpha=ba;
+    const g2=ctx.createLinearGradient(W/2-180,0,W/2+180,0);g2.addColorStop(0,WA);g2.addColorStop(1,'#128C7E');
+    ctx.fillStyle=g2;ctx.beginPath();ctx.roundRect(W/2-180,H/2+30,360,52,26);ctx.fill();
+    glow('#fff',8);txt('🤖  AGS AI Bot — Always Online',W/2,H/2+62,16,'#fff');noGlow();
+    
+    const la=fade(t,7.5,8);
+    ctx.globalAlpha=la;
+    glow(O,10);txt('AG TECHNOLOGY SYSTEMS',W/2,H/2+118,13,O,'center','700');noGlow();
+    txt('wa.me/201002194451',W/2,H/2+138,12,'#666','center','400');
+    ctx.globalAlpha=1;
+  }
+
+  ctx.fillStyle='rgba(0,0,0,0.03)';for(let y=0;y<H;y+=3)ctx.fillRect(0,y,W,1);
+  f++;
+}
+function loop(){draw();if(f<=TOT+10)requestAnimationFrame(loop);}
+loop();
+</script></body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0}body{background:#000;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c" width="960" height="540"></canvas>
+<script>
+const cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=960,H=540;
+const FPS=30,DUR=8,TOT=FPS*DUR;
+let f=0;
+const O='#F5821F',T='#00D4FF',R='#FF3B3B',G='#25D366';
+function lerp(a,b,t){return a+(b-a)*t}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function easeOut(t){return 1-Math.pow(clamp(t,0,1)-1,4)}
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+function fade(t,s,e){return easeOut(clamp((t-s)/(e-s),0,1))}
+function glow(color,blur){ctx.shadowColor=color;ctx.shadowBlur=blur}
+function noGlow(){ctx.shadowBlur=0;ctx.shadowColor='transparent'}
+function txt(s,x,y,sz,c,a='center',w='900'){ctx.font=`${w} ${sz}px Inter,Arial Black,sans-serif`;ctx.fillStyle=c;ctx.textAlign=a;ctx.fillText(s,x,y)}
+
+let particles=[];
+for(let i=0;i<80;i++) particles.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5,c:Math.random()>.5?O:T});
+
+function drawParticles(alpha){
+  particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    glow(p.c,8);ctx.fillStyle=p.c;ctx.globalAlpha=alpha*.4;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;noGlow();});
+}
+
+function drawCounter(val,x,y,maxVal,alpha){
+  // Outer ring
+  ctx.globalAlpha=alpha;
+  ctx.strokeStyle=R;ctx.lineWidth=8;glow(R,20);
+  ctx.beginPath();ctx.arc(x,y,110,-Math.PI/2,-Math.PI/2+Math.PI*2*(val/maxVal));ctx.stroke();
+  // Background ring
+  ctx.strokeStyle='rgba(255,59,59,0.15)';ctx.lineWidth=8;ctx.shadowBlur=0;
+  ctx.beginPath();ctx.arc(x,y,110,0,Math.PI*2);ctx.stroke();
+  // Number
+  glow(R,30);
+  txt(Math.round(val)+'%',x,y+20,90,R);
+  noGlow();
+  // Label
+  txt('REVENUE LOST',x,y+60,13,'#888');
+  ctx.globalAlpha=1;
+}
+
+function drawStatBar(label,pct,x,y,w,h,alpha,color){
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle='rgba(255,255,255,0.05)';ctx.beginPath();ctx.roundRect(x,y,w,h,4);ctx.fill();
+  glow(color,10);ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y+(1-pct)*h,w,pct*h,4);ctx.fill();noGlow();
+  txt(label,x+w/2,y+h+18,10,'#888','center','600');
+  ctx.globalAlpha=1;
+}
+
+function drawAGSBadge(x,y,alpha){
+  ctx.globalAlpha=alpha;
+  const g=ctx.createLinearGradient(x-140,y,x+140,y);g.addColorStop(0,O);g.addColorStop(1,T);
+  ctx.fillStyle=g;ctx.beginPath();ctx.roundRect(x-140,y-26,280,52,26);ctx.fill();
+  glow('#fff',10);txt('AGS — Your IT Backbone',x,y+8,18,'#fff');noGlow();
+  ctx.globalAlpha=1;
+}
+
+function draw(){
+  const t=f/FPS;
+  
+  // BG
+  const bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#02060f');bg.addColorStop(1,'#000');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  
+  drawParticles(Math.min(t/2,1));
+
+  // PHASE 1 (0-3s): Shocking statistic
+  if(t<4){
+    const intro=fade(t,0,.5);
+    ctx.globalAlpha=intro;txt('DID YOU KNOW?',W/2,H/2-180,20,T,'center','600');ctx.globalAlpha=1;
+    
+    const cp=fade(t,.3,2.5);
+    const countVal=cp*67;
+    drawCounter(countVal,W/2,H/2-40,100,Math.min(cp*1.5,1));
+    
+    const sp=fade(t,1.8,2.8);
+    ctx.globalAlpha=sp;
+    ctx.fillStyle='rgba(255,59,59,0.06)';ctx.beginPath();ctx.roundRect(W/2-300,H/2+90,600,70,12);ctx.fill();
+    txt('of Egyptian businesses lost revenue',W/2,H/2+120,17,'#cc8888','center','600');
+    txt('due to IT system failures last year.',W/2,H/2+144,17,'#cc8888','center','600');
+    ctx.globalAlpha=1;
+
+    // Red flash at start
+    if(t<.4){const fl=1-t/.4;ctx.fillStyle=`rgba(200,0,0,${fl*.2})`;ctx.fillRect(0,0,W,H);}
+  }
+
+  // PHASE 2 (2.5-5s): Bar chart of failures
+  if(t>2.5&&t<5.5){
+    const p=fade(t,2.5,3);
+    const sectors=[['Factories',0.72],['SMBs',0.61],['Offices',0.55],['Retail',0.48]];
+    const bw=60,bh=160,startX=W/2-((sectors.length-1)*90)/2-30;
+    sectors.forEach(([l,pct],i)=>{
+      const ba=easeOut(fade(t,2.8+i*.15,3.3+i*.15));
+      drawStatBar(l,pct*ba,startX+i*90,H-230,bw,bh,p,R);
+      const va=fade(t,3.2+i*.15,3.7+i*.15);
+      ctx.globalAlpha=p*va;glow(R,8);txt(Math.round(pct*100*ba)+'%',startX+i*90+bw/2,H-240,13,R);noGlow();ctx.globalAlpha=1;
+    });
+    ctx.globalAlpha=p;txt('INDUSTRIES HIT BY IT FAILURE',W/2,H-60,13,'#666','center','600');ctx.globalAlpha=1;
+  }
+
+  // PHASE 3 (4-6s): Transition to AGS
+  if(t>4&&t<6.5){
+    const p=fade(t,4,5);
+    // Wipe left to right
+    const wipe=fade(t,4.2,5.2)*W;
+    const tg=ctx.createLinearGradient(0,0,W,0);
+    tg.addColorStop(wipe/W-.05,'rgba(5,11,24,0)');
+    tg.addColorStop(wipe/W,'rgba(5,11,24,0.95)');
+    tg.addColorStop(1,'rgba(5,11,24,0.95)');
+    ctx.fillStyle=tg;ctx.fillRect(0,0,W,H);
+
+    const ta=fade(t,4.8,5.5);
+    ctx.globalAlpha=ta;
+    txt('ARE YOU NEXT?',W/2,H/2-80,44,'#fff');
+    ctx.globalAlpha=ta*.7;txt('Unplanned downtime costs Egyptian SMBs',W/2,H/2-28,16,'#999');
+    txt('an average of 12,000 EGP per hour.',W/2,H/2-4,16,'#bbb');
+    ctx.globalAlpha=1;
+  }
+
+  // PHASE 4 (5.5-7.5s): AGS solution
+  if(t>5.5){
+    const p=fade(t,5.5,6.3);
+    const gr=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,350*p);
+    gr.addColorStop(0,`rgba(0,212,255,${p*0.12})`);gr.addColorStop(1,'transparent');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+
+    ctx.globalAlpha=p;
+    glow(T,15);txt('THE SOLUTION',W/2,H/2-90,15,T,'center','600');noGlow();
+    txt('AGS — Rack Rental. Zero Risk.',W/2,H/2-50,40,'#fff');
+    ctx.globalAlpha=1;
+
+    const items=['⚡  Deploy in 24 hours','🔒  Zero downtime guarantee','📞  24/7 AI support'];
+    items.forEach((item,i)=>{
+      const ia=fade(t,6+i*.3,6.5+i*.3);
+      ctx.globalAlpha=ia;
+      glow(G,8);txt(item,W/2,H/2+20+i*40,17,i===0?T:i===1?O:'#7ed87e');noGlow();
+      ctx.globalAlpha=1;
+    });
+    drawAGSBadge(W/2,H/2+175,fade(t,7,7.5));
+  }
+
+  ctx.fillStyle='rgba(0,0,0,0.03)';for(let y=0;y<H;y+=3)ctx.fillRect(0,y,W,1);
+  f++;
+}
+function loop(){draw();if(f<=TOT+10)requestAnimationFrame(loop);}
+loop();
+</script></body></html>

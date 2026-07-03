@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Digital Growth Proposal | AGS × OLTANI</title>
+<meta name="description" content="AI-Powered Digital Transformation Proposal for AG Technology Systems by OLTANI"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+:root{
+  --o:#F5821F;--od:#C96510;--ol:#FF9E45;
+  --t:#00D4FF;--td:#00A8CC;
+  --n:#050b18;--n2:#09132a;--n3:#0d1b35;
+  --g:rgba(255,255,255,0.04);--gb:rgba(255,255,255,0.08);
+  --gray:#7a90b0;--lt:#c2d4eb;--wh:#fff;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--n);color:var(--lt);overflow-x:hidden}
+#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--o),var(--t));z-index:9999;transition:width .1s}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:1000;background:rgba(5,11,24,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--gb);padding:13px 36px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hlogo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.hlogo svg{width:40px;height:40px;flex-shrink:0}
+.hlt{line-height:1.1}
+.hlt .bn{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;letter-spacing:.5px}
+.hlt .bn span{color:var(--o)}
+.hlt .tg{font-size:9px;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase}
+.hbadge{background:linear-gradient(135deg,var(--o),var(--od));color:#fff;font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;white-space:nowrap}
+.hdate{font-size:12px;color:var(--gray)}
+
+/* META STRIP */
+.mstrip{background:linear-gradient(90deg,rgba(245,130,31,.07),rgba(0,212,255,.04),rgba(245,130,31,.07));border-top:1px solid rgba(245,130,31,.12);border-bottom:1px solid rgba(245,130,31,.12);padding:12px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.mi{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--gray)}
+.mi i{color:var(--o)}
+.mi strong{color:var(--lt)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 20px 80px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(245,130,31,.1) 0%,transparent 68%);pointer-events:none}
+.htag{display:inline-block;background:rgba(245,130,31,.09);border:1px solid rgba(245,130,31,.28);color:var(--o);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:30px;margin-bottom:26px;animation:fadeUp .7s ease both}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,6vw,74px);font-weight:800;line-height:1.1;margin-bottom:22px;animation:fadeUp .8s .15s ease both}
+.co{color:var(--o)} .ct{color:var(--t)}
+.hsub{font-size:clamp(14px,2vw,17px);color:var(--gray);max-width:660px;margin:0 auto 44px;line-height:1.75;animation:fadeUp .8s .3s ease both}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .45s ease both}
+.hstats{display:flex;gap:44px;justify-content:center;flex-wrap:wrap;margin-top:60px;animation:fadeUp .8s .6s ease both}
+.hs{text-align:center}
+.hs .n{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:var(--o);display:block}
+.hs .l{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase}
+.scroll-ind{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:var(--gray);font-size:12px;display:flex;flex-direction:column;align-items:center;gap:6px;animation:bob 2s infinite;cursor:pointer}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* BUTTONS */
+.btn-p{background:linear-gradient(135deg,var(--o),var(--od));color:#fff;padding:13px 28px;border-radius:11px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .3s;box-shadow:0 4px 22px rgba(245,130,31,.32)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(245,130,31,.48)}
+.btn-s{background:var(--g);border:1px solid var(--gb);color:var(--lt);padding:13px 28px;border-radius:11px;font-size:14px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .3s;backdrop-filter:blur(10px)}
+.btn-s:hover{border-color:var(--o);color:var(--o);transform:translateY(-3px)}
+.btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:16px 36px;border-radius:12px;font-size:15px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:11px;box-shadow:0 5px 26px rgba(37,211,102,.32);transition:all .3s}
+.btn-wa:hover{transform:translateY(-4px);box-shadow:0 10px 38px rgba(37,211,102,.48)}
+.btn-web{background:var(--g);border:1px solid rgba(245,130,31,.32);color:var(--o);padding:16px 36px;border-radius:12px;font-size:15px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:11px;backdrop-filter:blur(10px);transition:all .3s}
+.btn-web:hover{background:rgba(245,130,31,.09);transform:translateY(-4px)}
+
+/* SECTIONS */
+section{padding:90px 20px}
+.cnt{max-width:1180px;margin:0 auto}
+.stag{display:inline-block;color:var(--o);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 15px;border:1px solid rgba(245,130,31,.22);border-radius:20px;background:rgba(245,130,31,.05);margin-bottom:13px}
+.stitle{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,46px);font-weight:700;color:var(--wh);line-height:1.2;margin-bottom:14px}
+.ssub{font-size:15px;color:var(--gray);max-width:580px;line-height:1.75}
+.sh{margin-bottom:56px}
+.div{height:1px;background:linear-gradient(90deg,transparent,var(--gb),transparent);max-width:1180px;margin:0 auto}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .65s ease,transform .65s ease}
+.rv.vis{opacity:1;transform:translateY(0)}
+.rl{opacity:0;transform:translateX(-36px);transition:opacity .65s ease,transform .65s ease}
+.rl.vis{opacity:1;transform:translateX(0)}
+.rr{opacity:0;transform:translateX(36px);transition:opacity .65s ease,transform .65s ease}
+.rr.vis{opacity:1;transform:translateX(0)}
+
+/* INTRO GRID */
+.igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.ic{background:var(--g);border:1px solid var(--gb);border-radius:18px;padding:32px;transition:all .35s;position:relative;overflow:hidden}
+.ic::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--o),var(--t));opacity:0;transition:opacity .3s;border-radius:18px 18px 0 0}
+.ic:hover{border-color:rgba(245,130,31,.28);transform:translateY(-4px)}
+.ic:hover::before{opacity:1}
+.ic .ico{font-size:30px;color:var(--o);margin-bottom:18px}
+.ic h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;color:var(--wh);margin-bottom:11px}
+.ic p{font-size:13.5px;color:var(--gray);line-height:1.8}
+
+/* UNIQUE BANNER */
+.ubanner{background:linear-gradient(135deg,var(--n3) 0%,rgba(0,212,255,.04) 100%);border:1px solid rgba(0,212,255,.18);border-radius:22px;padding:44px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+@media(max-width:700px){.ubanner{grid-template-columns:1fr;text-align:center;padding:30px 22px}}
+.uico{width:86px;height:86px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:40px;color:var(--t);flex-shrink:0;margin:0 auto}
+.ubanner h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--wh);margin-bottom:12px}
+.ubanner p{font-size:14px;color:var(--gray);line-height:1.85}
+.hl{color:var(--t);font-weight:600}
+
+/* PAIN CARDS */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.pc{background:rgba(255,50,50,.04);border:1px solid rgba(255,80,80,.14);border-radius:16px;padding:26px;transition:all .3s}
+.pc:hover{border-color:rgba(255,100,100,.28);transform:translateY(-4px)}
+.pc .pi{font-size:26px;color:#ff6b6b;margin-bottom:14px}
+.pc h4{font-size:15px;font-weight:600;color:var(--wh);margin-bottom:9px}
+.pc p{font-size:13px;color:var(--gray);line-height:1.75}
+.psol{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12.5px;font-weight:600;color:var(--t)}
+
+/* SERVICE CARDS */
+.scard{display:grid;grid-template-columns:1fr 1fr;background:var(--g);border:1px solid var(--gb);border-radius:22px;overflow:hidden;margin-bottom:28px;transition:all .4s;transform-style:preserve-3d}
+.scard:hover{border-color:rgba(245,130,31,.3);box-shadow:0 18px 56px rgba(0,0,0,.38),0 0 36px rgba(245,130,31,.07);transform:translateY(-5px)}
+.scard.rev{direction:rtl}
+.scard.rev>*{direction:ltr}
+@media(max-width:750px){.scard,.scard.rev{grid-template-columns:1fr;direction:ltr}
+.scard.rev>*{direction:ltr}}
+
+/* SERVICE VISUAL PANEL */
+.svis{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--n3)}
+.svis img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.scard:hover .svis img{transform:scale(1.05)}
+.snum{position:absolute;top:18px;left:18px;width:46px;height:46px;background:linear-gradient(135deg,var(--o),var(--od));border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:800;color:#fff;box-shadow:0 4px 18px rgba(245,130,31,.38);z-index:2}
+
+/* CSS ART VISUALS */
+/* Social Icons Grid */
+.art-social{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:36px}
+.soc-ico{border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:28px;font-weight:700;transition:transform .3s;animation:floatIco 3s ease-in-out infinite}
+.soc-ico span{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.soc-ico:hover{transform:scale(1.06)}
+.soc-fb{background:rgba(24,119,242,.15);border:1px solid rgba(24,119,242,.3);color:#4e9af1}
+.soc-li{background:rgba(10,102,194,.15);border:1px solid rgba(10,102,194,.3);color:#5a9fd4}
+.soc-ig{background:rgba(200,60,150,.15);border:1px solid rgba(200,60,150,.3);color:#d96cb4}
+.soc-x{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e0e0e0}
+@keyframes floatIco{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.soc-ico:nth-child(2){animation-delay:.4s}
+.soc-ico:nth-child(3){animation-delay:.8s}
+.soc-ico:nth-child(4){animation-delay:1.2s}
+
+/* Calendar Art */
+.art-calendar{padding:28px;width:100%}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-header span{font-size:12px;font-weight:600;color:var(--o);letter-spacing:1px;text-transform:uppercase}
+.cal-header .cal-dots{display:flex;gap:5px}
+.cal-dots span{width:8px;height:8px;border-radius:50%}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px}
+.cal-day{font-size:9px;color:var(--gray);text-align:center;padding:3px 0;font-weight:500}
+.cal-cell{aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;transition:all .2s}
+.cal-empty{background:transparent}
+.cal-normal{background:rgba(255,255,255,.04);color:var(--gray)}
+.cal-post{background:linear-gradient(135deg,rgba(245,130,31,.25),rgba(245,130,31,.1));border:1px solid rgba(245,130,31,.35);color:var(--o);font-weight:700;animation:calPulse 2s ease-in-out infinite}
+.cal-post:nth-child(3n){animation-delay:.6s}
+.cal-post:nth-child(3n+1){animation-delay:1.2s}
+@keyframes calPulse{0%,100%{box-shadow:0 0 0 0 rgba(245,130,31,.2)}50%{box-shadow:0 0 0 4px rgba(245,130,31,0)}}
+.cal-legend{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--gray)}
+.cal-legend-dot{width:8px;height:8px;border-radius:50%;background:var(--o)}
+
+/* Growth Art */
+.art-growth{padding:28px;width:100%}
+.chart-bars{display:flex;align-items:flex-end;justify-content:center;gap:10px;height:140px;padding-bottom:8px}
+.bar-wrap{display:flex;flex-direction:column;align-items:center;gap:5px}
+.bar{width:34px;border-radius:6px 6px 0 0;transition:height .4s ease;animation:growBar .8s ease both}
+.bar-0{height:25%;background:rgba(245,130,31,.3);animation-delay:.1s}
+.bar-1{height:45%;background:rgba(245,130,31,.5);animation-delay:.2s}
+.bar-2{height:62%;background:rgba(245,130,31,.65);animation-delay:.3s}
+.bar-3{height:80%;background:rgba(245,130,31,.8);animation-delay:.4s}
+.bar-4{height:100%;background:linear-gradient(180deg,var(--ol),var(--o));animation-delay:.5s;box-shadow:0 0 16px rgba(245,130,31,.4)}
+.bar-label{font-size:9px;color:var(--gray);font-weight:500}
+.bar-val{font-size:9px;color:var(--o);font-weight:700;margin-bottom:3px}
+@keyframes growBar{from{height:0}}
+.chart-title{text-align:center;font-size:11px;font-weight:600;color:var(--o);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.chart-total{text-align:center;margin-top:10px;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;color:var(--o)}
+.chart-total span{font-size:12px;color:var(--gray);font-weight:400}
+
+/* IT Group Art */
+.art-group{padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;height:100%}
+.group-stat{text-align:center}
+.group-stat .gsn{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:900;color:var(--o);line-height:1}
+.group-stat .gsl{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.avatars{display:flex;justify-content:center;margin-top:4px}
+.avatar{width:36px;height:36px;border-radius:50%;border:2px solid var(--n);margin-left:-10px;background:linear-gradient(135deg,var(--n3),var(--n2));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--o)}
+.avatar:first-child{margin-left:0}
+.more-av{background:rgba(245,130,31,.15);border-color:rgba(245,130,31,.3);font-size:10px;color:var(--o)}
+.group-tag{background:rgba(245,130,31,.08);border:1px solid rgba(245,130,31,.2);border-radius:12px;padding:10px 18px;font-size:12px;color:var(--lt);display:flex;align-items:center;gap:8px}
+
+/* SERVICE CONTENT */
+.scnt{padding:36px 32px}
+@media(max-width:750px){.scnt{padding:26px 22px}}
+.slabel{font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--o);margin-bottom:9px}
+.scnt h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--wh);line-height:1.3;margin-bottom:14px}
+.scnt p{font-size:13.5px;color:var(--gray);line-height:1.82;margin-bottom:22px}
+.sfeat{list-style:none;margin-bottom:26px}
+.sfeat li{font-size:13px;color:var(--lt);padding:5px 0;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.sfeat li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--o);flex-shrink:0;margin-top:5px}
+.spbox{background:rgba(245,130,31,.07);border:1px solid rgba(245,130,31,.18);border-radius:13px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.sp-lbl{font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase}
+.sp-val{font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:800;color:var(--o)}
+.sp-val sup{font-size:13px;font-weight:600}
+.ptag{font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px}
+.ot{background:rgba(245,130,31,.13);color:var(--o)}
+.mo{background:rgba(0,212,255,.13);color:var(--t)}
+.pnote{font-size:11px;color:var(--gray);margin-top:4px}
+
+/* ===== VIDEO SHOWCASE SECTION ===== */
+.video-section{background:var(--n2)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.vcard{background:var(--n3);border:1px solid var(--gb);border-radius:20px;overflow:hidden;transition:all .4s;position:relative}
+.vcard:hover{border-color:rgba(245,130,31,.3);box-shadow:0 16px 48px rgba(0,0,0,.4);transform:translateY(-6px)}
+.vscreen{position:relative;background:linear-gradient(135deg,#050b18,#0d1b35);min-height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
+.vscreen-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.85;transition:transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;}
+.vcard:hover .vscreen-img{transform:scale(1.15) translate(1%, 1%);filter:brightness(1.1) contrast(1.05);}
+.vscreen-bg{position:absolute;inset:0;opacity:.45;transition:opacity 0.4s ease;z-index:1;}
+.vcard:hover .vscreen-bg{opacity:.25;}
+.vscreen-bg.promo{background:radial-gradient(ellipse at 30% 60%,rgba(245,130,31,.25) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(0,212,255,.2) 0%,transparent 50%)}
+.vscreen-bg.reel{background:radial-gradient(ellipse at 60% 40%,rgba(138,43,226,.25) 0%,transparent 60%),radial-gradient(ellipse at 20% 70%,rgba(245,130,31,.2) 0%,transparent 50%)}
+/* Film grain lines */
+.vscreen::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:2}
+.play-btn{width:64px;height:64px;background:rgba(245,130,31,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;transition:all .4s ease;z-index:3;position:relative;box-shadow:0 0 0 0 rgba(245,130,31,.4);animation:pulsePly 2s infinite}
+.vcard:hover .play-btn{background:var(--o);transform:scale(1.1);box-shadow:0 0 0 16px rgba(245,130,31,0)}
+@keyframes pulsePly{0%,100%{box-shadow:0 0 0 0 rgba(245,130,31,.4)}70%{box-shadow:0 0 0 16px rgba(245,130,31,0)}}
+.play-btn i{margin-left:4px}
+.v-duration{position:absolute;bottom:12px;right:14px;background:rgba(0,0,0,.7);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:5px;z-index:3}
+.v-type-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;z-index:3}
+.vb-promo{background:rgba(245,130,31,.9);color:#fff}
+.vb-reel{background:linear-gradient(135deg,#8B44F7,#F542A3);color:#fff}
+/* Progress bar on hover */
+.vprogress{position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(255,255,255,.1);z-index:4}
+.vbar{height:100%;background:linear-gradient(90deg,var(--o),var(--t));width:0%;border-radius:2px}
+/* Video bottom info */
+.vinfo{padding:20px 22px}
+.vinfo .vtitle{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--wh);margin-bottom:6px}
+.vhook{font-size:12.5px;color:var(--gray);line-height:1.6;font-style:italic;border-left:2px solid var(--o);padding-left:10px;margin-bottom:12px}
+.vhook .hk{color:var(--o);font-style:normal;font-weight:600;font-size:13px}
+.vplatforms{display:flex;gap:8px;align-items:center}
+.vplat{font-size:11px;color:var(--gray);display:flex;align-items:center;gap:4px}
+.vplat i{font-size:12px}
+.vplat-fb{color:#4e9af1}
+.vplat-li{color:#5a9fd4}
+.vplat-ig{color:#d96cb4}
+.vplat-yt{color:#ff4444}
+
+/* PRICING TABLE */
+.ptbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--g);border:1px solid var(--gb);border-radius:22px;overflow:hidden;backdrop-filter:blur(20px)}
+.ptbl thead tr{background:linear-gradient(135deg,var(--n3),rgba(245,130,31,.09))}
+.ptbl thead th{padding:18px 22px;text-align:left;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);border-bottom:1px solid var(--gb)}
+.ptbl thead th:last-child{text-align:right}
+.ptbl tbody tr{transition:background .25s}
+.ptbl tbody tr:hover{background:rgba(245,130,31,.04)}
+.ptbl tbody tr:not(:last-child) td{border-bottom:1px solid var(--gb)}
+.ptbl td{padding:20px 22px;font-size:13.5px;color:var(--lt);vertical-align:top}
+.ptbl td:last-child{text-align:right;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;color:var(--o);white-space:nowrap}
+.inum{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:rgba(245,130,31,.11);border-radius:7px;font-size:11px;font-weight:700;color:var(--o);margin-right:9px;flex-shrink:0}
+.iname{font-weight:600;color:var(--wh);display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.idesc{font-size:12px;color:var(--gray);line-height:1.55;padding-left:35px;margin-top:3px}
+.bdg{display:inline-block;font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:10px}
+.bdg-o{background:rgba(245,130,31,.13);color:var(--o)}
+.bdg-t{background:rgba(0,212,255,.13);color:var(--t)}
+.ptbl tfoot tr{background:linear-gradient(135deg,var(--n3),rgba(245,130,31,.07));border-top:2px solid rgba(245,130,31,.28)}
+.ptbl tfoot td{padding:22px}
+.ttl{font-size:14px;font-weight:700;color:var(--wh);text-transform:uppercase;letter-spacing:.5px}
+.ttl small{font-size:11.5px;color:var(--gray);font-weight:400;text-transform:none;letter-spacing:0;display:block;margin-top:3px}
+.tval{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:900;color:var(--o);text-align:right}
+.tval small{font-size:13px;color:var(--gray);display:block;font-weight:500}
+.pnote2{margin-top:18px;background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.14);border-radius:11px;padding:14px 18px;font-size:13px;color:var(--gray);display:flex;align-items:flex-start;gap:9px}
+.pnote2 i{color:var(--t);flex-shrink:0;margin-top:2px}
+
+/* TIMELINE */
+.tl{position:relative}
+.tl::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--o),var(--t),var(--o))}
+@media(min-width:750px){.tl::before{left:50%;transform:translateX(-50%)}}
+.tli{display:flex;gap:0;margin-bottom:44px;padding-left:56px;position:relative}
+@media(min-width:750px){
+  .tli{padding-left:0}
+  .tli:nth-child(odd){flex-direction:row}
+  .tli:nth-child(even){flex-direction:row-reverse}
+  .tli:nth-child(odd) .tlc{margin-left:36px}
+  .tli:nth-child(even) .tlc{margin-right:36px}
+  .tli .tlc{width:calc(50% - 36px)}
+  .tli .tldw{width:72px;flex-shrink:0;display:flex;justify-content:center;align-items:flex-start;padding-top:6px}
+}
+.tldot{position:absolute;left:10px;top:6px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--od));border:3px solid var(--n);box-shadow:0 0 0 3px rgba(245,130,31,.28),0 0 18px rgba(245,130,31,.36);flex-shrink:0}
+@media(min-width:750px){.tldot{position:relative;left:auto;top:auto}}
+.tlc{background:var(--g);border:1px solid var(--gb);border-radius:16px;padding:22px 26px;transition:all .3s;flex:1}
+.tlc:hover{border-color:rgba(245,130,31,.28);transform:translateY(-3px)}
+.tlw{font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--o);margin-bottom:7px}
+.tlc h4{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:var(--wh);margin-bottom:8px}
+.tlc p{font-size:13px;color:var(--gray);line-height:1.72}
+.tldw{display:none}
+@media(min-width:750px){.tldw{display:flex}}
+
+/* SCRIPTS */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.ssc{background:var(--g);border:1px solid var(--gb);border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:all .4s}
+.ssc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--o),var(--t));transform:scaleX(0);transition:transform .3s}
+.ssc:hover{transform:translateY(-5px);border-color:rgba(245,130,31,.22)}
+.ssc:hover::after{transform:scaleX(1)}
+.stp{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.tp-p{background:rgba(245,130,31,.11);color:var(--o)}
+.tp-r{background:rgba(138,43,226,.15);color:#b47ef7}
+.tp-l{background:rgba(90,159,212,.13);color:#7ab4e8}
+.hkbdg{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:#FFD700;font-weight:600;margin-bottom:11px}
+.stitle2{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--wh);margin-bottom:13px}
+.stxt{font-size:13.5px;color:var(--lt);line-height:1.85;font-style:italic;border-left:3px solid rgba(245,130,31,.35);padding-left:14px;margin-bottom:14px}
+.stxt .hk{color:var(--o);font-style:normal;font-weight:600}
+.splat{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* WHY */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+.wc{background:var(--g);border:1px solid var(--gb);border-radius:18px;padding:30px 22px;text-align:center;transition:all .3s}
+.wc:hover{transform:translateY(-6px);border-color:rgba(245,130,31,.28);box-shadow:0 18px 46px rgba(0,0,0,.28)}
+.wico{width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,rgba(245,130,31,.14),rgba(245,130,31,.04));border:1px solid rgba(245,130,31,.18);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;color:var(--o);transition:all .3s}
+.wc:hover .wico{background:linear-gradient(135deg,var(--o),var(--od));color:#fff;box-shadow:0 6px 22px rgba(245,130,31,.3)}
+.wc h4{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--wh);margin-bottom:8px}
+.wc p{font-size:12.5px;color:var(--gray);line-height:1.72}
+
+/* SUMMARY */
+.sbox{background:linear-gradient(135deg,var(--n3),rgba(245,130,31,.05));border:1px solid rgba(245,130,31,.18);border-radius:26px;padding:52px 44px;position:relative;overflow:hidden}
+@media(max-width:700px){.sbox{padding:34px 22px}}
+.sbox::before{content:'AGS';position:absolute;right:-15px;bottom:-35px;font-family:'Space Grotesk',sans-serif;font-size:150px;font-weight:900;color:rgba(245,130,31,.03);pointer-events:none}
+.sgrd{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px}
+@media(max-width:700px){.sgrd{grid-template-columns:1fr}}
+.si{padding:22px;background:rgba(255,255,255,.02);border-radius:14px;border:1px solid var(--gb)}
+.si .sl{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:10px}
+.si .sv{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--o)}
+.si .sn{font-size:12px;color:var(--gray);margin-top:5px}
+.sctarow{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.vbadge{background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.18);border-radius:11px;padding:13px 18px;font-size:13px;color:var(--t);display:flex;align-items:center;gap:9px}
+
+/* CTA */
+.ctasec{background:linear-gradient(135deg,var(--n2),var(--n3));text-align:center;padding:110px 20px}
+.ctasec h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,48px);font-weight:800;color:var(--wh);margin-bottom:18px}
+.ctasec p{font-size:15px;color:var(--gray);max-width:540px;margin:0 auto 44px;line-height:1.75}
+.ctabtns{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+
+/* FLOATING WA */
+.wafloat{position:fixed;bottom:26px;right:26px;z-index:9999;width:58px;height:58px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;text-decoration:none;box-shadow:0 4px 22px rgba(37,211,102,.42);transition:all .3s;animation:waPulse 2.5s infinite}
+.wafloat:hover{transform:scale(1.12);animation:none;box-shadow:0 8px 34px rgba(37,211,102,.58)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 22px rgba(37,211,102,.42)}50%{box-shadow:0 4px 38px rgba(37,211,102,.65)}}
+.watt{position:absolute;right:70px;top:50%;transform:translateY(-50%);background:rgba(8,18,36,.96);border:1px solid rgba(37,211,102,.28);color:#fff;font-size:12.5px;font-weight:500;white-space:nowrap;padding:7px 13px;border-radius:9px;opacity:0;pointer-events:none;transition:opacity .3s}
+.wafloat:hover .watt{opacity:1}
+
+/* FOOTER */
+footer{background:var(--n3);border-top:1px solid var(--gb);padding:36px 20px;text-align:center}
+footer .flogo{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;margin-bottom:9px}
+footer .flogo span{color:var(--o)}
+footer p{font-size:13px;color:var(--gray);line-height:1.7}
+footer a{color:var(--o);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:480px){
+  header{padding:11px 14px}
+  .hdate{display:none}
+  section{padding:68px 14px}
+}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+<canvas id="bg"></canvas>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/201002194451" target="_blank" class="wafloat">
+  <i class="fab fa-whatsapp"></i>
+  <span class="watt">Let's Talk Now</span>
+</a>
+
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+  <a href="https://oltani.com" target="_blank" class="hlogo">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="6.5" fill="#00D4FF" opacity=".9"/>
+      <circle cx="20" cy="6" r="2.8" fill="#6B9FD4"/>
+      <circle cx="20" cy="34" r="2.8" fill="#6B9FD4"/>
+      <circle cx="6" cy="13" r="2.8" fill="#6B9FD4"/>
+      <circle cx="6" cy="27" r="2.8" fill="#6B9FD4"/>
+      <circle cx="34" cy="13" r="2.8" fill="#F5821F"/>
+      <circle cx="34" cy="27" r="2.8" fill="#F5821F"/>
+      <line x1="20" y1="9" x2="20" y2="13.5" stroke="#6B9FD4" stroke-width="1.4"/>
+      <line x1="20" y1="26.5" x2="20" y2="31" stroke="#6B9FD4" stroke-width="1.4"/>
+      <line x1="9" y1="13" x2="13.5" y2="16" stroke="#6B9FD4" stroke-width="1.4"/>
+      <line x1="9" y1="27" x2="13.5" y2="24" stroke="#6B9FD4" stroke-width="1.4"/>
+      <line x1="31" y1="13" x2="26.5" y2="16" stroke="#F5821F" stroke-width="1.4"/>
+      <line x1="31" y1="27" x2="26.5" y2="24" stroke="#F5821F" stroke-width="1.4"/>
+      <polygon points="36,20 40,17 40,23" fill="#F5821F" opacity=".85"/>
+    </svg>
+    <div class="hlt">
+      <div class="bn">OLT<span>ANI</span></div>
+      <div class="tg">Your Integrated Digital Partner</div>
+    </div>
+  </a>
+  <span class="hdate"><i class="far fa-calendar-alt" style="color:var(--o);margin-right:5px"></i>July 2026</span>
+  <span class="hbadge"><i class="fas fa-file-contract" style="margin-right:6px"></i>Proposal #AGS-2026</span>
+</header>
+
+<!-- META STRIP -->
+<div class="mstrip">
+  <div class="mi"><i class="fas fa-paper-plane"></i>Prepared by: <strong>OLTANI</strong></div>
+  <div class="mi"><i class="fas fa-building"></i>Client: <strong>AG Technology Systems (AGS)</strong></div>
+  <div class="mi"><i class="fas fa-globe"></i>Scope: <strong>Egypt &amp; Global Markets</strong></div>
+  <div class="mi"><i class="fas fa-clock"></i>Validity: <strong>30 Days</strong></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div>
+    <div class="htag">⚡ Confidential Digital Growth Proposal</div>
+    <h1>Transforming <span class="ct">AGS</span><br/>Into Egypt's <span class="co">#1 IT Brand</span></h1>
+    <p class="hsub">A full-spectrum AI-powered digital transformation plan — engineered specifically for <strong style="color:var(--lt)">AG Technology Systems</strong> to dominate the IT solutions market and generate enterprise-grade leads locally and globally.</p>
+    <div class="hbtns">
+      <a href="#services" class="btn-p"><i class="fas fa-rocket"></i> Explore The Plan</a>
+      <a href="https://wa.me/201002194451" target="_blank" class="btn-s"><i class="fab fa-whatsapp"></i> Discuss Now</a>
+    </div>
+    <div class="hstats">
+      <div class="hs"><span class="n" data-c="7">0</span><span class="l">Packages</span></div>
+      <div class="hs"><span class="n" data-c="400">0</span><span class="l">K+ Audience</span></div>
+      <div class="hs"><span class="n" data-c="13">0</span><span class="l">Posts / Month</span></div>
+      <div class="hs"><span class="n" data-c="8">0</span><span class="l">AI Videos</span></div>
+    </div>
+  </div>
+  <div class="scroll-ind" onclick="document.getElementById('ctx').scrollIntoView({behavior:'smooth'})">
+    <span>Scroll to explore</span><i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<div class="div"></div>
+<section id="ctx">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">The Brief</div>
+      <h2 class="stitle">Understanding <span style="color:var(--o)">Your Vision</span></h2>
+      <p class="ssub">Dear Eng. Ashraf — we have thoroughly analyzed your marketing brief and identified every opportunity to accelerate AGS's growth.</p>
+    </div>
+    <div class="igrid">
+      <div class="ic rv"><div class="ico"><i class="fas fa-bullseye"></i></div><h3>3 Strategic Objectives</h3><p>Redesign your bilingual website, elevate all social media platforms, and launch precision-targeted paid campaigns in Egypt and internationally — focused on enterprise lead generation from factories and corporations.</p></div>
+      <div class="ic rv" style="transition-delay:.12s"><div class="ico"><i class="fas fa-star"></i></div><h3>Your Competitive Edge</h3><p>AGS possesses a rare differentiator: <strong style="color:var(--o)">Mobile Server Rack Rental</strong> — a complete turnkey IT infrastructure on wheels. Full hardware + software + 24/7 support. No competitor in Egypt offers this at scale. This is your #1 weapon.</p></div>
+      <div class="ic rv" style="transition-delay:.24s"><div class="ico"><i class="fas fa-map-marked-alt"></i></div><h3>Target Market</h3><p>Egyptian factories, industrial enterprises, SMBs, and corporations requiring complete IT infrastructure without CAPEX commitment. International B2B prospects seeking managed IT solutions from a trusted Egyptian partner.</p></div>
+      <div class="ic rv" style="transition-delay:.36s"><div class="ico"><i class="fas fa-robot"></i></div><h3>AI at the Core</h3><p>Every deliverable is AI-enhanced — from AI-generated video content and intelligent copywriting to a WhatsApp bot that qualifies leads and books appointments 24/7 without human intervention.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIQUE PROP -->
+<div class="div"></div>
+<section>
+  <div class="cnt">
+    <div class="ubanner rv">
+      <div class="uico"><i class="fas fa-server"></i></div>
+      <div>
+        <h3>The Offer No Competitor Can Match</h3>
+        <p>While every other IT company in Egypt sells or installs equipment — <span class="hl">AGS delivers a fully operational IT backbone on wheels.</span> Server racks loaded with enterprise-grade hardware, pre-configured software stacks, network infrastructure, and a dedicated support contract — all under one monthly rental fee. A factory can go from zero IT to fully operational in <span class="hl">under 24 hours.</span> This proposition will be the cornerstone of every campaign we build together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<div class="div"></div>
+<section>
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Current Challenges</div>
+      <h2 class="stitle">What's Holding <span style="color:var(--o)">AGS Back</span></h2>
+      <p class="ssub">Our audit of your existing digital presence revealed critical gaps costing you enterprise clients daily.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pc rv"><div class="pi"><i class="fas fa-tachometer-alt"></i></div><h4>Slow, Underperforming Website</h4><p>ag-techsystem.com has critical performance issues, outdated content, and poor mobile optimization — failing to convert visitors into inquiries.</p><div class="psol"><i class="fas fa-arrow-right"></i> Complete website overhaul planned</div></div>
+      <div class="pc rv" style="transition-delay:.1s"><div class="pi"><i class="fas fa-user-slash"></i></div><h4>Low Client Acquisition</h4><p>No structured lead generation pipeline. Potential clients in target industries are unaware of AGS's unique rack rental service.</p><div class="psol"><i class="fas fa-arrow-right"></i> AI-powered lead gen campaigns</div></div>
+      <div class="pc rv" style="transition-delay:.2s"><div class="pi"><i class="fas fa-share-alt"></i></div><h4>Weak Social Media Presence</h4><p>Social pages lack brand consistency, posting strategy, and engagement — invisible to the 400k+ IT decision-makers on Facebook and LinkedIn.</p><div class="psol"><i class="fas fa-arrow-right"></i> Full social media rebuild</div></div>
+      <div class="pc rv" style="transition-delay:.3s"><div class="pi"><i class="fas fa-comment-slash"></i></div><h4>No Automated Lead Response</h4><p>Leads going cold due to delayed responses. No CRM to track prospects from inquiry to contract. Manual follow-up is losing deals.</p><div class="psol"><i class="fas fa-arrow-right"></i> 24/7 AI WhatsApp bot + CRM</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<div class="div"></div>
+<section id="services" style="background:var(--n2)">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">The Solution</div>
+      <h2 class="stitle">7 Integrated <span style="color:var(--o)">Growth Packages</span></h2>
+      <p class="ssub">A complete, sequenced digital transformation roadmap — each package engineered for maximum ROI.</p>
+    </div>
+
+    <!-- S1: Website — uses actual image -->
+    <div class="scard rv">
+      <div class="svis">
+        <img src="images/website.png" alt="Website Redesign Mockup" loading="lazy"/>
+        <div class="snum">01</div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">Foundation Package</div>
+        <h3>Digital Presence Overhaul: Website + SEO + Store + Brand Identity</h3>
+        <p>A complete rebuild of ag-techsystem.com into a bilingual, high-performance, SEO-optimized platform with an integrated store — plus a fresh AGS logo redesign.</p>
+        <ul class="sfeat">
+          <li>Bilingual website (Arabic + English) with lightning-fast performance</li>
+          <li>Integrated service, hardware &amp; software product store</li>
+          <li>Google Search Console &amp; Google My Business registration</li>
+          <li>On-page SEO for Egyptian &amp; global IT search terms</li>
+          <li>New AGS logo redesign &amp; full brand guidelines</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>20k</div></div><span class="ptag ot">One-Time</span></div>
+      </div>
+    </div>
+
+    <!-- S2: Social Media — CSS ART -->
+    <div class="scard rev rv">
+      <div class="svis" style="background:var(--n2)">
+        <div class="snum">02</div>
+        <div class="art-social" style="width:100%">
+          <div class="soc-ico soc-fb"><i class="fab fa-facebook-f"></i><span>Facebook</span></div>
+          <div class="soc-ico soc-li"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></div>
+          <div class="soc-ico soc-ig"><i class="fab fa-instagram"></i><span>Instagram</span></div>
+          <div class="soc-ico soc-x"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></div>
+        </div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">Brand Refresh Package</div>
+        <h3>Social Media Platform Rebuild: Facebook · LinkedIn · Instagram · X</h3>
+        <p>Complete visual and strategic overhaul of all AGS social profiles — new brand identity, optimized metadata, and conversion-ready pages that drive leads to your WhatsApp bot.</p>
+        <ul class="sfeat">
+          <li>New covers, profile photos &amp; bios across all 4 platforms</li>
+          <li>Keyword-optimized descriptions &amp; contact info</li>
+          <li>Call-to-action buttons linked to WhatsApp bot</li>
+          <li>Highlight reels &amp; pinned content configuration</li>
+          <li>Platform-specific growth strategy documentation</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>7k</div></div><span class="ptag ot">One-Time</span></div>
+      </div>
+    </div>
+
+    <!-- S3: Videos — uses actual image -->
+    <div class="scard rv">
+      <div class="svis">
+        <img src="images/video.png" alt="AI Video Production" loading="lazy"/>
+        <div class="snum">03</div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">AI Content Production</div>
+        <h3>8 Premium AI-Powered Videos: 4 Promo Ads + 4 High-Impact Reels</h3>
+        <p>Professional video content crafted with AI-enhanced production tools. Full-format promo ads plus short-form reels engineered to go viral among IT decision-makers.</p>
+        <ul class="sfeat">
+          <li>4 Promotional Videos — cinematic quality, scripted with powerful hooks</li>
+          <li>4 Teaser Reels — punchy, scroll-stopping social content</li>
+          <li>AI voiceover + motion graphics + bilingual subtitles</li>
+          <li>Optimized for Facebook, LinkedIn, Instagram &amp; YouTube</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>26k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">4 Promo × 4k + 4 Reels × 2.5k</p></div></div>
+      </div>
+    </div>
+
+    <!-- S4: Monthly Posts — CSS ART (Calendar) -->
+    <div class="scard rev rv">
+      <div class="svis" style="background:var(--n2);flex-direction:column;padding:0">
+        <div class="snum">04</div>
+        <div class="art-calendar" style="width:100%;padding:32px 28px">
+          <div class="cal-header">
+            <span>Content Calendar</span>
+            <div class="cal-dots">
+              <span style="background:#F5821F;border-radius:50%"></span>
+              <span style="background:#00D4FF;border-radius:50%"></span>
+              <span style="background:#7a90b0;border-radius:50%"></span>
+            </div>
+          </div>
+          <div class="cal-grid">
+            <div class="cal-day">M</div><div class="cal-day">T</div><div class="cal-day">W</div><div class="cal-day">T</div><div class="cal-day">F</div><div class="cal-day">S</div><div class="cal-day">S</div>
+            <div class="cal-empty"></div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">3</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">5</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">7</div>
+            <div class="cal-normal">8</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">10</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">12</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">14</div>
+            <div class="cal-normal">15</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">17</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">19</div>
+            <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
+            <div class="cal-normal">21</div>
+          </div>
+          <div class="cal-legend"><div class="cal-legend-dot"></div><span>Post day (13 posts/month)</span></div>
+        </div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">Monthly Retainer</div>
+        <h3>Ongoing Content: 13 Designed Posts/Month with AI Captions</h3>
+        <p>3 professionally designed posts per week (13/month) — each with an AI-crafted caption targeting IT decision-makers, factory owners, and corporate procurement managers.</p>
+        <ul class="sfeat">
+          <li>13 professionally designed visual posts per month</li>
+          <li>AI-optimized Arabic + English captions + hashtag strategy</li>
+          <li>Content calendar delivered at start of each month</li>
+          <li>Published across Facebook, LinkedIn &amp; Instagram</li>
+          <li>Monthly performance &amp; engagement analytics report</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Monthly Investment</div><div class="sp-val"><sup>EGP </sup>6k</div></div><span class="ptag mo">/ Month</span></div>
+      </div>
+    </div>
+
+    <!-- S5: Growth — uses server image -->
+    <div class="scard rv">
+      <div class="svis" style="background:var(--n2);flex-direction:column;padding:0">
+        <img src="images/server.png" alt="Server Infrastructure" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
+        <div class="snum">05</div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">Growth Acceleration</div>
+        <h3>Rapid Audience Growth: 13,000 Real Egyptian Followers in 2 Weeks</h3>
+        <p>A precision 3-phase growth sprint designed to build a credible, engaged audience among Egyptian IT professionals and corporate managers — creating social proof that accelerates organic growth.</p>
+        <ul class="sfeat">
+          <li><strong style="color:var(--o)">Phase 1</strong> — 3,000 real Egyptian followers (IT &amp; business sector): <strong style="color:var(--wh)">1.2k EGP</strong></li>
+          <li><strong style="color:var(--o)">Phase 2</strong> — Targeted paid ad campaign (1 week): <strong style="color:var(--wh)">2k EGP</strong></li>
+          <li><strong style="color:var(--o)">Phase 3</strong> — 10,000 additional real Egyptian followers: <strong style="color:var(--wh)">2k EGP</strong></li>
+          <li>Fully executed within 14 days from launch</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>5.2k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">Delivered in 14 days</p></div></div>
+      </div>
+    </div>
+
+    <!-- S6: IT Group — CSS ART -->
+    <div class="scard rev rv">
+      <div class="svis" style="background:var(--n2)">
+        <div class="snum">06</div>
+        <div class="art-group">
+          <div class="group-stat">
+            <div class="gsn">400k+</div>
+            <div class="gsl">Active IT Members</div>
+          </div>
+          <div class="avatars">
+            <div class="avatar">IT</div>
+            <div class="avatar">CEO</div>
+            <div class="avatar">MFG</div>
+            <div class="avatar">CTO</div>
+            <div class="avatar more-av">+k</div>
+          </div>
+          <div class="group-tag"><i class="fab fa-facebook-f" style="color:#4e9af1"></i> IT Support Egypt — Largest Group</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+            <div style="background:rgba(245,130,31,.09);border:1px solid rgba(245,130,31,.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--o)"><i class="fas fa-video" style="margin-right:5px"></i>4-Day Ad Slot</div>
+            <div style="background:rgba(0,212,255,.09);border:1px solid rgba(0,212,255,.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--t)"><i class="fas fa-bullhorn" style="margin-right:5px"></i>Direct Reach</div>
+          </div>
+        </div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">Community Penetration</div>
+        <h3>IT Support Group Campaign: Direct Access to 400K+ Decision-Makers</h3>
+        <p>A sponsored video ad placed directly inside Egypt's largest IT Support Facebook group — reaching 400,000+ business owners, IT managers, and operations directors. 4 days of premium exposure post-growth phase.</p>
+        <ul class="sfeat">
+          <li>Sponsored ad in Egypt's #1 IT Support Facebook group</li>
+          <li>4-day premium placement for maximum reach</li>
+          <li>One of the 4 produced promo videos deployed as the creative</li>
+          <li>Timed post-growth phase for amplified social proof</li>
+          <li>Direct lead capture to WhatsApp bot</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>1.2k</div></div><span class="ptag ot">One-Time</span></div>
+      </div>
+    </div>
+
+    <!-- S7: CRM — uses actual image -->
+    <div class="scard rv">
+      <div class="svis">
+        <img src="images/crm.png" alt="AI WhatsApp Bot & CRM" loading="lazy"/>
+        <div class="snum">07</div>
+      </div>
+      <div class="scnt">
+        <div class="slabel">AI Automation Stack</div>
+        <h3>AI WhatsApp Bot + Enterprise CRM: 24/7 Intelligent Lead Management</h3>
+        <p>A fully automated AI-powered WhatsApp response system integrated with a professional CRM — enabling AGS management to track, qualify, and close leads without missing a single inquiry.</p>
+        <ul class="sfeat">
+          <li>AI chatbot that qualifies leads, answers FAQs &amp; books appointments</li>
+          <li>Full CRM dashboard: lead pipeline, follow-up scheduling, reporting</li>
+          <li>Role-based access control for AGS management team</li>
+          <li>Integration with WhatsApp Business API</li>
+          <li>On-premise or Windows VPS deployment (VPS cost separate)</li>
+          <li>Training &amp; full handover documentation</li>
+        </ul>
+        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>12k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">VPS billed separately at cost</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEO SHOWCASE ===== -->
+<div class="div"></div>
+<section class="video-section">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Video Content Preview</div>
+      <h2 class="stitle">8 AI-Powered Videos — <span style="color:var(--o)">Sample Concepts</span></h2>
+      <p class="ssub">A preview of the 4 promotional ads and 4 viral reels we will produce for AGS — each engineered with a scroll-stopping hook.</p>
+    </div>
+    <div class="vgrid">
+
+      <!-- Video 1 -->
+      <div class="vcard rv" data-video-card>
+        <div class="vscreen">
+          <video src="videos/vid1.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <div class="vscreen-bg promo"></div>
+          <span class="v-type-badge vb-promo"><i class="fas fa-film" style="margin-right:4px"></i>Promo Ad #1</span>
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <span class="v-duration">0:08</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">The 2AM IT Failure Ad</div>
+          <div class="vhook"><span class="hk">"It's 2AM. Your factory is dark — servers down, production halted."</span><br/>Every minute costs thousands. What if this never happened again? AGS delivers a complete IT backbone — on wheels, ready in 24 hours.</div>
+          <div class="vplatforms">
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
+            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i> LinkedIn</span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i> YouTube</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="vcard rv" style="transition-delay:.12s" data-video-card>
+        <div class="vscreen">
+          <video src="videos/vid2.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <div class="vscreen-bg reel"></div>
+          <span class="v-type-badge vb-reel"><i class="fas fa-mobile-alt" style="margin-right:4px"></i>Reel #1</span>
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <span class="v-duration">0:08</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">The 24-Hour Transformation Reel</div>
+          <div class="vhook"><span class="hk">"67% of Egyptian businesses lost revenue last year due to IT failure."</span><br/>[Fast cut: empty office → AGS arrives → rack installed → systems live in 24h]</div>
+          <div class="vplatforms">
+            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i> Reels</span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="vcard rv" style="transition-delay:.24s" data-video-card>
+        <div class="vscreen">
+          <video src="videos/vid3.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <div class="vscreen-bg promo"></div>
+          <span class="v-type-badge vb-promo"><i class="fas fa-film" style="margin-right:4px"></i>Promo Ad #2</span>
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <span class="v-duration">0:08</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">Zero CAPEX — Full IT Power</div>
+          <div class="vhook"><span class="hk">"What if your factory could have enterprise-grade IT infrastructure starting tomorrow — with zero upfront investment?"</span><br/>One monthly fee. Everything included. AGS covers it all.</div>
+          <div class="vplatforms">
+            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i> LinkedIn</span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i> YouTube</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="vcard rv" style="transition-delay:.36s" data-video-card>
+        <div class="vscreen">
+          <video src="videos/vid4.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <div class="vscreen-bg reel"></div>
+          <span class="v-type-badge vb-reel"><i class="fas fa-mobile-alt" style="margin-right:4px"></i>Reel #2</span>
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <span class="v-duration">0:08</span>
+        </div>
+        <div class="vinfo">
+          <div class="vtitle">The Remote Support Reel</div>
+          <div class="vhook"><span class="hk">"Your engineer called in sick. Your system crashed. Your deadline is in 3 hours."</span><br/>AGS remote support is already on it — before you even pick up the phone.</div>
+          <div class="vplatforms">
+            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i> Reels</span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<div class="div"></div>
+<section id="pricing">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Investment Breakdown</div>
+      <h2 class="stitle">Complete <span style="color:var(--o)">Pricing Summary</span></h2>
+      <p class="ssub">Full transparency — every line item detailed. No hidden fees.</p>
+    </div>
+    <div class="rv" style="overflow-x:auto">
+      <table class="ptbl">
+        <thead>
+          <tr>
+            <th style="width:55%">Service / Deliverable</th>
+            <th style="width:20%">Type</th>
+            <th style="width:25%">Investment (EGP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="iname"><span class="inum">01</span>Website Redesign + SEO + Store + Logo<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Bilingual website, product/service store, Google Search registration, new AGS brand identity</div></td><td style="color:var(--gray);font-size:12.5px">Foundation</td><td>20k</td></tr>
+          <tr><td><div class="iname"><span class="inum">02</span>Social Media Pages Full Renewal<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Facebook, LinkedIn, Instagram, X — complete brand refresh, optimization &amp; setup</div></td><td style="color:var(--gray);font-size:12.5px">Brand</td><td>7k</td></tr>
+          <tr><td><div class="iname"><span class="inum">03a</span>4 AI Promotional Videos<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Cinematic quality, scripted with high-impact hooks, bilingual, AI voiceover</div></td><td style="color:var(--gray);font-size:12.5px">Content</td><td>16k</td></tr>
+          <tr><td><div class="iname"><span class="inum">03b</span>4 Teaser Reels (Short-Form)<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Viral-optimized short reels for Facebook, Instagram &amp; LinkedIn</div></td><td style="color:var(--gray);font-size:12.5px">Content</td><td>10k</td></tr>
+          <tr><td><div class="iname"><span class="inum">04</span>Monthly Content — 13 Posts/Month<span class="bdg bdg-t">Monthly</span></div><div class="idesc">3 posts/week, professional design + AI-optimized captions + hashtag strategy</div></td><td style="color:var(--gray);font-size:12.5px">Retainer</td><td>6k<span style="font-size:12px;color:var(--t)">/mo</span></td></tr>
+          <tr><td><div class="iname"><span class="inum">05</span>Rapid Growth: 13,000 Real Followers<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Phase 1: 3k (1.2k) + Ad campaign 1 week (2k) + Phase 3: 10k followers (2k)</div></td><td style="color:var(--gray);font-size:12.5px">Growth</td><td>5.2k</td></tr>
+          <tr><td><div class="iname"><span class="inum">06</span>IT Support Group Ad — 4 Days<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Video ad in Egypt's largest IT group, 400k+ members</div></td><td style="color:var(--gray);font-size:12.5px">Advertising</td><td>1.2k</td></tr>
+          <tr><td><div class="iname"><span class="inum">07</span>AI WhatsApp Bot + Enterprise CRM<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Full AI chatbot + CRM platform + lead pipeline + management dashboard. VPS billed separately.</div></td><td style="color:var(--gray);font-size:12.5px">Automation</td><td>12k</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2"><div class="ttl">Total One-Time Investment<small>+ 6k EGP/month ongoing content retainer from Month 2</small></div></td><td><div class="tval">71.4k<small>EGP one-time</small></div></td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="pnote2 rv"><i class="fas fa-info-circle fa-lg"></i><span>All prices in Egyptian Pounds (EGP). Monthly retainer (6k) starts Month 2. Windows VPS is billed at market cost — no markup. A phased payment plan is available on request.</span></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<div class="div"></div>
+<section style="background:var(--n2)">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Implementation Roadmap</div>
+      <h2 class="stitle">From Kickoff to <span style="color:var(--o)">Market Dominance</span></h2>
+      <p class="ssub">A structured 6-week launch sequence built for speed and maximum impact.</p>
+    </div>
+    <div class="tl">
+      <div class="tli rv"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 1</div><h4>🚀 Kickoff &amp; Brand Foundation</h4><p>Onboarding, brand strategy session, new AGS logo design, social media pages updated with new identity, website wireframes approved.</p></div></div>
+      <div class="tli rv" style="transition-delay:.12s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 2</div><h4>🌐 Website Development + Video Production</h4><p>Full bilingual website development in progress. AI video scripts and storyboards approved. Growth Phase 1 launched: 3,000 followers acquisition begins.</p></div></div>
+      <div class="tli rv" style="transition-delay:.24s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 3</div><h4>📱 Website Launch + Paid Ad Campaign</h4><p>New website goes live and registered on Google. 1-week targeted paid campaign launched. First 2 promo videos delivered and published.</p></div></div>
+      <div class="tli rv" style="transition-delay:.36s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 4</div><h4>🤖 AI Bot &amp; CRM Go Live + Content Begins</h4><p>WhatsApp AI bot and CRM deployed. First month's content calendar published. Remaining videos (2 promos + 4 reels) delivered.</p></div></div>
+      <div class="tli rv" style="transition-delay:.48s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 5–6</div><h4>📢 IT Community + 10K Growth Phase</h4><p>Growth Phase 3: 10,000 additional followers. Sponsored video ad in IT Support group (400k+ members). Full performance review and optimization.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<div class="div"></div>
+<section>
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Content Strategy</div>
+      <h2 class="stitle">High-Impact <span style="color:var(--o)">Script Samples</span></h2>
+      <p class="ssub">Sample hooks crafted for AGS — engineered to stop the scroll and drive immediate action from IT decision-makers.</p>
+    </div>
+    <div class="sgrid">
+      <div class="ssc rv"><span class="stp tp-p">Promotional Video</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The Midnight IT Failure Script</div><div class="stxt"><span class="hk">"It's 2AM. Your factory just went dark — servers down, systems offline, production halted."</span><br/><br/>Every minute costs you thousands. Your IT vendor isn't answering. Your team is helpless.<br/><br/><em>What if this never happened again?</em><br/><br/>AGS doesn't just fix IT problems — we eliminate them. A complete server rack, pre-loaded with everything your operation needs, installed in your facility, backed by 24/7 expert support. <span class="hk">A fully operational IT backbone — on your terms.</span></div><div class="splat"><i class="fab fa-facebook-f vplat-fb"></i> Facebook <i class="fab fa-youtube vplat-yt" style="margin-left:8px"></i> YouTube <i class="fab fa-linkedin-in vplat-li" style="margin-left:8px"></i> LinkedIn</div></div>
+      <div class="ssc rv" style="transition-delay:.12s"><span class="stp tp-r">Viral Reel</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The 24-Hour Transformation Reel</div><div class="stxt"><span class="hk">"67% of Egyptian businesses lost revenue last year because of IT failure. Are you still depending on one PC and a prayer?"</span><br/><br/>[Fast cut: empty office → AGS team arrives → rack installed → systems running]<br/><br/>24 hours. That's all it takes. Full server infrastructure. Complete software stack. Non-stop support.<br/><br/><span class="hk">AGS — Your entire IT department, delivered.</span></div><div class="splat"><i class="fab fa-instagram vplat-ig"></i> Reels <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Facebook</div></div>
+      <div class="ssc rv" style="transition-delay:.24s"><span class="stp tp-l">LinkedIn Authority</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The Enterprise Decision-Maker Post</div><div class="stxt"><span class="hk">"What if you could deploy a Fortune 500-level IT infrastructure in your factory — by tomorrow?"</span><br/><br/>This isn't a pitch. It's what AGS does every week for Egyptian enterprises that are tired of:<br/>❌ Overpriced IT consultants who disappear after installation<br/>❌ Hardware that fails with zero backup<br/>❌ Software licensing nightmares<br/><br/>Instead, they rent a complete IT system — all under one monthly contract.<br/><span class="hk">Zero CAPEX. Maximum uptime. Total peace of mind.</span></div><div class="splat"><i class="fab fa-linkedin-in vplat-li"></i> LinkedIn <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Groups</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY OLTANI -->
+<div class="div"></div>
+<section style="background:var(--n2)">
+  <div class="cnt">
+    <div class="sh rv">
+      <div class="stag">Why OLTANI</div>
+      <h2 class="stitle">Your Strategic <span style="color:var(--o)">Digital Partner</span></h2>
+      <p class="ssub">OLTANI is not a marketing agency — we are a technology-driven growth partner that speaks IT fluently and delivers measurable results.</p>
+    </div>
+    <div class="wgrid">
+      <div class="wc rv"><div class="wico"><i class="fas fa-robot"></i></div><h4>AI-Native Execution</h4><p>Every content piece, ad, and response is AI-enhanced — faster production, smarter targeting, measurable results.</p></div>
+      <div class="wc rv" style="transition-delay:.08s"><div class="wico"><i class="fas fa-code"></i></div><h4>Technical Fluency</h4><p>We understand IT infrastructure and enterprise software — your audience's language is our language.</p></div>
+      <div class="wc rv" style="transition-delay:.16s"><div class="wico"><i class="fas fa-chart-line"></i></div><h4>Data-Driven Strategy</h4><p>Every decision is backed by analytics. Monthly KPI reports with conversion data and actionable insights.</p></div>
+      <div class="wc rv" style="transition-delay:.24s"><div class="wico"><i class="fas fa-globe-africa"></i></div><h4>Egypt &amp; Global Reach</h4><p>Deep knowledge of the Egyptian B2B market combined with global digital best practices.</p></div>
+      <div class="wc rv" style="transition-delay:.32s"><div class="wico"><i class="fas fa-shield-alt"></i></div><h4>Full Accountability</h4><p>Clear deliverables, defined timelines, and guaranteed execution. You see progress every week.</p></div>
+      <div class="wc rv" style="transition-delay:.4s"><div class="wico"><i class="fas fa-headset"></i></div><h4>Dedicated Support</h4><p>Direct WhatsApp line to your account manager. Fast response, proactive communication, zero bureaucracy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<div class="div"></div>
+<section>
+  <div class="cnt">
+    <div class="sbox rv">
+      <div style="margin-bottom:36px"><div class="stag">Total Investment</div><h2 class="stitle" style="font-size:clamp(22px,3.2vw,38px)">Your Complete <span style="color:var(--o)">AGS Growth Package</span></h2></div>
+      <div class="sgrd">
+        <div class="si"><div class="sl">One-Time Total Investment</div><div class="sv">71.4k EGP</div><div class="sn">Covers all 7 packages — website, brand, videos, content, growth, community &amp; AI automation</div></div>
+        <div class="si"><div class="sl">Monthly Retainer (from Month 2)</div><div class="sv" style="color:var(--t)">6k EGP</div><div class="sn">13 posts/month, captions, scheduling &amp; monthly analytics report</div></div>
+        <div class="si"><div class="sl">Windows VPS (Optional)</div><div class="sv" style="color:var(--gray);font-size:20px">At Market Cost</div><div class="sn">For WhatsApp Bot &amp; CRM hosting — no markup applied</div></div>
+        <div class="si"><div class="sl">Full Deployment Timeline</div><div class="sv" style="font-size:clamp(18px,2.5vw,30px)">6 Weeks</div><div class="sn">From contract signing to all systems live and first content published</div></div>
+      </div>
+      <div class="sctarow">
+        <div class="vbadge"><i class="fas fa-clock"></i><span>Proposal valid for <strong>30 days</strong> from July 3, 2026</span></div>
+        <a href="https://wa.me/201002194451" target="_blank" class="btn-p" style="font-size:14px;padding:14px 26px"><i class="fab fa-whatsapp"></i> Accept &amp; Start Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctasec">
+  <div class="cnt">
+    <div class="stag" style="margin-bottom:18px">Ready to Begin?</div>
+    <h2>Let's Build the <span style="color:var(--o)">Future</span> of AGS Together</h2>
+    <p>Eng. Ashraf, the Egyptian IT market is moving fast. Every day without a dominant digital presence is a lead your competitor is closing. Let's talk — we're ready to start immediately.</p>
+    <div class="ctabtns">
+      <a href="https://wa.me/201002194451" target="_blank" class="btn-wa"><i class="fab fa-whatsapp fa-lg"></i>Message on WhatsApp</a>
+      <a href="https://oltani.com" target="_blank" class="btn-web"><i class="fas fa-globe"></i>Visit oltani.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flogo">OLT<span>ANI</span></div>
+  <p>Open Link Technologies &amp; Artificial Network Intelligence</p>
+  <p style="margin-top:8px"><a href="https://oltani.com" target="_blank">oltani.com</a> &nbsp;·&nbsp; <a href="https://wa.me/201002194451" target="_blank">+20 100 219 4451</a></p>
+  <p style="margin-top:14px;font-size:11px;color:#3a4a60">Confidential proposal prepared exclusively for AG Technology Systems (AGS) · July 2026</p>
+</footer>
+
+</div><!-- .wrap -->
+
+<script>
+// CANVAS NETWORK
+const cv=document.getElementById('bg'),cx=cv.getContext('2d');
+let W,H;
+function rsz(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight}
+rsz();window.addEventListener('resize',rsz);
+class P{constructor(){this.reset()}reset(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.r=Math.random()*1.8+.8;this.a=Math.random()*.35+.08;this.c=Math.random()>.55?'#F5821F':'#00D4FF'}update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W||this.y<0||this.y>H)this.reset()}draw(){cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fillStyle=this.c;cx.globalAlpha=this.a;cx.fill();cx.globalAlpha=1}}
+const pts=Array.from({length:70},()=>new P());
+function loop(){cx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw()});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){cx.beginPath();cx.moveTo(pts[i].x,pts[i].y);cx.lineTo(pts[j].x,pts[j].y);cx.strokeStyle=pts[i].c;cx.globalAlpha=(1-d/110)*.1;cx.lineWidth=.7;cx.stroke();cx.globalAlpha=1}}requestAnimationFrame(loop)}
+loop();
+
+// PROGRESS BAR
+window.addEventListener('scroll',()=>{const s=window.scrollY,m=document.body.scrollHeight-window.innerHeight;document.getElementById('bar').style.width=(s/m*100)+'%'});
+
+// INTERSECTION OBSERVER
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.rv,.rl,.rr').forEach(el=>obs.observe(el));
+
+// HERO COUNTERS
+function runCounters(){document.querySelectorAll('[data-c]').forEach(el=>{const t=+el.dataset.c;let c=0;const st=Math.ceil(t/40);const tm=setInterval(()=>{c=Math.min(c+st,t);el.textContent=c+(t>=100?'K+':'');if(c>=t)clearInterval(tm)},40)})}
+const ho=new IntersectionObserver(e=>{if(e[0].isIntersecting){runCounters();ho.disconnect()}},{threshold:.3});
+ho.observe(document.querySelector('.hero'));
+
+// 3D TILT on service cards
+document.querySelectorAll('.scard').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`translateY(-5px) rotateX(${-y*3.5}deg) rotateY(${x*3.5}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';});
+});
+
+// VIDEO CONTROLS ON HOVER/CLICK + AUTOPLAY ON SCROLL (for Mobile/Viewport)
+const videoCards = document.querySelectorAll('[data-video-card]');
+
+function playVideo(video, playBtn) {
+  video.play().then(() => {
+    playBtn.style.opacity = '0';
+    playBtn.style.transform = 'scale(0.8)';
+  }).catch(err => {});
+}
+
+function pauseVideo(video, playBtn) {
+  video.pause();
+  video.currentTime = 0;
+  playBtn.style.opacity = '1';
+  playBtn.style.transform = 'scale(1)';
+}
+
+// Intersection Observer for scroll-to-play on mobile
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const card = entry.target;
+    const video = card.querySelector('video');
+    const playBtn = card.querySelector('.play-btn');
+
+    if (entry.isIntersecting) {
+      playVideo(video, playBtn);
+    } else {
+      pauseVideo(video, playBtn);
+    }
+  });
+}, {
+  threshold: 0.55 // Play when 55% of the card is visible in the viewport
+});
+
+videoCards.forEach(card => {
+  const video = card.querySelector('video');
+  const playBtn = card.querySelector('.play-btn');
+
+  // Observe card for scroll play/pause
+  videoObserver.observe(card);
+
+  // Hover events as desktop fallback
+  card.addEventListener('mouseenter', () => playVideo(video, playBtn));
+  card.addEventListener('mouseleave', () => pauseVideo(video, playBtn));
+
+  // Click / Touch toggle
+  card.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (video.paused) {
+      playVideo(video, playBtn);
+    } else {
+      pauseVideo(video, playBtn);
+    }
+  });
+});
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+</script>
+</body>
+</html>

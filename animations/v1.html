@@ -1,0 +1,177 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><style>*{margin:0;padding:0}body{background:#000;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c" width="960" height="540"></canvas>
+<script>
+const cv=document.getElementById('c'),ctx=cv.getContext('2d'),W=960,H=540;
+const FPS=30,DUR=8,TOT=FPS*DUR;
+let f=0;
+const O='#F5821F',T='#00D4FF',N='#050b18',R='#FF3B3B',G='#25D366';
+function lerp(a,b,t){return a+(b-a)*t}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+function easeOut(t){return 1-Math.pow(1-t,3)}
+function fade(t,s,e){return clamp((t-s)/(e-s),0,1)}
+function glow(color,blur){ctx.shadowColor=color;ctx.shadowBlur=blur}
+function noGlow(){ctx.shadowBlur=0;ctx.shadowColor='transparent'}
+function text(txt,x,y,sz,color,align='center',font='900',family='Inter,Arial,sans-serif'){
+  ctx.font=`${font} ${sz}px ${family}`;ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(txt,x,y)}
+function drawBg(){
+  const g=ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#020810');g.addColorStop(1,'#000305');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+}
+function drawGrid(alpha){
+  ctx.strokeStyle=`rgba(0,150,255,${alpha*0.08})`;ctx.lineWidth=1;
+  for(let x=0;x<W;x+=60){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+  for(let y=0;y<H;y+=60){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+}
+function drawServerIcon(x,y,w,h,alpha,greenPct){
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle='#0a1628';ctx.strokeStyle=`rgba(0,212,255,0.4)`;ctx.lineWidth=2;
+  ctx.beginPath();ctx.roundRect(x,y,w,h,8);ctx.fill();ctx.stroke();
+  const rh=12,rg=6,rows=Math.floor(h/(rh+rg));
+  for(let i=0;i<rows;i++){
+    const ry=y+10+i*(rh+rg);
+    const isGreen=i/rows<greenPct;
+    ctx.fillStyle=isGreen?'#0d2a1a':'#2a0d0d';
+    ctx.beginPath();ctx.roundRect(x+8,ry,w-16,rh,4);ctx.fill();
+    ctx.fillStyle=isGreen?G:R;
+    glow(isGreen?G:R,6);
+    ctx.beginPath();ctx.arc(x+w-20,ry+rh/2,4,0,Math.PI*2);ctx.fill();
+    noGlow();
+  }
+  ctx.globalAlpha=1;
+}
+function drawWarning(x,y,size,alpha){
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle=R;glow(R,20);
+  ctx.beginPath();ctx.moveTo(x,y-size);ctx.lineTo(x+size*.866,y+size/2);ctx.lineTo(x-size*.866,y+size/2);ctx.closePath();ctx.fill();
+  ctx.fillStyle='#000';ctx.font=`900 ${size*.7}px Arial`;ctx.textAlign='center';ctx.fillText('!',x,y+size*.3);
+  noGlow();ctx.globalAlpha=1;
+}
+function drawClock(x,y,time,alpha){
+  ctx.globalAlpha=alpha;
+  ctx.strokeStyle=R;ctx.lineWidth=3;glow(R,15);
+  ctx.beginPath();ctx.arc(x,y,44,0,Math.PI*2);ctx.stroke();
+  const h=parseInt(time.split(':')[0]),m=parseInt(time.split(':')[1]);
+  const ha=(h%12/12)*Math.PI*2-Math.PI/2;
+  const ma=(m/60)*Math.PI*2-Math.PI/2;
+  ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(ha)*25,y+Math.sin(ha)*25);ctx.stroke();
+  ctx.lineWidth=2;
+  ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(ma)*36,y+Math.sin(ma)*36);ctx.stroke();
+  ctx.fillStyle=R;glow(R,8);ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fill();
+  noGlow();ctx.globalAlpha=1;
+}
+function drawAGSLogo(x,y,alpha,scale=1){
+  ctx.globalAlpha=alpha;
+  ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
+  // Hexagon
+  glow(T,30);ctx.strokeStyle=T;ctx.lineWidth=2;
+  ctx.beginPath();for(let i=0;i<6;i++){const a=i*Math.PI/3-Math.PI/6;ctx.lineTo(Math.cos(a)*40,Math.sin(a)*40)}ctx.closePath();ctx.stroke();
+  // Arrow
+  glow(O,20);ctx.strokeStyle=O;ctx.lineWidth=3;
+  ctx.beginPath();ctx.moveTo(50,0);ctx.lineTo(80,0);ctx.moveTo(68,-12);ctx.lineTo(80,0);ctx.lineTo(68,12);ctx.stroke();
+  // Text
+  noGlow();ctx.fillStyle='#fff';ctx.font='700 28px Inter,Arial,sans-serif';ctx.textAlign='left';ctx.fillText('AGS',90,10);
+  ctx.fillStyle=O;ctx.font='500 11px Inter,Arial,sans-serif';ctx.fillText('AG TECHNOLOGY SYSTEMS',90,28);
+  ctx.restore();ctx.globalAlpha=1;
+}
+
+function draw(){
+  const t=f/FPS; // seconds
+  drawBg();
+  
+  // PHASE 1 (0-2.5s): Clock + Red warnings
+  if(t<3){
+    const p=fade(t,0,.4);
+    drawGrid(p);
+    // Big clock
+    const cAlpha=easeOut(fade(t,0,.5));
+    drawClock(W/2,H/2-60,'02:00',cAlpha);
+    // TIME text
+    const ta=easeOut(fade(t,.3,.8));
+    glow(R,20);text('02:00 AM',W/2,H/2-10,72,'#FF3B3B','center','900');noGlow();
+    // Subtitle
+    const sa=easeOut(fade(t,.8,1.5));ctx.globalAlpha=sa;
+    text('CRITICAL SYSTEM FAILURE',W/2,H/2+70,18,'#888','center','600');
+    ctx.globalAlpha=1;
+    // Red pulsing overlay
+    const pulse=Math.sin(t*Math.PI*4)*.5+.5;
+    ctx.fillStyle=`rgba(255,0,0,${pulse*0.04*Math.min(t,1)})`;ctx.fillRect(0,0,W,H);
+  }
+
+  // PHASE 2 (1.5-4s): Servers going down
+  if(t>1.5&&t<5){
+    const p=fade(t,1.5,2.5);
+    drawServerIcon(80,80,200,360,p,0);
+    drawServerIcon(680,80,200,360,p,0);
+    drawServerIcon(380,130,200,280,p,0);
+    // Warning signs
+    const wa=easeOut(fade(t,2,2.8));
+    drawWarning(180,400,30,wa);drawWarning(500,420,24,wa);drawWarning(760,390,28,wa);
+    // Server Down text
+    const sda=easeOut(fade(t,2.2,3));
+    glow(R,25);text('SERVERS DOWN',W/2,H/2+10,56,R);noGlow();
+    const sda2=easeOut(fade(t,2.6,3.4));
+    ctx.globalAlpha=sda2;text('Production halted. Every second costs revenue.',W/2,H/2+58,17,'#aaa');ctx.globalAlpha=1;
+    // Flash effect on server failure
+    if(t>2&&t<2.3){const fl=1-(t-2)/.3;ctx.fillStyle=`rgba(255,0,0,${fl*.15})`;ctx.fillRect(0,0,W,H)}
+  }
+
+  // PHASE 3 (3.5-5.5s): AGS to the rescue
+  if(t>3.5&&t<6){
+    const p=easeOut(fade(t,3.5,4.5));
+    // Dark overlay lifts
+    ctx.fillStyle=`rgba(5,11,24,${(1-p)*.7})`;ctx.fillRect(0,0,W,H);
+    // Teal glow spreading
+    const gr=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,400*p);
+    gr.addColorStop(0,`rgba(0,212,255,${p*0.15})`);gr.addColorStop(1,'transparent');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
+    // AGS Logo
+    drawAGSLogo(W/2-120,H/2-20,p,1);
+    // Tagline
+    const ta=easeOut(fade(t,4.2,5));
+    ctx.globalAlpha=ta;
+    text('Your complete IT backbone — on wheels, ready 24/7',W/2,H/2+80,18,T);
+    ctx.globalAlpha=1;
+    // Server icons going green
+    const gp=easeOut(fade(t,4.5,5.5));
+    drawServerIcon(100,H-180,80,160,gp*0.7,gp);
+    drawServerIcon(800,H-180,80,160,gp*0.7,gp);
+  }
+
+  // PHASE 4 (5-7s): Features
+  if(t>5&&t<7.5){
+    const feats=['✓  Complete Server Infrastructure','✓  Pre-Configured Software Stack','✓  24/7 Expert Support Included'];
+    feats.forEach((feat,i)=>{
+      const fa=easeOut(fade(t,5.2+i*.35,5.7+i*.35));
+      ctx.globalAlpha=fa;
+      const fy=H/2+i*40;
+      ctx.fillStyle='rgba(0,212,255,0.08)';ctx.beginPath();ctx.roundRect(W/2-260,fy-22,520,36,8);ctx.fill();
+      text(feat,W/2,fy,16,'#d0e8ff');
+      ctx.globalAlpha=1;
+    });
+  }
+
+  // PHASE 5 (6.5-8s): CTA
+  if(t>6.5){
+    const ca=easeOut(fade(t,6.5,7));
+    glow(O,30);ctx.globalAlpha=ca;
+    text('NEVER GO DARK AGAIN.',W/2,H/2+130,34,O);
+    noGlow();
+    const wa=easeOut(fade(t,7,7.5));ctx.globalAlpha=wa;
+    ctx.fillStyle='rgba(37,211,102,0.15)';ctx.beginPath();ctx.roundRect(W/2-150,H/2+155,300,36,20);ctx.fill();
+    ctx.strokeStyle=G;ctx.lineWidth=1;ctx.beginPath();ctx.roundRect(W/2-150,H/2+155,300,36,20);ctx.stroke();
+    text('💬  wa.me/201002194451',W/2,H/2+179,14,G);
+    ctx.globalAlpha=1;noGlow();
+  }
+
+  // Scanline overlay always
+  ctx.fillStyle='rgba(0,0,0,0.03)';
+  for(let y=0;y<H;y+=3){ctx.fillRect(0,y,W,1);}
+
+  f++;
+}
+function loop(){draw();if(f<=TOT+10)requestAnimationFrame(loop);}
+loop();
+</script></body></html>
