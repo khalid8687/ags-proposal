@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Digital Growth Proposal | AGS × OLTANI</title>
+<title data-t="meta_title">Digital Growth Proposal | AGS × OLTANI</title>
 <meta name="description" content="AI-Powered Digital Transformation Proposal for AG Technology Systems by OLTANI"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <style>
 :root{
@@ -22,6 +22,114 @@ body{font-family:'Inter',sans-serif;background:var(--n);color:var(--lt);overflow
 #bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--o),var(--t));z-index:9999;transition:width .1s}
 canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
 .wrap{position:relative;z-index:1}
+
+/* LANGUAGE BUTTON */
+.btn-lang{background:var(--g);border:1px solid rgba(255,255,255,0.15);color:var(--lt);padding:8px 16px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .3s}
+.btn-lang:hover{border-color:var(--o);color:var(--o)}
+
+/* RTL STYLES */
+html[dir="rtl"] body {
+  font-family: 'Cairo', sans-serif;
+}
+html[dir="rtl"] .stitle,
+html[dir="rtl"] .stitle2,
+html[dir="rtl"] .bn,
+html[dir="rtl"] .hs .n,
+html[dir="rtl"] .ubanner h3,
+html[dir="rtl"] .tval,
+html[dir="rtl"] .sp-val,
+html[dir="rtl"] .tli h4,
+html[dir="rtl"] .ssc h4,
+html[dir="rtl"] .si .sv {
+  font-family: 'Cairo', sans-serif;
+}
+html[dir="rtl"] .stxt {
+  border-left: none;
+  border-right: 3px solid rgba(245,130,31,.35);
+  padding-left: 0;
+  padding-right: 14px;
+}
+html[dir="rtl"] .vhook {
+  border-left: none;
+  border-right: 2px solid var(--o);
+  padding-left: 0;
+  padding-right: 10px;
+}
+html[dir="rtl"] .inum {
+  margin-right: 0;
+  margin-left: 9px;
+}
+html[dir="rtl"] .idesc {
+  padding-left: 0;
+  padding-right: 35px;
+}
+html[dir="rtl"] .cal-legend-dot {
+  margin-left: 8px;
+  margin-right: 0;
+}
+html[dir="rtl"] .ptbl thead th {
+  text-align: right;
+}
+html[dir="rtl"] .ptbl thead th:last-child {
+  text-align: left;
+}
+html[dir="rtl"] .ptbl td:last-child {
+  text-align: left;
+}
+html[dir="rtl"] .tval {
+  text-align: left;
+}
+html[dir="rtl"] .avatar {
+  margin-left: 0;
+  margin-right: -10px;
+}
+html[dir="rtl"] .avatar:first-child {
+  margin-right: 0;
+}
+html[dir="rtl"] .wafloat {
+  right: auto;
+  left: 26px;
+}
+html[dir="rtl"] .watt {
+  right: auto;
+  left: 70px;
+}
+html[dir="rtl"] .tl::before {
+  left: auto;
+  right: 20px;
+}
+@media(min-width:750px){
+  html[dir="rtl"] .tl::before {
+    left: 50%;
+    right: auto;
+  }
+}
+html[dir="rtl"] .tli {
+  padding-left: 0;
+  padding-right: 56px;
+}
+@media(min-width:750px){
+  html[dir="rtl"] .tli {
+    padding-right: 0;
+  }
+  html[dir="rtl"] .tli:nth-child(odd) .tlc {
+    margin-left: 0;
+    margin-right: 36px;
+  }
+  html[dir="rtl"] .tli:nth-child(even) .tlc {
+    margin-right: 0;
+    margin-left: 36px;
+  }
+}
+html[dir="rtl"] .tldot {
+  left: auto;
+  right: 10px;
+}
+@media(min-width:750px){
+  html[dir="rtl"] .tldot {
+    right: auto;
+  }
+}
 
 /* HEADER */
 header{position:sticky;top:0;z-index:1000;background:rgba(5,11,24,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--gb);padding:13px 36px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -125,7 +233,6 @@ section{padding:90px 20px}
 .snum{position:absolute;top:18px;left:18px;width:46px;height:46px;background:linear-gradient(135deg,var(--o),var(--od));border-radius:13px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:800;color:#fff;box-shadow:0 4px 18px rgba(245,130,31,.38);z-index:2}
 
 /* CSS ART VISUALS */
-/* Social Icons Grid */
 .art-social{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:36px}
 .soc-ico{border-radius:16px;padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:28px;font-weight:700;transition:transform .3s;animation:floatIco 3s ease-in-out infinite}
 .soc-ico span{font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
@@ -203,7 +310,7 @@ section{padding:90px 20px}
 .mo{background:rgba(0,212,255,.13);color:var(--t)}
 .pnote{font-size:11px;color:var(--gray);margin-top:4px}
 
-/* ===== VIDEO SHOWCASE SECTION ===== */
+/* VIDEO SHOWCASE SECTION */
 .video-section{background:var(--n2)}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
 .vcard{background:var(--n3);border:1px solid var(--gb);border-radius:20px;overflow:hidden;transition:all .4s;position:relative}
@@ -215,7 +322,6 @@ section{padding:90px 20px}
 .vcard:hover .vscreen-bg{opacity:.25;}
 .vscreen-bg.promo{background:radial-gradient(ellipse at 30% 60%,rgba(245,130,31,.25) 0%,transparent 60%),radial-gradient(ellipse at 70% 20%,rgba(0,212,255,.2) 0%,transparent 50%)}
 .vscreen-bg.reel{background:radial-gradient(ellipse at 60% 40%,rgba(138,43,226,.25) 0%,transparent 60%),radial-gradient(ellipse at 20% 70%,rgba(245,130,31,.2) 0%,transparent 50%)}
-/* Film grain lines */
 .vscreen::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0px,rgba(255,255,255,.015) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:2}
 .play-btn{width:64px;height:64px;background:rgba(245,130,31,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;transition:all .4s ease;z-index:3;position:relative;box-shadow:0 0 0 0 rgba(245,130,31,.4);animation:pulsePly 2s infinite}
 .vcard:hover .play-btn{background:var(--o);transform:scale(1.1);box-shadow:0 0 0 16px rgba(245,130,31,0)}
@@ -225,10 +331,8 @@ section{padding:90px 20px}
 .v-type-badge{position:absolute;top:14px;left:14px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;z-index:3}
 .vb-promo{background:rgba(245,130,31,.9);color:#fff}
 .vb-reel{background:linear-gradient(135deg,#8B44F7,#F542A3);color:#fff}
-/* Progress bar on hover */
 .vprogress{position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(255,255,255,.1);z-index:4}
 .vbar{height:100%;background:linear-gradient(90deg,var(--o),var(--t));width:0%;border-radius:2px}
-/* Video bottom info */
 .vinfo{padding:20px 22px}
 .vinfo .vtitle{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:var(--wh);margin-bottom:6px}
 .vhook{font-size:12.5px;color:var(--gray);line-height:1.6;font-style:italic;border-left:2px solid var(--o);padding-left:10px;margin-bottom:12px}
@@ -364,7 +468,7 @@ footer a:hover{text-decoration:underline}
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/201002194451" target="_blank" class="wafloat">
   <i class="fab fa-whatsapp"></i>
-  <span class="watt">Let's Talk Now</span>
+  <span class="watt" data-t="wa_float_text">Let's Talk Now</span>
 </a>
 
 <div class="wrap">
@@ -390,41 +494,42 @@ footer a:hover{text-decoration:underline}
     </svg>
     <div class="hlt">
       <div class="bn">OLT<span>ANI</span></div>
-      <div class="tg">Your Integrated Digital Partner</div>
+      <div class="tg" data-t="hdr_tagline">Your Integrated Digital Partner</div>
     </div>
   </a>
-  <span class="hdate"><i class="far fa-calendar-alt" style="color:var(--o);margin-right:5px"></i>July 2026</span>
-  <span class="hbadge"><i class="fas fa-file-contract" style="margin-right:6px"></i>Proposal #AGS-2026</span>
+  <span class="hdate"><i class="far fa-calendar-alt" style="color:var(--o);margin-right:5px"></i><span data-t="hdr_date">July 2026</span></span>
+  <span class="hbadge"><i class="fas fa-file-contract" style="margin-right:6px"></i><span data-t="hdr_badge">Proposal #AGS-2026</span></span>
+  <button id="langBtn" onclick="toggleLang()" class="btn-lang"><i class="fas fa-globe"></i> <span>العربية</span></button>
 </header>
 
 <!-- META STRIP -->
 <div class="mstrip">
-  <div class="mi"><i class="fas fa-paper-plane"></i>Prepared by: <strong>OLTANI</strong></div>
-  <div class="mi"><i class="fas fa-building"></i>Client: <strong>AG Technology Systems (AGS)</strong></div>
-  <div class="mi"><i class="fas fa-globe"></i>Scope: <strong>Egypt &amp; Global Markets</strong></div>
-  <div class="mi"><i class="fas fa-clock"></i>Validity: <strong>30 Days</strong></div>
+  <div class="mi"><i class="fas fa-paper-plane"></i><span data-t="meta_prepared">Prepared by: <strong>OLTANI</strong></span></div>
+  <div class="mi"><i class="fas fa-building"></i><span data-t="meta_client">Client: <strong>AG Technology Systems (AGS)</strong></span></div>
+  <div class="mi"><i class="fas fa-globe"></i><span data-t="meta_scope">Scope: <strong>Egypt &amp; Global Markets</strong></span></div>
+  <div class="mi"><i class="fas fa-clock"></i><span data-t="meta_validity">Validity: <strong>30 Days</strong></span></div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
   <div>
-    <div class="htag">⚡ Confidential Digital Growth Proposal</div>
-    <h1>Transforming <span class="ct">AGS</span><br/>Into Egypt's <span class="co">#1 IT Brand</span></h1>
-    <p class="hsub">A full-spectrum AI-powered digital transformation plan — engineered specifically for <strong style="color:var(--lt)">AG Technology Systems</strong> to dominate the IT solutions market and generate enterprise-grade leads locally and globally.</p>
+    <div class="htag" data-t="hero_tag">⚡ Confidential Digital Growth Proposal</div>
+    <h1 data-t="hero_title">Transforming <span class="ct">AGS</span><br/>Into Egypt's <span class="co">#1 IT Brand</span></h1>
+    <p class="hsub" data-t="hero_sub">A full-spectrum AI-powered digital transformation plan — engineered specifically for <strong style="color:var(--lt)">AG Technology Systems</strong> to dominate the IT solutions market and generate enterprise-grade leads locally and globally.</p>
     <div class="hbtns">
-      <a href="#services" class="btn-p"><i class="fas fa-rocket"></i> Explore The Plan</a>
-      <a href="https://wa.me/201002194451" target="_blank" class="btn-s"><i class="fab fa-whatsapp"></i> Discuss Now</a>
+      <a href="#services" class="btn-p" data-t="btn_explore"><i class="fas fa-rocket"></i> Explore The Plan</a>
+      <a href="https://wa.me/201002194451" target="_blank" class="btn-s" data-t="btn_discuss"><i class="fab fa-whatsapp"></i> Discuss Now</a>
     </div>
     <div class="hstats">
-      <div class="hs"><span class="n" data-c="7">0</span><span class="l">Packages</span></div>
-      <div class="hs"><span class="n" data-c="400">0</span><span class="l">K+ Audience</span></div>
-      <div class="hs"><span class="n" data-c="13">0</span><span class="l">Posts / Month</span></div>
-      <div class="hs"><span class="n" data-c="8">0</span><span class="l">AI Videos</span></div>
+      <div class="hs"><span class="n" data-c="7">0</span><span class="l" data-t="stat_packages">Packages</span></div>
+      <div class="hs"><span class="n" data-c="400">0</span><span class="l" data-t="stat_audience">K+ Audience</span></div>
+      <div class="hs"><span class="n" data-c="13">0</span><span class="l" data-t="stat_posts">Posts / Month</span></div>
+      <div class="hs"><span class="n" data-c="8">0</span><span class="l" data-t="stat_videos">AI Videos</span></div>
     </div>
   </div>
   <div class="scroll-ind" onclick="document.getElementById('ctx').scrollIntoView({behavior:'smooth'})">
-    <span>Scroll to explore</span><i class="fas fa-chevron-down"></i>
+    <span data-t="scroll_text">Scroll to explore</span><i class="fas fa-chevron-down"></i>
   </div>
 </section>
 
@@ -433,15 +538,31 @@ footer a:hover{text-decoration:underline}
 <section id="ctx">
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">The Brief</div>
-      <h2 class="stitle">Understanding <span style="color:var(--o)">Your Vision</span></h2>
-      <p class="ssub">Dear Eng. Ashraf — we have thoroughly analyzed your marketing brief and identified every opportunity to accelerate AGS's growth.</p>
+      <div class="stag" data-t="brief_tag">The Brief</div>
+      <h2 class="stitle" data-t="brief_title">Understanding <span style="color:var(--o)">Your Vision</span></h2>
+      <p class="ssub" data-t="brief_sub">Dear Eng. Ashraf — we have thoroughly analyzed your marketing brief and identified every opportunity to accelerate AGS's growth.</p>
     </div>
     <div class="igrid">
-      <div class="ic rv"><div class="ico"><i class="fas fa-bullseye"></i></div><h3>3 Strategic Objectives</h3><p>Redesign your bilingual website, elevate all social media platforms, and launch precision-targeted paid campaigns in Egypt and internationally — focused on enterprise lead generation from factories and corporations.</p></div>
-      <div class="ic rv" style="transition-delay:.12s"><div class="ico"><i class="fas fa-star"></i></div><h3>Your Competitive Edge</h3><p>AGS possesses a rare differentiator: <strong style="color:var(--o)">Mobile Server Rack Rental</strong> — a complete turnkey IT infrastructure on wheels. Full hardware + software + 24/7 support. No competitor in Egypt offers this at scale. This is your #1 weapon.</p></div>
-      <div class="ic rv" style="transition-delay:.24s"><div class="ico"><i class="fas fa-map-marked-alt"></i></div><h3>Target Market</h3><p>Egyptian factories, industrial enterprises, SMBs, and corporations requiring complete IT infrastructure without CAPEX commitment. International B2B prospects seeking managed IT solutions from a trusted Egyptian partner.</p></div>
-      <div class="ic rv" style="transition-delay:.36s"><div class="ico"><i class="fas fa-robot"></i></div><h3>AI at the Core</h3><p>Every deliverable is AI-enhanced — from AI-generated video content and intelligent copywriting to a WhatsApp bot that qualifies leads and books appointments 24/7 without human intervention.</p></div>
+      <div class="ic rv">
+        <div class="ico"><i class="fas fa-bullseye"></i></div>
+        <h3 data-t="card1_title">3 Strategic Objectives</h3>
+        <p data-t="card1_desc">Redesign your bilingual website, elevate all social media platforms, and launch precision-targeted paid campaigns in Egypt and internationally — focused on enterprise lead generation from factories and corporations.</p>
+      </div>
+      <div class="ic rv" style="transition-delay:.12s">
+        <div class="ico"><i class="fas fa-star"></i></div>
+        <h3 data-t="card2_title">Your Competitive Edge</h3>
+        <p data-t="card2_desc">AGS possesses a rare differentiator: <strong style="color:var(--o)">Mobile Server Rack Rental</strong> — a complete turnkey IT infrastructure on wheels. Full hardware + software + 24/7 support. No competitor in Egypt offers this at scale. This is your #1 weapon.</p>
+      </div>
+      <div class="ic rv" style="transition-delay:.24s">
+        <div class="ico"><i class="fas fa-map-marked-alt"></i></div>
+        <h3 data-t="card3_title">Target Market</h3>
+        <p data-t="card3_desc">Egyptian factories, industrial enterprises, SMBs, and corporations requiring complete IT infrastructure without CAPEX commitment. International B2B prospects seeking managed IT solutions from a trusted Egyptian partner.</p>
+      </div>
+      <div class="ic rv" style="transition-delay:.36s">
+        <div class="ico"><i class="fas fa-robot"></i></div>
+        <h3 data-t="card4_title">AI at the Core</h3>
+        <p data-t="card4_desc">Every deliverable is AI-enhanced — from AI-generated video content and intelligent copywriting to a WhatsApp bot that qualifies leads and books appointments 24/7 without human intervention.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -453,8 +574,8 @@ footer a:hover{text-decoration:underline}
     <div class="ubanner rv">
       <div class="uico"><i class="fas fa-server"></i></div>
       <div>
-        <h3>The Offer No Competitor Can Match</h3>
-        <p>While every other IT company in Egypt sells or installs equipment — <span class="hl">AGS delivers a fully operational IT backbone on wheels.</span> Server racks loaded with enterprise-grade hardware, pre-configured software stacks, network infrastructure, and a dedicated support contract — all under one monthly rental fee. A factory can go from zero IT to fully operational in <span class="hl">under 24 hours.</span> This proposition will be the cornerstone of every campaign we build together.</p>
+        <h3 data-t="ub_title">The Offer No Competitor Can Match</h3>
+        <p data-t="ub_desc">While every other IT company in Egypt sells or installs equipment — <span class="hl">AGS delivers a fully operational IT backbone on wheels.</span> Server racks loaded with enterprise-grade hardware, pre-configured software stacks, network infrastructure, and a dedicated support contract — all under one monthly rental fee. A factory can go from zero IT to fully operational in <span class="hl">under 24 hours.</span> This proposition will be the cornerstone of every campaign we build together.</p>
       </div>
     </div>
   </div>
@@ -465,15 +586,35 @@ footer a:hover{text-decoration:underline}
 <section>
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Current Challenges</div>
-      <h2 class="stitle">What's Holding <span style="color:var(--o)">AGS Back</span></h2>
-      <p class="ssub">Our audit of your existing digital presence revealed critical gaps costing you enterprise clients daily.</p>
+      <div class="stag" data-t="pain_tag">Current Challenges</div>
+      <h2 class="stitle" data-t="pain_title">What's Holding <span style="color:var(--o)">AGS Back</span></h2>
+      <p class="ssub" data-t="pain_sub">Our audit of your existing digital presence revealed critical gaps costing you enterprise clients daily.</p>
     </div>
     <div class="pgrid">
-      <div class="pc rv"><div class="pi"><i class="fas fa-tachometer-alt"></i></div><h4>Slow, Underperforming Website</h4><p>ag-techsystem.com has critical performance issues, outdated content, and poor mobile optimization — failing to convert visitors into inquiries.</p><div class="psol"><i class="fas fa-arrow-right"></i> Complete website overhaul planned</div></div>
-      <div class="pc rv" style="transition-delay:.1s"><div class="pi"><i class="fas fa-user-slash"></i></div><h4>Low Client Acquisition</h4><p>No structured lead generation pipeline. Potential clients in target industries are unaware of AGS's unique rack rental service.</p><div class="psol"><i class="fas fa-arrow-right"></i> AI-powered lead gen campaigns</div></div>
-      <div class="pc rv" style="transition-delay:.2s"><div class="pi"><i class="fas fa-share-alt"></i></div><h4>Weak Social Media Presence</h4><p>Social pages lack brand consistency, posting strategy, and engagement — invisible to the 400k+ IT decision-makers on Facebook and LinkedIn.</p><div class="psol"><i class="fas fa-arrow-right"></i> Full social media rebuild</div></div>
-      <div class="pc rv" style="transition-delay:.3s"><div class="pi"><i class="fas fa-comment-slash"></i></div><h4>No Automated Lead Response</h4><p>Leads going cold due to delayed responses. No CRM to track prospects from inquiry to contract. Manual follow-up is losing deals.</p><div class="psol"><i class="fas fa-arrow-right"></i> 24/7 AI WhatsApp bot + CRM</div></div>
+      <div class="pc rv">
+        <div class="pi"><i class="fas fa-tachometer-alt"></i></div>
+        <h4 data-t="pain1_title">Slow, Underperforming Website</h4>
+        <p data-t="pain1_desc">ag-techsystem.com has critical performance issues, outdated content, and poor mobile optimization — failing to convert visitors into inquiries.</p>
+        <div class="psol" data-t="pain1_sol"><i class="fas fa-arrow-right"></i> Complete website overhaul planned</div>
+      </div>
+      <div class="pc rv" style="transition-delay:.1s">
+        <div class="pi"><i class="fas fa-user-slash"></i></div>
+        <h4 data-t="pain2_title">Low Client Acquisition</h4>
+        <p data-t="pain2_desc">No structured lead generation pipeline. Potential clients in target industries are unaware of AGS's unique rack rental service.</p>
+        <div class="psol" data-t="pain2_sol"><i class="fas fa-arrow-right"></i> AI-powered lead gen campaigns</div>
+      </div>
+      <div class="pc rv" style="transition-delay:.2s">
+        <div class="pi"><i class="fas fa-share-alt"></i></div>
+        <h4 data-t="pain3_title">Weak Social Media Presence</h4>
+        <p data-t="pain3_desc">Social pages lack brand consistency, posting strategy, and engagement — invisible to the 400k+ IT decision-makers on Facebook and LinkedIn.</p>
+        <div class="psol" data-t="pain3_sol"><i class="fas fa-arrow-right"></i> Full social media rebuild</div>
+      </div>
+      <div class="pc rv" style="transition-delay:.3s">
+        <div class="pi"><i class="fas fa-comment-slash"></i></div>
+        <h4 data-t="pain4_title">No Automated Lead Response</h4>
+        <p data-t="pain4_desc">Leads going cold due to delayed responses. No CRM to track prospects from inquiry to contract. Manual follow-up is losing deals.</p>
+        <div class="psol" data-t="pain4_sol"><i class="fas fa-arrow-right"></i> 24/7 AI WhatsApp bot + CRM</div>
+      </div>
     </div>
   </div>
 </section>
@@ -483,33 +624,39 @@ footer a:hover{text-decoration:underline}
 <section id="services" style="background:var(--n2)">
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">The Solution</div>
-      <h2 class="stitle">7 Integrated <span style="color:var(--o)">Growth Packages</span></h2>
-      <p class="ssub">A complete, sequenced digital transformation roadmap — each package engineered for maximum ROI.</p>
+      <div class="stag" data-t="sol_tag">The Solution</div>
+      <h2 class="stitle" data-t="sol_title">7 Integrated <span style="color:var(--o)">Growth Packages</span></h2>
+      <p class="ssub" data-t="sol_sub">A complete, sequenced digital transformation roadmap — each package engineered for maximum ROI.</p>
     </div>
 
-    <!-- S1: Website — uses actual image -->
+    <!-- S1: Website -->
     <div class="scard rv">
       <div class="svis">
         <img src="images/website.png" alt="Website Redesign Mockup" loading="lazy"/>
         <div class="snum">01</div>
       </div>
       <div class="scnt">
-        <div class="slabel">Foundation Package</div>
-        <h3>Digital Presence Overhaul: Website + SEO + Store + Brand Identity</h3>
-        <p>A complete rebuild of ag-techsystem.com into a bilingual, high-performance, SEO-optimized platform with an integrated store — plus a fresh AGS logo redesign.</p>
+        <div class="slabel" data-t="s1_label">Foundation Package</div>
+        <h3 data-t="s1_title">Digital Presence Overhaul: Website + SEO + Store + Brand Identity</h3>
+        <p data-t="s1_desc">A complete rebuild of ag-techsystem.com into a bilingual, high-performance, SEO-optimized platform with an integrated store — plus a fresh AGS logo redesign.</p>
         <ul class="sfeat">
-          <li>Bilingual website (Arabic + English) with lightning-fast performance</li>
-          <li>Integrated service, hardware &amp; software product store</li>
-          <li>Google Search Console &amp; Google My Business registration</li>
-          <li>On-page SEO for Egyptian &amp; global IT search terms</li>
-          <li>New AGS logo redesign &amp; full brand guidelines</li>
+          <li data-t="s1_f1">Bilingual website (Arabic + English) with lightning-fast performance</li>
+          <li data-t="s1_f2">Integrated service, hardware &amp; software product store</li>
+          <li data-t="s1_f3">Google Search Console &amp; Google My Business registration</li>
+          <li data-t="s1_f4">On-page SEO for Egyptian &amp; global IT search terms</li>
+          <li data-t="s1_f5">New AGS logo redesign &amp; full brand guidelines</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>20k</div></div><span class="ptag ot">One-Time</span></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s1_price"><sup>EGP </sup>20k</div>
+          </div>
+          <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+        </div>
       </div>
     </div>
 
-    <!-- S2: Social Media — CSS ART -->
+    <!-- S2: Social Media -->
     <div class="scard rev rv">
       <div class="svis" style="background:var(--n2)">
         <div class="snum">02</div>
@@ -521,47 +668,62 @@ footer a:hover{text-decoration:underline}
         </div>
       </div>
       <div class="scnt">
-        <div class="slabel">Brand Refresh Package</div>
-        <h3>Social Media Platform Rebuild: Facebook · LinkedIn · Instagram · X</h3>
-        <p>Complete visual and strategic overhaul of all AGS social profiles — new brand identity, optimized metadata, and conversion-ready pages that drive leads to your WhatsApp bot.</p>
+        <div class="slabel" data-t="s2_label">Brand Refresh Package</div>
+        <h3 data-t="s2_title">Social Media Platform Rebuild: Facebook · LinkedIn · Instagram · X</h3>
+        <p data-t="s2_desc">Complete visual and strategic overhaul of all AGS social profiles — new brand identity, optimized metadata, and conversion-ready pages that drive leads to your WhatsApp bot.</p>
         <ul class="sfeat">
-          <li>New covers, profile photos &amp; bios across all 4 platforms</li>
-          <li>Keyword-optimized descriptions &amp; contact info</li>
-          <li>Call-to-action buttons linked to WhatsApp bot</li>
-          <li>Highlight reels &amp; pinned content configuration</li>
-          <li>Platform-specific growth strategy documentation</li>
+          <li data-t="s2_f1">New covers, profile photos &amp; bios across all 4 platforms</li>
+          <li data-t="s2_f2">Keyword-optimized descriptions &amp; contact info</li>
+          <li data-t="s2_f3">Call-to-action buttons linked to WhatsApp bot</li>
+          <li data-t="s2_f4">Highlight reels &amp; pinned content configuration</li>
+          <li data-t="s2_f5">Platform-specific growth strategy documentation</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>7k</div></div><span class="ptag ot">One-Time</span></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s2_price"><sup>EGP </sup>7k</div>
+          </div>
+          <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+        </div>
       </div>
     </div>
 
-    <!-- S3: Videos — uses actual image -->
+    <!-- S3: Videos -->
     <div class="scard rv">
       <div class="svis">
         <img src="images/video.png" alt="AI Video Production" loading="lazy"/>
         <div class="snum">03</div>
       </div>
       <div class="scnt">
-        <div class="slabel">AI Content Production</div>
-        <h3>8 Premium AI-Powered Videos: 4 Promo Ads + 4 High-Impact Reels</h3>
-        <p>Professional video content crafted with AI-enhanced production tools. Full-format promo ads plus short-form reels engineered to go viral among IT decision-makers.</p>
+        <div class="slabel" data-t="s3_label">AI Content Production</div>
+        <h3 data-t="s3_title">8 Premium AI-Powered Videos: 4 Promo Ads + 4 High-Impact Reels</h3>
+        <p data-t="s3_desc">Professional video content crafted with AI-enhanced production tools. Full-format promo ads plus short-form reels engineered to go viral among IT decision-makers.</p>
         <ul class="sfeat">
-          <li>4 Promotional Videos — cinematic quality, scripted with powerful hooks</li>
-          <li>4 Teaser Reels — punchy, scroll-stopping social content</li>
-          <li>AI voiceover + motion graphics + bilingual subtitles</li>
-          <li>Optimized for Facebook, LinkedIn, Instagram &amp; YouTube</li>
+          <li data-t="s3_f1">4 Promotional Videos — cinematic quality, scripted with powerful hooks</li>
+          <li data-t="s3_f2">4 Teaser Reels — punchy, scroll-stopping social content</li>
+          <li data-t="s3_f3">AI voiceover + motion graphics + bilingual subtitles</li>
+          <li data-t="s3_f4">Optimized for Facebook, LinkedIn, Instagram &amp; YouTube</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>26k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">4 Promo × 4k + 4 Reels × 2.5k</p></div></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s3_price"><sup>EGP </sup>26k</div>
+          </div>
+          <div style="text-align:right">
+            <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+            <p class="pnote" data-t="s3_note">4 Promo × 4k + 4 Reels × 2.5k</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- S4: Monthly Posts — CSS ART (Calendar) -->
+    <!-- S4: Monthly Posts -->
     <div class="scard rev rv">
       <div class="svis" style="background:var(--n2);flex-direction:column;padding:0">
         <div class="snum">04</div>
         <div class="art-calendar" style="width:100%;padding:32px 28px">
           <div class="cal-header">
-            <span>Content Calendar</span>
+            <span data-t="cal_title">Content Calendar</span>
             <div class="cal-dots">
               <span style="background:#F5821F;border-radius:50%"></span>
               <span style="background:#00D4FF;border-radius:50%"></span>
@@ -592,232 +754,314 @@ footer a:hover{text-decoration:underline}
             <div class="cal-post"><i class="fas fa-image" style="font-size:8px"></i></div>
             <div class="cal-normal">21</div>
           </div>
-          <div class="cal-legend"><div class="cal-legend-dot"></div><span>Post day (13 posts/month)</span></div>
+          <div class="cal-legend"><div class="cal-legend-dot"></div><span data-t="cal_legend">Post day (13 posts/month)</span></div>
         </div>
       </div>
       <div class="scnt">
-        <div class="slabel">Monthly Retainer</div>
-        <h3>Ongoing Content: 13 Designed Posts/Month with AI Captions</h3>
-        <p>3 professionally designed posts per week (13/month) — each with an AI-crafted caption targeting IT decision-makers, factory owners, and corporate procurement managers.</p>
+        <div class="slabel" data-t="s4_label">Monthly Retainer</div>
+        <h3 data-t="s4_title">Ongoing Content: 13 Designed Posts/Month with AI Captions</h3>
+        <p data-t="s4_desc">3 professionally designed posts per week (13/month) — each with an AI-crafted caption targeting IT decision-makers, factory owners, and corporate procurement managers.</p>
         <ul class="sfeat">
-          <li>13 professionally designed visual posts per month</li>
-          <li>AI-optimized Arabic + English captions + hashtag strategy</li>
-          <li>Content calendar delivered at start of each month</li>
-          <li>Published across Facebook, LinkedIn &amp; Instagram</li>
-          <li>Monthly performance &amp; engagement analytics report</li>
+          <li data-t="s4_f1">13 professionally designed visual posts per month</li>
+          <li data-t="s4_f2">AI-optimized Arabic + English captions + hashtag strategy</li>
+          <li data-t="s4_f3">Content calendar delivered at start of each month</li>
+          <li data-t="s4_f4">Published across Facebook, LinkedIn &amp; Instagram</li>
+          <li data-t="s4_f5">Monthly performance &amp; engagement analytics report</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Monthly Investment</div><div class="sp-val"><sup>EGP </sup>6k</div></div><span class="ptag mo">/ Month</span></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_monthly_invest">Monthly Investment</div>
+            <div class="sp-val" data-t="s4_price"><sup>EGP </sup>6k</div>
+          </div>
+          <span class="ptag mo" data-t="lbl_monthly">/ Month</span>
+        </div>
       </div>
     </div>
 
-    <!-- S5: Growth — uses server image -->
+    <!-- S5: Growth -->
     <div class="scard rv">
-      <div class="svis" style="background:var(--n2);flex-direction:column;padding:0">
+      <div class="svis" style="background:var(--n3);flex-direction:column;padding:0">
         <img src="images/server.png" alt="Server Infrastructure" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
         <div class="snum">05</div>
       </div>
       <div class="scnt">
-        <div class="slabel">Growth Acceleration</div>
-        <h3>Rapid Audience Growth: 13,000 Real Egyptian Followers in 2 Weeks</h3>
-        <p>A precision 3-phase growth sprint designed to build a credible, engaged audience among Egyptian IT professionals and corporate managers — creating social proof that accelerates organic growth.</p>
+        <div class="slabel" data-t="s5_label">Growth Acceleration</div>
+        <h3 data-t="s5_title">Rapid Audience Growth: 13,000 Real Egyptian Followers in 2 Weeks</h3>
+        <p data-t="s5_desc">A precision 3-phase growth sprint designed to build a credible, engaged audience among Egyptian IT professionals and corporate managers — creating social proof that accelerates your sales.</p>
         <ul class="sfeat">
-          <li><strong style="color:var(--o)">Phase 1</strong> — 3,000 real Egyptian followers (IT &amp; business sector): <strong style="color:var(--wh)">1.2k EGP</strong></li>
-          <li><strong style="color:var(--o)">Phase 2</strong> — Targeted paid ad campaign (1 week): <strong style="color:var(--wh)">2k EGP</strong></li>
-          <li><strong style="color:var(--o)">Phase 3</strong> — 10,000 additional real Egyptian followers: <strong style="color:var(--wh)">2k EGP</strong></li>
-          <li>Fully executed within 14 days from launch</li>
+          <li data-t="s5_f1">Phase 1: Build base credibility with 3,000 quality industry followers</li>
+          <li data-t="s5_f2">Phase 2: Target corporate procurement managers &amp; business owners via ads</li>
+          <li data-t="s5_f3">Phase 3: Broaden reach to acquire 10,000 additional potential B2B buyers</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>5.2k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">Delivered in 14 days</p></div></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s5_price"><sup>EGP </sup>5.2k</div>
+          </div>
+          <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+        </div>
       </div>
     </div>
 
-    <!-- S6: IT Group — CSS ART -->
+    <!-- S6: IT Group -->
     <div class="scard rev rv">
       <div class="svis" style="background:var(--n2)">
         <div class="snum">06</div>
-        <div class="art-group">
+        <div class="art-group" style="width:100%">
+          <div class="chart-title" data-t="art6_title">IT Community Target</div>
           <div class="group-stat">
-            <div class="gsn">400k+</div>
-            <div class="gsl">Active IT Members</div>
+            <div class="gsn">400K+</div>
+            <div class="gsl" data-t="art6_lbl">IT Members</div>
           </div>
           <div class="avatars">
-            <div class="avatar">IT</div>
-            <div class="avatar">CEO</div>
-            <div class="avatar">MFG</div>
-            <div class="avatar">CTO</div>
-            <div class="avatar more-av">+k</div>
+            <div class="avatar">👨‍💻</div>
+            <div class="avatar">👩‍💻</div>
+            <div class="avatar">💻</div>
+            <div class="avatar more-av">+400k</div>
           </div>
-          <div class="group-tag"><i class="fab fa-facebook-f" style="color:#4e9af1"></i> IT Support Egypt — Largest Group</div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-            <div style="background:rgba(245,130,31,.09);border:1px solid rgba(245,130,31,.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--o)"><i class="fas fa-video" style="margin-right:5px"></i>4-Day Ad Slot</div>
-            <div style="background:rgba(0,212,255,.09);border:1px solid rgba(0,212,255,.2);border-radius:8px;padding:6px 12px;font-size:11px;color:var(--t)"><i class="fas fa-bullhorn" style="margin-right:5px"></i>Direct Reach</div>
-          </div>
+          <div class="group-tag"><i class="fas fa-ad"></i> <span data-t="art6_badge">Sponsored Pinned Post</span></div>
         </div>
       </div>
       <div class="scnt">
-        <div class="slabel">Community Penetration</div>
-        <h3>IT Support Group Campaign: Direct Access to 400K+ Decision-Makers</h3>
-        <p>A sponsored video ad placed directly inside Egypt's largest IT Support Facebook group — reaching 400,000+ business owners, IT managers, and operations directors. 4 days of premium exposure post-growth phase.</p>
+        <div class="slabel" data-t="s6_label">Targeted Advertising</div>
+        <h3 data-t="s6_title">IT Community Sponsored Ad: Reach 400,000+ Egyptian IT Professionals</h3>
+        <p data-t="s6_desc">Publishing your high-impact video ad pinned at the top of Egypt's largest IT support group — locking in high authority and driving enterprise inquiries directly.</p>
         <ul class="sfeat">
-          <li>Sponsored ad in Egypt's #1 IT Support Facebook group</li>
-          <li>4-day premium placement for maximum reach</li>
-          <li>One of the 4 produced promo videos deployed as the creative</li>
-          <li>Timed post-growth phase for amplified social proof</li>
-          <li>Direct lead capture to WhatsApp bot</li>
+          <li data-t="s6_f1">Sponsored post pinned at the top of the group for 4 days</li>
+          <li data-t="s6_f2">Direct exposure to 400,000+ IT engineers, managers, and decision-makers</li>
+          <li data-t="s6_f3">High-credibility referral: Recommended by the community administration</li>
+          <li data-t="s6_f4">Immediate B2B lead capture via direct link to your WhatsApp bot</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>1.2k</div></div><span class="ptag ot">One-Time</span></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s6_price"><sup>EGP </sup>1.2k</div>
+          </div>
+          <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+        </div>
       </div>
     </div>
 
-    <!-- S7: CRM — uses actual image -->
+    <!-- S7: Bot + CRM -->
     <div class="scard rv">
-      <div class="svis">
-        <img src="images/crm.png" alt="AI WhatsApp Bot & CRM" loading="lazy"/>
+      <div class="svis" style="background:var(--n3);flex-direction:column;padding:0">
+        <img src="images/social.png" alt="AI Bot Flow" loading="lazy" style="width:100%;height:100%;object-fit:cover"/>
         <div class="snum">07</div>
       </div>
       <div class="scnt">
-        <div class="slabel">AI Automation Stack</div>
-        <h3>AI WhatsApp Bot + Enterprise CRM: 24/7 Intelligent Lead Management</h3>
-        <p>A fully automated AI-powered WhatsApp response system integrated with a professional CRM — enabling AGS management to track, qualify, and close leads without missing a single inquiry.</p>
+        <div class="slabel" data-t="s7_label">Sales Automation</div>
+        <h3 data-t="s7_title">AI WhatsApp Lead Bot + Enterprise CRM + Management Dashboard</h3>
+        <p data-t="s7_desc">A complete automation system. The AI chatbot qualifies leads, books meetings, and routes hot prospects to your phone, while the CRM stores every contract, license, and client interaction.</p>
         <ul class="sfeat">
-          <li>AI chatbot that qualifies leads, answers FAQs &amp; books appointments</li>
-          <li>Full CRM dashboard: lead pipeline, follow-up scheduling, reporting</li>
-          <li>Role-based access control for AGS management team</li>
-          <li>Integration with WhatsApp Business API</li>
-          <li>On-premise or Windows VPS deployment (VPS cost separate)</li>
-          <li>Training &amp; full handover documentation</li>
+          <li data-t="s7_f1">24/7 AI WhatsApp bot: Automated lead qualification &amp; booking</li>
+          <li data-t="s7_f2">Custom Enterprise CRM: Pipeline, client database, activity logs</li>
+          <li data-t="s7_f3">Management Dashboard: Real-time analytics, user roles, control panel</li>
+          <li data-t="s7_f4">Server setup: Scalable VPS configuration (VPS cost billed separately)</li>
         </ul>
-        <div class="spbox"><div><div class="sp-lbl">Investment</div><div class="sp-val"><sup>EGP </sup>12k</div></div><div style="text-align:right"><span class="ptag ot">One-Time</span><p class="pnote">VPS billed separately at cost</p></div></div>
+        <div class="spbox">
+          <div>
+            <div class="sp-lbl" data-t="lbl_invest">Investment</div>
+            <div class="sp-val" data-t="s7_price"><sup>EGP </sup>12k</div>
+          </div>
+          <span class="ptag ot" data-t="lbl_onetime">One-Time</span>
+        </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ===== VIDEO SHOWCASE ===== -->
+<!-- VIDEO SHOWCASE -->
 <div class="div"></div>
 <section class="video-section">
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Video Content Preview</div>
-      <h2 class="stitle">8 AI-Powered Videos — <span style="color:var(--o)">Sample Concepts</span></h2>
-      <p class="ssub">A preview of the 4 promotional ads and 4 viral reels we will produce for AGS — each engineered with a scroll-stopping hook.</p>
+      <div class="stag" data-t="v_tag">Content Portfolio</div>
+      <h2 class="stitle" data-t="v_title">AI Video Showcase: <span style="color:var(--o)">Veo &amp; Gen-3</span></h2>
+      <p class="ssub" data-t="v_sub">Premium, ultra-realistic video ads engineered using top generative models (Google Veo &amp; Runway Gen-3) for maximum brand authority.</p>
     </div>
     <div class="vgrid">
-
-      <!-- Video 1 -->
+      <!-- V1 -->
       <div class="vcard rv" data-video-card>
         <div class="vscreen">
-          <video src="videos/vid1.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <img class="vscreen-img" src="images/v1_still.png" alt="Promo Video 1" loading="lazy"/>
           <div class="vscreen-bg promo"></div>
-          <span class="v-type-badge vb-promo"><i class="fas fa-film" style="margin-right:4px"></i>Promo Ad #1</span>
+          <video src="videos/vid1.webm" loop muted playsinline style="display:none"></video>
           <div class="play-btn"><i class="fas fa-play"></i></div>
-          <span class="v-duration">0:08</span>
+          <span class="v-duration">0:45</span>
+          <span class="v-type-badge vb-promo" data-t="v1_badge">Promo Ad</span>
+          <div class="vprogress"><div class="vbar"></div></div>
         </div>
         <div class="vinfo">
-          <div class="vtitle">The 2AM IT Failure Ad</div>
-          <div class="vhook"><span class="hk">"It's 2AM. Your factory is dark — servers down, production halted."</span><br/>Every minute costs thousands. What if this never happened again? AGS delivers a complete IT backbone — on wheels, ready in 24 hours.</div>
+          <h4 class="vtitle" data-t="v1_title">The Midnight IT Disaster Ad</h4>
+          <p class="vhook" data-t="v1_hook"><span class="hk">Hook:</span> "It's 2AM. Your factory just went dark — servers down, production halted. What if this never happened again?"</p>
           <div class="vplatforms">
-            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
-            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i> LinkedIn</span>
-            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i> YouTube</span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i></span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i></span>
+            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i></span>
           </div>
         </div>
       </div>
-
-      <!-- Video 2 -->
+      <!-- V2 -->
       <div class="vcard rv" style="transition-delay:.12s" data-video-card>
         <div class="vscreen">
-          <video src="videos/vid2.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
-          <div class="vscreen-bg reel"></div>
-          <span class="v-type-badge vb-reel"><i class="fas fa-mobile-alt" style="margin-right:4px"></i>Reel #1</span>
+          <img class="vscreen-img" src="images/v2_still.png" alt="Promo Video 2" loading="lazy"/>
+          <div class="vscreen-bg promo"></div>
+          <video src="videos/vid2.webm" loop muted playsinline style="display:none"></video>
           <div class="play-btn"><i class="fas fa-play"></i></div>
-          <span class="v-duration">0:08</span>
+          <span class="v-duration">0:50</span>
+          <span class="v-type-badge vb-promo" data-t="v2_badge">Promo Ad</span>
+          <div class="vprogress"><div class="vbar"></div></div>
         </div>
         <div class="vinfo">
-          <div class="vtitle">The 24-Hour Transformation Reel</div>
-          <div class="vhook"><span class="hk">"67% of Egyptian businesses lost revenue last year due to IT failure."</span><br/>[Fast cut: empty office → AGS arrives → rack installed → systems live in 24h]</div>
+          <h4 class="vtitle" data-t="v2_title">The Mobile Server Rack Solution</h4>
+          <p class="vhook" data-t="v2_hook"><span class="hk">Hook:</span> "Why buy hardware that devalues every year? Rent your entire server room on wheels with AGS."</p>
           <div class="vplatforms">
-            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i> Reels</span>
-            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i></span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i></span>
+            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i></span>
           </div>
         </div>
       </div>
-
-      <!-- Video 3 -->
+      <!-- V3 -->
       <div class="vcard rv" style="transition-delay:.24s" data-video-card>
         <div class="vscreen">
-          <video src="videos/vid3.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
-          <div class="vscreen-bg promo"></div>
-          <span class="v-type-badge vb-promo"><i class="fas fa-film" style="margin-right:4px"></i>Promo Ad #2</span>
+          <img class="vscreen-img" src="images/v3_still.png" alt="Reel Video 1" loading="lazy"/>
+          <div class="vscreen-bg reel"></div>
+          <video src="videos/vid3.webm" loop muted playsinline style="display:none"></video>
           <div class="play-btn"><i class="fas fa-play"></i></div>
-          <span class="v-duration">0:08</span>
+          <span class="v-duration">0:15</span>
+          <span class="v-type-badge vb-reel" data-t="v3_badge">Short Reel</span>
+          <div class="vprogress"><div class="vbar"></div></div>
         </div>
         <div class="vinfo">
-          <div class="vtitle">Zero CAPEX — Full IT Power</div>
-          <div class="vhook"><span class="hk">"What if your factory could have enterprise-grade IT infrastructure starting tomorrow — with zero upfront investment?"</span><br/>One monthly fee. Everything included. AGS covers it all.</div>
+          <h4 class="vtitle" data-t="v3_title">The 24-Hour IT Setup (Timelapse)</h4>
+          <p class="vhook" data-t="v3_hook"><span class="hk">Hook:</span> "67% of Egyptian businesses lost revenue due to IT downtime. We set up an entire factory backbone in 24 hours."</p>
           <div class="vplatforms">
-            <span class="vplat vplat-li"><i class="fab fa-linkedin-in"></i> LinkedIn</span>
-            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i> YouTube</span>
+            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i></span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i></span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i></span>
           </div>
         </div>
       </div>
-
-      <!-- Video 4 -->
+      <!-- V4 -->
       <div class="vcard rv" style="transition-delay:.36s" data-video-card>
         <div class="vscreen">
-          <video src="videos/vid4.webm" loop muted playsinline preload="metadata" class="vscreen-video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0.95;"></video>
+          <img class="vscreen-img" src="images/v4_still.png" alt="Reel Video 2" loading="lazy"/>
           <div class="vscreen-bg reel"></div>
-          <span class="v-type-badge vb-reel"><i class="fas fa-mobile-alt" style="margin-right:4px"></i>Reel #2</span>
+          <video src="videos/vid4.webm" loop muted playsinline style="display:none"></video>
           <div class="play-btn"><i class="fas fa-play"></i></div>
-          <span class="v-duration">0:08</span>
+          <span class="v-duration">0:15</span>
+          <span class="v-type-badge vb-reel" data-t="v4_badge">Short Reel</span>
+          <div class="vprogress"><div class="vbar"></div></div>
         </div>
         <div class="vinfo">
-          <div class="vtitle">The Remote Support Reel</div>
-          <div class="vhook"><span class="hk">"Your engineer called in sick. Your system crashed. Your deadline is in 3 hours."</span><br/>AGS remote support is already on it — before you even pick up the phone.</div>
+          <h4 class="vtitle" data-t="v4_title">Why CAPEX is Killing Your IT</h4>
+          <p class="vhook" data-t="v4_hook"><span class="hk">Hook:</span> "Still paying millions upfront for server infrastructure? Let's talk about the rental model that saves 40%."</p>
           <div class="vplatforms">
-            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i> Reels</span>
-            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i> Facebook</span>
+            <span class="vplat vplat-ig"><i class="fab fa-instagram"></i></span>
+            <span class="vplat vplat-fb"><i class="fab fa-facebook-f"></i></span>
+            <span class="vplat vplat-yt"><i class="fab fa-youtube"></i></span>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- PRICING TABLE -->
+<!-- PRICING SUMMARY TABLE -->
 <div class="div"></div>
-<section id="pricing">
+<section>
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Investment Breakdown</div>
-      <h2 class="stitle">Complete <span style="color:var(--o)">Pricing Summary</span></h2>
-      <p class="ssub">Full transparency — every line item detailed. No hidden fees.</p>
+      <div class="stag" data-t="p_tag">Investment Overview</div>
+      <h2 class="stitle" data-t="p_title">Transparent <span style="color:var(--o)">Pricing Structure</span></h2>
+      <p class="ssub" data-t="p_sub">Clear, upfront packaging with zero hidden costs. Pay for what you need, scale as you grow.</p>
     </div>
-    <div class="rv" style="overflow-x:auto">
+    <div class="ptbl-wrap rv">
       <table class="ptbl">
         <thead>
           <tr>
-            <th style="width:55%">Service / Deliverable</th>
-            <th style="width:20%">Type</th>
-            <th style="width:25%">Investment (EGP)</th>
+            <th style="width:55%" data-t="th_service">Service / Deliverable</th>
+            <th style="width:20%" data-t="th_type">Type</th>
+            <th style="width:25%" data-t="th_invest">Investment (EGP)</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><div class="iname"><span class="inum">01</span>Website Redesign + SEO + Store + Logo<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Bilingual website, product/service store, Google Search registration, new AGS brand identity</div></td><td style="color:var(--gray);font-size:12.5px">Foundation</td><td>20k</td></tr>
-          <tr><td><div class="iname"><span class="inum">02</span>Social Media Pages Full Renewal<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Facebook, LinkedIn, Instagram, X — complete brand refresh, optimization &amp; setup</div></td><td style="color:var(--gray);font-size:12.5px">Brand</td><td>7k</td></tr>
-          <tr><td><div class="iname"><span class="inum">03a</span>4 AI Promotional Videos<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Cinematic quality, scripted with high-impact hooks, bilingual, AI voiceover</div></td><td style="color:var(--gray);font-size:12.5px">Content</td><td>16k</td></tr>
-          <tr><td><div class="iname"><span class="inum">03b</span>4 Teaser Reels (Short-Form)<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Viral-optimized short reels for Facebook, Instagram &amp; LinkedIn</div></td><td style="color:var(--gray);font-size:12.5px">Content</td><td>10k</td></tr>
-          <tr><td><div class="iname"><span class="inum">04</span>Monthly Content — 13 Posts/Month<span class="bdg bdg-t">Monthly</span></div><div class="idesc">3 posts/week, professional design + AI-optimized captions + hashtag strategy</div></td><td style="color:var(--gray);font-size:12.5px">Retainer</td><td>6k<span style="font-size:12px;color:var(--t)">/mo</span></td></tr>
-          <tr><td><div class="iname"><span class="inum">05</span>Rapid Growth: 13,000 Real Followers<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Phase 1: 3k (1.2k) + Ad campaign 1 week (2k) + Phase 3: 10k followers (2k)</div></td><td style="color:var(--gray);font-size:12.5px">Growth</td><td>5.2k</td></tr>
-          <tr><td><div class="iname"><span class="inum">06</span>IT Support Group Ad — 4 Days<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Video ad in Egypt's largest IT group, 400k+ members</div></td><td style="color:var(--gray);font-size:12.5px">Advertising</td><td>1.2k</td></tr>
-          <tr><td><div class="iname"><span class="inum">07</span>AI WhatsApp Bot + Enterprise CRM<span class="bdg bdg-o">One-Time</span></div><div class="idesc">Full AI chatbot + CRM platform + lead pipeline + management dashboard. VPS billed separately.</div></td><td style="color:var(--gray);font-size:12.5px">Automation</td><td>12k</td></tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">01</span><span data-t="tbl_s1_name">Website Redesign + SEO + Store + Logo</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s1_desc">Bilingual website, product/service store, Google Search registration, new AGS brand identity</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s1_type">Foundation</td>
+            <td data-t="tbl_s1_price">20k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">02</span><span data-t="tbl_s2_name">Social Media Pages Full Renewal</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s2_desc">Facebook, LinkedIn, Instagram, X — complete brand refresh, optimization &amp; setup</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s2_type">Brand</td>
+            <td data-t="tbl_s2_price">7k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">03a</span><span data-t="tbl_s3a_name">4 AI Promotional Videos</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s3a_desc">Cinematic quality, scripted with high-impact hooks, bilingual, AI voiceover</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s3a_type">Content</td>
+            <td data-t="tbl_s3a_price">16k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">03b</span><span data-t="tbl_s3b_name">4 Teaser Reels (Short-Form)</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s3b_desc">Viral-optimized short reels for Facebook, Instagram &amp; LinkedIn</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s3b_type">Content</td>
+            <td data-t="tbl_s3b_price">10k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">04</span><span data-t="tbl_s4_name">Monthly Content — 13 Posts/Month</span><span class="bdg bdg-t" data-t="lbl_monthly">Monthly</span></div>
+              <div class="idesc" data-t="tbl_s4_desc">3 posts/week, professional design + AI-optimized captions + hashtag strategy</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s4_type">Retainer</td>
+            <td data-t="tbl_s4_price">6k<span style="font-size:12px;color:var(--t)">/mo</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">05</span><span data-t="tbl_s5_name">Rapid Growth: 13,000 Real Followers</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s5_desc">Phase 1: 3k (1.2k) + Ad campaign 1 week (2k) + Phase 3: 10k followers (2k)</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s5_type">Growth</td>
+            <td data-t="tbl_s5_price">5.2k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">06</span><span data-t="tbl_s6_name">IT Support Group Ad — 4 Days</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s6_desc">Video ad in Egypt's largest IT group, 400k+ members</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s6_type">Advertising</td>
+            <td data-t="tbl_s6_price">1.2k</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="iname"><span class="inum">07</span><span data-t="tbl_s7_name">AI WhatsApp Bot + Enterprise CRM</span><span class="bdg bdg-o" data-t="lbl_onetime">One-Time</span></div>
+              <div class="idesc" data-t="tbl_s7_desc">Full AI chatbot + CRM platform + lead pipeline + management dashboard. VPS billed separately.</div>
+            </td>
+            <td style="color:var(--gray);font-size:12.5px" data-t="tbl_s7_type">Automation</td>
+            <td data-t="tbl_s7_price">12k</td>
+          </tr>
         </tbody>
         <tfoot>
-          <tr><td colspan="2"><div class="ttl">Total One-Time Investment<small>+ 6k EGP/month ongoing content retainer from Month 2</small></div></td><td><div class="tval">71.4k<small>EGP one-time</small></div></td></tr>
+          <tr>
+            <td colspan="2"><div class="ttl" data-t="tbl_t_label">Total One-Time Investment<small>+ 6k EGP/month ongoing content retainer from Month 2</small></div></td>
+            <td><div class="tval" data-t="tbl_t_value">71.4k<small>EGP one-time</small></div></td>
+          </tr>
         </tfoot>
       </table>
     </div>
-    <div class="pnote2 rv"><i class="fas fa-info-circle fa-lg"></i><span>All prices in Egyptian Pounds (EGP). Monthly retainer (6k) starts Month 2. Windows VPS is billed at market cost — no markup. A phased payment plan is available on request.</span></div>
+    <div class="pnote2 rv"><i class="fas fa-info-circle fa-lg"></i><span data-t="price_note">All prices in Egyptian Pounds (EGP). Monthly retainer (6k) starts Month 2. Windows VPS is billed at market cost — no markup. A phased payment plan is available on request.</span></div>
   </div>
 </section>
 
@@ -826,16 +1070,51 @@ footer a:hover{text-decoration:underline}
 <section style="background:var(--n2)">
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Implementation Roadmap</div>
-      <h2 class="stitle">From Kickoff to <span style="color:var(--o)">Market Dominance</span></h2>
-      <p class="ssub">A structured 6-week launch sequence built for speed and maximum impact.</p>
+      <div class="stag" data-t="road_tag">Implementation Roadmap</div>
+      <h2 class="stitle" data-t="road_title">From Kickoff to <span style="color:var(--o)">Market Dominance</span></h2>
+      <p class="ssub" data-t="road_sub">A structured 6-week launch sequence built for speed and maximum impact.</p>
     </div>
     <div class="tl">
-      <div class="tli rv"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 1</div><h4>🚀 Kickoff &amp; Brand Foundation</h4><p>Onboarding, brand strategy session, new AGS logo design, social media pages updated with new identity, website wireframes approved.</p></div></div>
-      <div class="tli rv" style="transition-delay:.12s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 2</div><h4>🌐 Website Development + Video Production</h4><p>Full bilingual website development in progress. AI video scripts and storyboards approved. Growth Phase 1 launched: 3,000 followers acquisition begins.</p></div></div>
-      <div class="tli rv" style="transition-delay:.24s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 3</div><h4>📱 Website Launch + Paid Ad Campaign</h4><p>New website goes live and registered on Google. 1-week targeted paid campaign launched. First 2 promo videos delivered and published.</p></div></div>
-      <div class="tli rv" style="transition-delay:.36s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 4</div><h4>🤖 AI Bot &amp; CRM Go Live + Content Begins</h4><p>WhatsApp AI bot and CRM deployed. First month's content calendar published. Remaining videos (2 promos + 4 reels) delivered.</p></div></div>
-      <div class="tli rv" style="transition-delay:.48s"><div class="tldw"><div class="tldot"></div></div><div class="tlc"><div class="tlw">Week 5–6</div><h4>📢 IT Community + 10K Growth Phase</h4><p>Growth Phase 3: 10,000 additional followers. Sponsored video ad in IT Support group (400k+ members). Full performance review and optimization.</p></div></div>
+      <div class="tli rv">
+        <div class="tldw"><div class="tldot"></div></div>
+        <div class="tlc">
+          <div class="tlw" data-t="w1_tag">Week 1</div>
+          <h4 data-t="w1_title">🚀 Kickoff &amp; Brand Foundation</h4>
+          <p data-t="w1_desc">Onboarding, brand strategy session, new AGS logo design, social media pages updated with new identity, website wireframes approved.</p>
+        </div>
+      </div>
+      <div class="tli rv" style="transition-delay:.12s">
+        <div class="tldw"><div class="tldot"></div></div>
+        <div class="tlc">
+          <div class="tlw" data-t="w2_tag">Week 2</div>
+          <h4 data-t="w2_title">🌐 Website Development + Video Production</h4>
+          <p data-t="w2_desc">Full bilingual website development in progress. AI video scripts and storyboards approved. Growth Phase 1 launched: 3,000 followers acquisition begins.</p>
+        </div>
+      </div>
+      <div class="tli rv" style="transition-delay:.24s">
+        <div class="tldw"><div class="tldot"></div></div>
+        <div class="tlc">
+          <div class="tlw" data-t="w3_tag">Week 3</div>
+          <h4 data-t="w3_title">📱 Website Launch + Paid Ad Campaign</h4>
+          <p data-t="w3_desc">New website goes live and registered on Google. 1-week targeted paid campaign launched. First 2 promo videos delivered and published.</p>
+        </div>
+      </div>
+      <div class="tli rv" style="transition-delay:.36s">
+        <div class="tldw"><div class="tldot"></div></div>
+        <div class="tlc">
+          <div class="tlw" data-t="w4_tag">Week 4</div>
+          <h4 data-t="w4_title">🤖 AI Bot &amp; CRM Go Live + Content Begins</h4>
+          <p data-t="w4_desc">WhatsApp AI bot and CRM deployed. First month's content calendar published. Remaining videos (2 promos + 4 reels) delivered.</p>
+        </div>
+      </div>
+      <div class="tli rv" style="transition-delay:.48s">
+        <div class="tldw"><div class="tldot"></div></div>
+        <div class="tlc">
+          <div class="tlw" data-t="w5_tag">Week 5–6</div>
+          <h4 data-t="w5_title">📢 IT Community + 10K Growth Phase</h4>
+          <p data-t="w5_desc">Growth Phase 3: 10,000 additional followers. Sponsored video ad in IT Support group (400k+ members). Full performance review and optimization.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -845,14 +1124,35 @@ footer a:hover{text-decoration:underline}
 <section>
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Content Strategy</div>
-      <h2 class="stitle">High-Impact <span style="color:var(--o)">Script Samples</span></h2>
-      <p class="ssub">Sample hooks crafted for AGS — engineered to stop the scroll and drive immediate action from IT decision-makers.</p>
+      <div class="stag" data-t="scr_tag">Content Strategy</div>
+      <h2 class="stitle" data-t="scr_title">High-Impact <span style="color:var(--o)">Script Samples</span></h2>
+      <p class="ssub" data-t="scr_sub">Sample hooks crafted for AGS — engineered to stop the scroll and drive immediate action from IT decision-makers.</p>
     </div>
     <div class="sgrid">
-      <div class="ssc rv"><span class="stp tp-p">Promotional Video</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The Midnight IT Failure Script</div><div class="stxt"><span class="hk">"It's 2AM. Your factory just went dark — servers down, systems offline, production halted."</span><br/><br/>Every minute costs you thousands. Your IT vendor isn't answering. Your team is helpless.<br/><br/><em>What if this never happened again?</em><br/><br/>AGS doesn't just fix IT problems — we eliminate them. A complete server rack, pre-loaded with everything your operation needs, installed in your facility, backed by 24/7 expert support. <span class="hk">A fully operational IT backbone — on your terms.</span></div><div class="splat"><i class="fab fa-facebook-f vplat-fb"></i> Facebook <i class="fab fa-youtube vplat-yt" style="margin-left:8px"></i> YouTube <i class="fab fa-linkedin-in vplat-li" style="margin-left:8px"></i> LinkedIn</div></div>
-      <div class="ssc rv" style="transition-delay:.12s"><span class="stp tp-r">Viral Reel</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The 24-Hour Transformation Reel</div><div class="stxt"><span class="hk">"67% of Egyptian businesses lost revenue last year because of IT failure. Are you still depending on one PC and a prayer?"</span><br/><br/>[Fast cut: empty office → AGS team arrives → rack installed → systems running]<br/><br/>24 hours. That's all it takes. Full server infrastructure. Complete software stack. Non-stop support.<br/><br/><span class="hk">AGS — Your entire IT department, delivered.</span></div><div class="splat"><i class="fab fa-instagram vplat-ig"></i> Reels <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Facebook</div></div>
-      <div class="ssc rv" style="transition-delay:.24s"><span class="stp tp-l">LinkedIn Authority</span><div class="hkbdg"><i class="fas fa-bolt"></i> Opening Hook</div><div class="stitle2">The Enterprise Decision-Maker Post</div><div class="stxt"><span class="hk">"What if you could deploy a Fortune 500-level IT infrastructure in your factory — by tomorrow?"</span><br/><br/>This isn't a pitch. It's what AGS does every week for Egyptian enterprises that are tired of:<br/>❌ Overpriced IT consultants who disappear after installation<br/>❌ Hardware that fails with zero backup<br/>❌ Software licensing nightmares<br/><br/>Instead, they rent a complete IT system — all under one monthly contract.<br/><span class="hk">Zero CAPEX. Maximum uptime. Total peace of mind.</span></div><div class="splat"><i class="fab fa-linkedin-in vplat-li"></i> LinkedIn <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Groups</div></div>
+      <!-- S1 -->
+      <div class="ssc rv">
+        <span class="stp tp-p" data-t="scr1_label">Promotional Video</span>
+        <div class="hkbdg" data-t="scr1_hook_lbl"><i class="fas fa-bolt"></i> Opening Hook</div>
+        <div class="stitle2" data-t="scr1_title">The Midnight IT Failure Script</div>
+        <div class="stxt" data-t="scr1_desc"><span class="hk">"It's 2AM. Your factory just went dark — servers down, systems offline, production halted."</span><br/><br/>Every minute costs you thousands. Your IT vendor isn't answering. Your team is helpless.<br/><br/><em>What if this never happened again?</em><br/><br/>AGS doesn't just fix IT problems — we eliminate them. A complete server rack, pre-loaded with everything your operation needs, installed in your facility, backed by 24/7 expert support. <span class="hk">A fully operational IT backbone — on your terms.</span></div>
+        <div class="splat"><i class="fab fa-facebook-f vplat-fb"></i> Facebook <i class="fab fa-youtube vplat-yt" style="margin-left:8px"></i> YouTube <i class="fab fa-linkedin-in vplat-li" style="margin-left:8px"></i> LinkedIn</div>
+      </div>
+      <!-- S2 -->
+      <div class="ssc rv" style="transition-delay:.12s">
+        <span class="stp tp-r" data-t="scr2_label">Viral Reel</span>
+        <div class="hkbdg" data-t="scr2_hook_lbl"><i class="fas fa-bolt"></i> Opening Hook</div>
+        <div class="stitle2" data-t="scr2_title">The 24-Hour Transformation Reel</div>
+        <div class="stxt" data-t="scr2_desc"><span class="hk">"67% of Egyptian businesses lost revenue last year because of IT failure. Are you still depending on one PC and a prayer?"</span><br/><br/>[Fast cut: empty office → AGS team arrives → rack installed → systems running]<br/><br/>24 hours. That's all it takes. Full server infrastructure. Complete software stack. Non-stop support.<br/><br/><span class="hk">AGS — Your entire IT department, delivered.</span></div>
+        <div class="splat"><i class="fab fa-instagram vplat-ig"></i> Reels <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Facebook</div>
+      </div>
+      <!-- S3 -->
+      <div class="ssc rv" style="transition-delay:.24s">
+        <span class="stp tp-l" data-t="scr3_label">LinkedIn Authority</span>
+        <div class="hkbdg" data-t="scr3_hook_lbl"><i class="fas fa-bolt"></i> Opening Hook</div>
+        <div class="stitle2" data-t="scr3_title">The Enterprise Decision-Maker Post</div>
+        <div class="stxt" data-t="scr3_desc"><span class="hk">"What if you could deploy a Fortune 500-level IT infrastructure in your factory — by tomorrow?"</span><br/><br/>This isn't a pitch. It's what AGS does every week for Egyptian enterprises that are tired of:<br/>❌ Overpriced IT consultants who disappear after installation<br/>❌ Hardware that fails with zero backup<br/>❌ Software licensing nightmares<br/><br/>Instead, they rent a complete IT system — all under one monthly contract.<br/><span class="hk">Zero CAPEX. Maximum uptime. Total peace of mind.</span></div>
+        <div class="splat"><i class="fab fa-linkedin-in vplat-li"></i> LinkedIn <i class="fab fa-facebook-f vplat-fb" style="margin-left:8px"></i> Groups</div>
+      </div>
     </div>
   </div>
 </section>
@@ -862,17 +1162,47 @@ footer a:hover{text-decoration:underline}
 <section style="background:var(--n2)">
   <div class="cnt">
     <div class="sh rv">
-      <div class="stag">Why OLTANI</div>
-      <h2 class="stitle">Your Strategic <span style="color:var(--o)">Digital Partner</span></h2>
-      <p class="ssub">OLTANI is not a marketing agency — we are a technology-driven growth partner that speaks IT fluently and delivers measurable results.</p>
+      <div class="stag" data-t="why_tag">Why OLTANI</div>
+      <h2 class="stitle" data-t="why_title">Your Strategic <span style="color:var(--o)">Digital Partner</span></h2>
+      <p class="ssub" data-t="why_sub">OLTANI is not a marketing agency — we are a technology-driven growth partner that speaks IT fluently and delivers measurable results.</p>
     </div>
     <div class="wgrid">
-      <div class="wc rv"><div class="wico"><i class="fas fa-robot"></i></div><h4>AI-Native Execution</h4><p>Every content piece, ad, and response is AI-enhanced — faster production, smarter targeting, measurable results.</p></div>
-      <div class="wc rv" style="transition-delay:.08s"><div class="wico"><i class="fas fa-code"></i></div><h4>Technical Fluency</h4><p>We understand IT infrastructure and enterprise software — your audience's language is our language.</p></div>
-      <div class="wc rv" style="transition-delay:.16s"><div class="wico"><i class="fas fa-chart-line"></i></div><h4>Data-Driven Strategy</h4><p>Every decision is backed by analytics. Monthly KPI reports with conversion data and actionable insights.</p></div>
-      <div class="wc rv" style="transition-delay:.24s"><div class="wico"><i class="fas fa-globe-africa"></i></div><h4>Egypt &amp; Global Reach</h4><p>Deep knowledge of the Egyptian B2B market combined with global digital best practices.</p></div>
-      <div class="wc rv" style="transition-delay:.32s"><div class="wico"><i class="fas fa-shield-alt"></i></div><h4>Full Accountability</h4><p>Clear deliverables, defined timelines, and guaranteed execution. You see progress every week.</p></div>
-      <div class="wc rv" style="transition-delay:.4s"><div class="wico"><i class="fas fa-headset"></i></div><h4>Dedicated Support</h4><p>Direct WhatsApp line to your account manager. Fast response, proactive communication, zero bureaucracy.</p></div>
+      <!-- W1 -->
+      <div class="wc rv">
+        <div class="wico"><i class="fas fa-robot"></i></div>
+        <h4 data-t="why1_title">AI-Native Execution</h4>
+        <p data-t="why1_desc">Every content piece, ad, and response is AI-enhanced — faster production, smarter targeting, measurable results.</p>
+      </div>
+      <!-- W2 -->
+      <div class="wc rv" style="transition-delay:.08s">
+        <div class="wico"><i class="fas fa-code"></i></div>
+        <h4 data-t="why2_title">Technical Fluency</h4>
+        <p data-t="why2_desc">We understand IT infrastructure and enterprise software — your audience's language is our language.</p>
+      </div>
+      <!-- W3 -->
+      <div class="wc rv" style="transition-delay:.16s">
+        <div class="wico"><i class="fas fa-chart-line"></i></div>
+        <h4 data-t="why3_title">Data-Driven Strategy</h4>
+        <p data-t="why3_desc">Every decision is backed by analytics. Monthly KPI reports with conversion data and actionable insights.</p>
+      </div>
+      <!-- W4 -->
+      <div class="wc rv" style="transition-delay:.24s">
+        <div class="wico"><i class="fas fa-globe-africa"></i></div>
+        <h4 data-t="why4_title">Egypt &amp; Global Reach</h4>
+        <p data-t="why4_desc">Deep knowledge of the Egyptian B2B market combined with global digital best practices.</p>
+      </div>
+      <!-- W5 -->
+      <div class="wc rv" style="transition-delay:.32s">
+        <div class="wico"><i class="fas fa-shield-alt"></i></div>
+        <h4 data-t="why5_title">Full Accountability</h4>
+        <p data-t="why5_desc">Clear deliverables, defined timelines, and guaranteed execution. You see progress every week.</p>
+      </div>
+      <!-- W6 -->
+      <div class="wc rv" style="transition-delay:.4s">
+        <div class="wico"><i class="fas fa-headset"></i></div>
+        <h4 data-t="why6_title">Dedicated Support</h4>
+        <p data-t="why6_desc">Direct WhatsApp line to your account manager. Fast response, proactive communication, zero bureaucracy.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -882,16 +1212,35 @@ footer a:hover{text-decoration:underline}
 <section>
   <div class="cnt">
     <div class="sbox rv">
-      <div style="margin-bottom:36px"><div class="stag">Total Investment</div><h2 class="stitle" style="font-size:clamp(22px,3.2vw,38px)">Your Complete <span style="color:var(--o)">AGS Growth Package</span></h2></div>
+      <div style="margin-bottom:36px">
+        <div class="stag" data-t="sum_tag">Total Investment</div>
+        <h2 class="stitle" style="font-size:clamp(22px,3.2vw,38px)" data-t="sum_title">Your Complete <span style="color:var(--o)">AGS Growth Package</span></h2>
+      </div>
       <div class="sgrd">
-        <div class="si"><div class="sl">One-Time Total Investment</div><div class="sv">71.4k EGP</div><div class="sn">Covers all 7 packages — website, brand, videos, content, growth, community &amp; AI automation</div></div>
-        <div class="si"><div class="sl">Monthly Retainer (from Month 2)</div><div class="sv" style="color:var(--t)">6k EGP</div><div class="sn">13 posts/month, captions, scheduling &amp; monthly analytics report</div></div>
-        <div class="si"><div class="sl">Windows VPS (Optional)</div><div class="sv" style="color:var(--gray);font-size:20px">At Market Cost</div><div class="sn">For WhatsApp Bot &amp; CRM hosting — no markup applied</div></div>
-        <div class="si"><div class="sl">Full Deployment Timeline</div><div class="sv" style="font-size:clamp(18px,2.5vw,30px)">6 Weeks</div><div class="sn">From contract signing to all systems live and first content published</div></div>
+        <div class="si">
+          <div class="sl" data-t="sum_o_lbl">One-Time Total Investment</div>
+          <div class="sv" data-t="sum_o_val">71.4k EGP</div>
+          <div class="sn" data-t="sum_o_desc">Covers all 7 packages — website, brand, videos, content, growth, community &amp; AI automation</div>
+        </div>
+        <div class="si">
+          <div class="sl" data-t="sum_m_lbl">Monthly Retainer (from Month 2)</div>
+          <div class="sv" style="color:var(--t)" data-t="sum_m_val">6k EGP</div>
+          <div class="sn" data-t="sum_m_desc">13 posts/month, captions, scheduling &amp; monthly analytics report</div>
+        </div>
+        <div class="si">
+          <div class="sl" data-t="sum_vps_lbl">Windows VPS (Optional)</div>
+          <div class="sv" style="color:var(--gray);font-size:20px" data-t="sum_vps_val">At Market Cost</div>
+          <div class="sn" data-t="sum_vps_desc">For WhatsApp Bot &amp; CRM hosting — no markup applied</div>
+        </div>
+        <div class="si">
+          <div class="sl" data-t="sum_time_lbl">Full Deployment Timeline</div>
+          <div class="sv" style="font-size:clamp(18px,2.5vw,30px)" data-t="sum_time_val">6 Weeks</div>
+          <div class="sn" data-t="sum_time_desc">From contract signing to all systems live and first content published</div>
+        </div>
       </div>
       <div class="sctarow">
-        <div class="vbadge"><i class="fas fa-clock"></i><span>Proposal valid for <strong>30 days</strong> from July 3, 2026</span></div>
-        <a href="https://wa.me/201002194451" target="_blank" class="btn-p" style="font-size:14px;padding:14px 26px"><i class="fab fa-whatsapp"></i> Accept &amp; Start Now</a>
+        <div class="vbadge"><i class="fas fa-clock"></i><span data-t="sum_valid">Proposal valid for <strong>30 days</strong> from July 3, 2026</span></div>
+        <a href="https://wa.me/201002194451" target="_blank" class="btn-p" style="font-size:14px;padding:14px 26px" data-t="btn_accept"><i class="fab fa-whatsapp"></i> Accept &amp; Start Now</a>
       </div>
     </div>
   </div>
@@ -900,12 +1249,12 @@ footer a:hover{text-decoration:underline}
 <!-- CTA -->
 <section class="ctasec">
   <div class="cnt">
-    <div class="stag" style="margin-bottom:18px">Ready to Begin?</div>
-    <h2>Let's Build the <span style="color:var(--o)">Future</span> of AGS Together</h2>
-    <p>Eng. Ashraf, the Egyptian IT market is moving fast. Every day without a dominant digital presence is a lead your competitor is closing. Let's talk — we're ready to start immediately.</p>
+    <div class="stag" style="margin-bottom:18px" data-t="cta_tag">Ready to Begin?</div>
+    <h2 data-t="cta_title">Let's Build the <span style="color:var(--o)">Future</span> of AGS Together</h2>
+    <p data-t="cta_desc">Eng. Ashraf, the Egyptian IT market is moving fast. Every day without a dominant digital presence is a lead your competitor is closing. Let's talk — we're ready to start immediately.</p>
     <div class="ctabtns">
-      <a href="https://wa.me/201002194451" target="_blank" class="btn-wa"><i class="fab fa-whatsapp fa-lg"></i>Message on WhatsApp</a>
-      <a href="https://oltani.com" target="_blank" class="btn-web"><i class="fas fa-globe"></i>Visit oltani.com</a>
+      <a href="https://wa.me/201002194451" target="_blank" class="btn-wa" data-t="btn_wa"><i class="fab fa-whatsapp fa-lg"></i>Message on WhatsApp</a>
+      <a href="https://oltani.com" target="_blank" class="btn-web" data-t="btn_web"><i class="fas fa-globe"></i>Visit oltani.com</a>
     </div>
   </div>
 </section>
@@ -913,9 +1262,9 @@ footer a:hover{text-decoration:underline}
 <!-- FOOTER -->
 <footer>
   <div class="flogo">OLT<span>ANI</span></div>
-  <p>Open Link Technologies &amp; Artificial Network Intelligence</p>
+  <p data-t="ft_company">Open Link Technologies &amp; Artificial Network Intelligence</p>
   <p style="margin-top:8px"><a href="https://oltani.com" target="_blank">oltani.com</a> &nbsp;·&nbsp; <a href="https://wa.me/201002194451" target="_blank">+20 100 219 4451</a></p>
-  <p style="margin-top:14px;font-size:11px;color:#3a4a60">Confidential proposal prepared exclusively for AG Technology Systems (AGS) · July 2026</p>
+  <p style="margin-top:14px;font-size:11px;color:#3a4a60" data-t="ft_confidential">Confidential proposal prepared exclusively for AG Technology Systems (AGS) · July 2026</p>
 </footer>
 
 </div><!-- .wrap -->
@@ -943,7 +1292,7 @@ function runCounters(){document.querySelectorAll('[data-c]').forEach(el=>{const 
 const ho=new IntersectionObserver(e=>{if(e[0].isIntersecting){runCounters();ho.disconnect()}},{threshold:.3});
 ho.observe(document.querySelector('.hero'));
 
-// 3D TILT on service cards
+// 3D TILT
 document.querySelectorAll('.scard').forEach(card=>{
   card.addEventListener('mousemove',e=>{
     const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
@@ -952,52 +1301,38 @@ document.querySelectorAll('.scard').forEach(card=>{
   card.addEventListener('mouseleave',()=>{card.style.transform='';});
 });
 
-// VIDEO CONTROLS ON HOVER/CLICK + AUTOPLAY ON SCROLL (for Mobile/Viewport)
+// VIDEO CONTROLS
 const videoCards = document.querySelectorAll('[data-video-card]');
-
 function playVideo(video, playBtn) {
   video.play().then(() => {
     playBtn.style.opacity = '0';
     playBtn.style.transform = 'scale(0.8)';
   }).catch(err => {});
 }
-
 function pauseVideo(video, playBtn) {
   video.pause();
   video.currentTime = 0;
   playBtn.style.opacity = '1';
   playBtn.style.transform = 'scale(1)';
 }
-
-// Intersection Observer for scroll-to-play on mobile
 const videoObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const card = entry.target;
     const video = card.querySelector('video');
     const playBtn = card.querySelector('.play-btn');
-
     if (entry.isIntersecting) {
       playVideo(video, playBtn);
     } else {
       pauseVideo(video, playBtn);
     }
   });
-}, {
-  threshold: 0.55 // Play when 55% of the card is visible in the viewport
-});
-
+}, {threshold: 0.55});
 videoCards.forEach(card => {
   const video = card.querySelector('video');
   const playBtn = card.querySelector('.play-btn');
-
-  // Observe card for scroll play/pause
   videoObserver.observe(card);
-
-  // Hover events as desktop fallback
   card.addEventListener('mouseenter', () => playVideo(video, playBtn));
   card.addEventListener('mouseleave', () => pauseVideo(video, playBtn));
-
-  // Click / Touch toggle
   card.addEventListener('click', (e) => {
     e.stopPropagation();
     if (video.paused) {
@@ -1010,6 +1345,550 @@ videoCards.forEach(card => {
 
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+
+// MULTILANG SYSTEM
+const translations = {
+  en: {
+    meta_title: "Digital Growth Proposal | AGS × OLTANI",
+    hdr_tagline: "Your Integrated Digital Partner",
+    hdr_date: "July 2026",
+    hdr_badge: "Proposal #AGS-2026",
+    meta_prepared: "Prepared by: <strong>OLTANI</strong>",
+    meta_client: "Client: <strong>AG Technology Systems (AGS)</strong>",
+    meta_scope: "Scope: <strong>Egypt & Global Markets</strong>",
+    meta_validity: "Validity: <strong>30 Days</strong>",
+    hero_tag: "⚡ Confidential Digital Growth Proposal",
+    hero_title: "Transforming <span class="ct">AGS</span><br/>Into Egypt's <span class="co">#1 IT Brand</span>",
+    hero_sub: "A full-spectrum AI-powered digital transformation plan — engineered specifically for <strong style="color:var(--lt)">AG Technology Systems</strong> to dominate the IT solutions market and generate enterprise-grade leads locally and globally.",
+    btn_explore: "<i class="fas fa-rocket"></i> Explore The Plan",
+    btn_discuss: "<i class="fab fa-whatsapp"></i> Discuss Now",
+    stat_packages: "Packages",
+    stat_audience: "K+ Audience",
+    stat_posts: "Posts / Month",
+    stat_videos: "AI Videos",
+    scroll_text: "Scroll to explore",
+    brief_tag: "The Brief",
+    brief_title: "Understanding <span style="color:var(--o)">Your Vision</span>",
+    brief_sub: "Dear Eng. Ashraf — we have thoroughly analyzed your marketing brief and identified every opportunity to accelerate AGS's growth.",
+    card1_title: "3 Strategic Objectives",
+    card1_desc: "Redesign your bilingual website, elevate all social media platforms, and launch precision-targeted paid campaigns in Egypt and internationally — focused on enterprise lead generation from factories and corporations.",
+    card2_title: "Your Competitive Edge",
+    card2_desc: "AGS possesses a rare differentiator: <strong style="color:var(--o)">Mobile Server Rack Rental</strong> — a complete turnkey IT infrastructure on wheels. Full hardware + software + 24/7 support. No competitor in Egypt offers this at scale. This is your #1 weapon.",
+    card3_title: "Target Market",
+    card3_desc: "Egyptian factories, industrial enterprises, SMBs, and corporations requiring complete IT infrastructure without CAPEX commitment. International B2B prospects seeking managed IT solutions from a trusted Egyptian partner.",
+    card4_title: "AI at the Core",
+    card4_desc: "Every deliverable is AI-enhanced — from AI-generated video content and intelligent copywriting to a WhatsApp bot that qualifies leads and books appointments 24/7 without human intervention.",
+    ub_title: "The Offer No Competitor Can Match",
+    ub_desc: "While every other IT company in Egypt sells or installs equipment — <span class="hl">AGS delivers a fully operational IT backbone on wheels.</span> Server racks loaded with enterprise-grade hardware, pre-configured software stacks, network infrastructure, and a dedicated support contract — all under one monthly rental fee. A factory can go from zero IT to fully operational in <span class="hl">under 24 hours.</span> This proposition will be the cornerstone of every campaign we build together.",
+    pain_tag: "Current Challenges",
+    pain_title: "What's Holding <span style="color:var(--o)">AGS Back</span>",
+    pain_sub: "Our audit of your existing digital presence revealed critical gaps costing you enterprise clients daily.",
+    pain1_title: "Slow, Underperforming Website",
+    pain1_desc: "ag-techsystem.com has critical performance issues, outdated content, and poor mobile optimization — failing to convert visitors into inquiries.",
+    pain1_sol: "<i class="fas fa-arrow-right"></i> Complete website overhaul planned",
+    pain2_title: "Low Client Acquisition",
+    pain2_desc: "No structured lead generation pipeline. Potential clients in target industries are unaware of AGS's unique rack rental service.",
+    pain2_sol: "<i class="fas fa-arrow-right"></i> AI-powered lead gen campaigns",
+    pain3_title: "Weak Social Media Presence",
+    pain3_desc: "Social pages lack brand consistency, posting strategy, and engagement — invisible to the 400k+ IT decision-makers on Facebook and LinkedIn.",
+    pain3_sol: "<i class="fas fa-arrow-right"></i> Full social media rebuild",
+    pain4_title: "No Automated Lead Response",
+    pain4_desc: "Leads going cold due to delayed responses. No CRM to track prospects from inquiry to contract. Manual follow-up is losing deals.",
+    pain4_sol: "<i class="fas fa-arrow-right"></i> 24/7 AI WhatsApp bot + CRM",
+    sol_tag: "The Solution",
+    sol_title: "7 Integrated <span style="color:var(--o)">Growth Packages</span>",
+    sol_sub: "A complete, sequenced digital transformation roadmap — each package engineered for maximum ROI.",
+    s1_label: "Foundation Package",
+    s1_title: "Digital Presence Overhaul: Website + SEO + Store + Brand Identity",
+    s1_desc: "A complete rebuild of ag-techsystem.com into a bilingual, high-performance, SEO-optimized platform with an integrated store — plus a fresh AGS logo redesign.",
+    s1_f1: "Bilingual website (Arabic + English) with lightning-fast performance",
+    s1_f2: "Integrated service, hardware &amp; software product store",
+    s1_f3: "Google Search Console &amp; Google My Business registration",
+    s1_f4: "On-page SEO for Egyptian &amp; global IT search terms",
+    s1_f5: "New AGS logo redesign &amp; full brand guidelines",
+    lbl_invest: "Investment",
+    s1_price: "<sup>EGP </sup>20k",
+    lbl_onetime: "One-Time",
+    s2_label: "Brand Refresh Package",
+    s2_title: "Social Media Platform Rebuild: Facebook · LinkedIn · Instagram · X",
+    s2_desc: "Complete visual and strategic overhaul of all AGS social profiles — new brand identity, optimized metadata, and conversion-ready pages that drive leads to your WhatsApp bot.",
+    s2_f1: "New covers, profile photos &amp; bios across all 4 platforms",
+    s2_f2: "Keyword-optimized descriptions &amp; contact info",
+    s2_f3: "Call-to-action buttons linked to WhatsApp bot",
+    s2_f4: "Highlight reels &amp; pinned content configuration",
+    s2_f5: "Platform-specific growth strategy documentation",
+    s2_price: "<sup>EGP </sup>7k",
+    s3_label: "AI Content Production",
+    s3_title: "8 Premium AI-Powered Videos: 4 Promo Ads + 4 High-Impact Reels",
+    s3_desc: "Professional video content crafted with AI-enhanced production tools. Full-format promo ads plus short-form reels engineered to go viral among IT decision-makers.",
+    s3_f1: "4 Promotional Videos — cinematic quality, scripted with powerful hooks",
+    s3_f2: "4 Teaser Reels — punchy, scroll-stopping social content",
+    s3_f3: "AI voiceover + motion graphics + bilingual subtitles",
+    s3_f4: "Optimized for Facebook, LinkedIn, Instagram &amp; YouTube",
+    s3_price: "<sup>EGP </sup>26k",
+    s3_note: "4 Promo × 4k + 4 Reels × 2.5k",
+    cal_title: "Content Calendar",
+    cal_legend: "Post day (13 posts/month)",
+    s4_label: "Monthly Retainer",
+    s4_title: "Ongoing Content: 13 Designed Posts/Month with AI Captions",
+    s4_desc: "3 professionally designed posts per week (13/month) — each with an AI-crafted caption targeting IT decision-makers, factory owners, and corporate procurement managers.",
+    s4_f1: "13 professionally designed visual posts per month",
+    s4_f2: "AI-optimized Arabic + English captions + hashtag strategy",
+    s4_f3: "Content calendar delivered at start of each month",
+    s4_f4: "Published across Facebook, LinkedIn &amp; Instagram",
+    s4_f5: "Monthly performance &amp; engagement analytics report",
+    lbl_monthly_invest: "Monthly Investment",
+    s4_price: "<sup>EGP </sup>6k",
+    lbl_monthly: "/ Month",
+    s5_label: "Growth Acceleration",
+    s5_title: "Rapid Audience Growth: 13,000 Real Egyptian Followers in 2 Weeks",
+    s5_desc: "A precision 3-phase growth sprint designed to build a credible, engaged audience among Egyptian IT professionals and corporate managers — creating social proof that accelerates your sales.",
+    s5_f1: "Phase 1: Build base credibility with 3,000 quality industry followers",
+    s5_f2: "Phase 2: Target corporate procurement managers &amp; business owners via ads",
+    s5_f3: "Phase 3: Broaden reach to acquire 10,000 additional potential B2B buyers",
+    s5_price: "<sup>EGP </sup>5.2k",
+    art6_title: "IT Community Target",
+    art6_lbl: "IT Members",
+    art6_badge: "Sponsored Pinned Post",
+    s6_label: "Targeted Advertising",
+    s6_title: "IT Community Sponsored Ad: Reach 400,000+ Egyptian IT Professionals",
+    s6_desc: "Publishing your high-impact video ad pinned at the top of Egypt's largest IT support group — locking in high authority and driving enterprise inquiries directly.",
+    s6_f1: "Sponsored post pinned at the top of the group for 4 days",
+    s6_f2: "Direct exposure to 400,000+ IT engineers, managers, and decision-makers",
+    s6_f3: "High-credibility referral: Recommended by the community administration",
+    s6_f4: "Immediate B2B lead capture via direct link to your WhatsApp bot",
+    s6_price: "<sup>EGP </sup>1.2k",
+    s7_label: "Sales Automation",
+    s7_title: "AI WhatsApp Lead Bot + Enterprise CRM + Management Dashboard",
+    s7_desc: "A complete automation system. The AI chatbot qualifies leads, books meetings, and routes hot prospects to your phone, while the CRM stores every contract, license, and client interaction.",
+    s7_f1: "24/7 AI WhatsApp bot: Automated lead qualification &amp; booking",
+    s7_f2: "Custom Enterprise CRM: Pipeline, client database, activity logs",
+    s7_f3: "Management Dashboard: Real-time analytics, user roles, control panel",
+    s7_f4: "Server setup: Scalable VPS configuration (VPS cost billed separately)",
+    s7_price: "<sup>EGP </sup>12k",
+    v_tag: "Content Portfolio",
+    v_title: "AI Video Showcase: <span style="color:var(--o)">Veo &amp; Gen-3</span>",
+    v_sub: "Premium, ultra-realistic video ads engineered using top generative models (Google Veo &amp; Runway Gen-3) for maximum brand authority.",
+    v1_badge: "Promo Ad",
+    v1_title: "The Midnight IT Disaster Ad",
+    v1_hook: "<span class="hk">Hook:</span> "It's 2AM. Your factory just went dark — servers down, production halted. What if this never happened again?"",
+    v2_badge: "Promo Ad",
+    v2_title: "The Mobile Server Rack Solution",
+    v2_hook: "<span class="hk">Hook:</span> "Why buy hardware that devalues every year? Rent your entire server room on wheels with AGS."",
+    v3_badge: "Short Reel",
+    v3_title: "The 24-Hour IT Setup (Timelapse)",
+    v3_hook: "<span class="hk">Hook:</span> "67% of Egyptian businesses lost revenue due to IT downtime. We set up an entire factory backbone in 24 hours."",
+    v4_badge: "Short Reel",
+    v4_title: "Why CAPEX is Killing Your IT",
+    v4_hook: "<span class="hk">Hook:</span> "Still paying millions upfront for server infrastructure? Let's talk about the rental model that saves 40%."",
+    p_tag: "Investment Overview",
+    p_title: "Transparent <span style="color:var(--o)">Pricing Structure</span>",
+    p_sub: "Clear, upfront packaging with zero hidden costs. Pay for what you need, scale as you grow.",
+    th_service: "Service / Deliverable",
+    th_type: "Type",
+    th_invest: "Investment (EGP)",
+    tbl_s1_name: "Website Redesign + SEO + Store + Logo",
+    tbl_s1_desc: "Bilingual website, product/service store, Google Search registration, new AGS brand identity",
+    tbl_s1_type: "Foundation",
+    tbl_s1_price: "20k",
+    tbl_s2_name: "Social Media Pages Full Renewal",
+    tbl_s2_desc: "Facebook, LinkedIn, Instagram, X — complete brand refresh, optimization &amp; setup",
+    tbl_s2_type: "Brand",
+    tbl_s2_price: "7k",
+    tbl_s3a_name: "4 AI Promotional Videos",
+    tbl_s3a_desc: "Cinematic quality, scripted with high-impact hooks, bilingual, AI voiceover",
+    tbl_s3a_type: "Content",
+    tbl_s3a_price: "16k",
+    tbl_s3b_name: "4 Teaser Reels (Short-Form)",
+    tbl_s3b_desc: "Viral-optimized short reels for Facebook, Instagram &amp; LinkedIn",
+    tbl_s3b_type: "Content",
+    tbl_s3b_price: "10k",
+    tbl_s4_name: "Monthly Content — 13 Posts/Month",
+    tbl_s4_desc: "3 posts/week, professional design + AI-optimized captions + hashtag strategy",
+    tbl_s4_type: "Retainer",
+    tbl_s4_price: "6k<span style="font-size:12px;color:var(--t)">/mo</span>",
+    tbl_s5_name: "Rapid Growth: 13,000 Real Followers",
+    tbl_s5_desc: "Phase 1: 3k (1.2k) + Ad campaign 1 week (2k) + Phase 3: 10k followers (2k)",
+    tbl_s5_type: "Growth",
+    tbl_s5_price: "5.2k",
+    tbl_s6_name: "IT Support Group Ad — 4 Days",
+    tbl_s6_desc: "Video ad in Egypt's largest IT group, 400k+ members",
+    tbl_s6_type: "Advertising",
+    tbl_s6_price: "1.2k",
+    tbl_s7_name: "AI WhatsApp Bot + Enterprise CRM",
+    tbl_s7_desc: "Full AI chatbot + CRM platform + lead pipeline + management dashboard. VPS billed separately.",
+    tbl_s7_type: "Automation",
+    tbl_s7_price: "12k",
+    tbl_t_label: "Total One-Time Investment<small>+ 6k EGP/month ongoing content retainer from Month 2</small>",
+    tbl_t_value: "71.4k<small>EGP one-time</small>",
+    price_note: "All prices in Egyptian Pounds (EGP). Monthly retainer (6k) starts Month 2. Windows VPS is billed at market cost — no markup. A phased payment plan is available on request.",
+    road_tag: "Implementation Roadmap",
+    road_title: "From Kickoff to <span style="color:var(--o)">Market Dominance</span>",
+    road_sub: "A structured 6-week launch sequence built for speed and maximum impact.",
+    w1_tag: "Week 1",
+    w1_title: "🚀 Kickoff &amp; Brand Foundation",
+    w1_desc: "Onboarding, brand strategy session, new AGS logo design, social media pages updated with new identity, website wireframes approved.",
+    w2_tag: "Week 2",
+    w2_title: "🌐 Website Development + Video Production",
+    w2_desc: "Full bilingual website development in progress. AI video scripts and storyboards approved. Growth Phase 1 launched: 3,000 followers acquisition begins.",
+    w3_tag: "Week 3",
+    w3_title: "📱 Website Launch + Paid Ad Campaign",
+    w3_desc: "New website goes live and registered on Google. 1-week targeted paid campaign launched. First 2 promo videos delivered and published.",
+    w4_tag: "Week 4",
+    w4_title: "🤖 AI Bot &amp; CRM Go Live + Content Begins",
+    w4_desc: "WhatsApp AI bot and CRM deployed. First month's content calendar published. Remaining videos (2 promos + 4 reels) delivered.",
+    w5_tag: "Week 5–6",
+    w5_title: "📢 IT Community + 10K Growth Phase",
+    w5_desc: "Growth Phase 3: 10,000 additional followers. Sponsored video ad in IT Support group (400k+ members). Full performance review and optimization.",
+    scr_tag: "Content Strategy",
+    scr_title: "High-Impact <span style="color:var(--o)">Script Samples</span>",
+    scr_sub: "Sample hooks crafted for AGS — engineered to stop the scroll and drive immediate action from IT decision-makers.",
+    scr1_label: "Promotional Video",
+    scr1_hook_lbl: "<i class="fas fa-bolt"></i> Opening Hook",
+    scr1_title: "The Midnight IT Failure Script",
+    scr1_desc: "<span class="hk">"It's 2AM. Your factory just went dark — servers down, systems offline, production halted."</span><br/><br/>Every minute costs you thousands. Your IT vendor isn't answering. Your team is helpless.<br/><br/><em>What if this never happened again?</em><br/><br/>AGS doesn't just fix IT problems — we eliminate them. A complete server rack, pre-loaded with everything your operation needs, installed in your facility, backed by 24/7 expert support. <span class="hk">A fully operational IT backbone — on your terms.</span>",
+    scr2_label: "Viral Reel",
+    scr2_hook_lbl: "<i class="fas fa-bolt"></i> Opening Hook",
+    scr2_title: "The 24-Hour Transformation Reel",
+    scr2_desc: "<span class="hk">"67% of Egyptian businesses lost revenue last year because of IT failure. Are you still depending on one PC and a prayer?"</span><br/><br/>[Fast cut: empty office &rarr; AGS team arrives &rarr; rack installed &rarr; systems running]<br/><br/>24 hours. That's all it takes. Full server infrastructure. Complete software stack. Non-stop support.<br/><br/><span class="hk">AGS — Your entire IT department, delivered.</span>",
+    scr3_label: "LinkedIn Authority",
+    scr3_hook_lbl: "<i class="fas fa-bolt"></i> Opening Hook",
+    scr3_title: "The Enterprise Decision-Maker Post",
+    scr3_desc: "<span class="hk">"What if you could deploy a Fortune 500-level IT infrastructure in your factory — by tomorrow?"</span><br/><br/>This isn't a pitch. It's what AGS does every week for Egyptian enterprises that are tired of:<br/>❌ Overpriced IT consultants who disappear after installation<br/>❌ Hardware that fails with zero backup<br/>❌ Software licensing nightmares<br/><br/>Instead, they rent a complete IT system — all under one monthly contract.<br/><span class="hk">Zero CAPEX. Maximum uptime. Total peace of mind.</span>",
+    why_tag: "Why OLTANI",
+    why_title: "Your Strategic <span style="color:var(--o)">Digital Partner</span>",
+    why_sub: "OLTANI is not a marketing agency — we are a technology-driven growth partner that speaks IT fluently and delivers measurable results.",
+    why1_title: "AI-Native Execution",
+    why1_desc: "Every content piece, ad, and response is AI-enhanced — faster production, smarter targeting, measurable results.",
+    why2_title: "Technical Fluency",
+    why2_desc: "We understand IT infrastructure and enterprise software — your audience's language is our language.",
+    why3_title: "Data-Driven Strategy",
+    why3_desc: "Every decision is backed by analytics. Monthly KPI reports with conversion data and actionable insights.",
+    why4_title: "Egypt &amp; Global Reach",
+    why4_desc: "Deep knowledge of the Egyptian B2B market combined with global digital best practices.",
+    why5_title: "Full Accountability",
+    why5_desc: "Clear deliverables, defined timelines, and guaranteed execution. You see progress every week.",
+    why6_title: "Dedicated Support",
+    why6_desc: "Direct WhatsApp line to your account manager. Fast response, proactive communication, zero bureaucracy.",
+    sum_tag: "Total Investment",
+    sum_title: "Your Complete <span style="color:var(--o)">AGS Growth Package</span>",
+    sum_o_lbl: "One-Time Total Investment",
+    sum_o_val: "71.4k EGP",
+    sum_o_desc: "Covers all 7 packages — website, brand, videos, content, growth, community &amp; AI automation",
+    sum_m_lbl: "Monthly Retainer (from Month 2)",
+    sum_m_val: "6k EGP",
+    sum_m_desc: "13 posts/month, captions, scheduling &amp; monthly analytics report",
+    sum_vps_lbl: "Windows VPS (Optional)",
+    sum_vps_val: "At Market Cost",
+    sum_vps_desc: "For WhatsApp Bot &amp; CRM hosting — no markup applied",
+    sum_time_lbl: "Full Deployment Timeline",
+    sum_time_val: "6 Weeks",
+    sum_time_desc: "From contract signing to all systems live and first content published",
+    sum_valid: "Proposal valid for <strong>30 days</strong> from July 3, 2026",
+    btn_accept: "<i class="fab fa-whatsapp"></i> Accept &amp; Start Now",
+    cta_tag: "Ready to Begin?",
+    cta_title: "Let's Build the <span style="color:var(--o)">Future</span> of AGS Together",
+    cta_desc: "Eng. Ashraf, the Egyptian IT market is moving fast. Every day without a dominant digital presence is a lead your competitor is closing. Let's talk — we're ready to start immediately.",
+    btn_wa: "<i class="fab fa-whatsapp fa-lg"></i> Message on WhatsApp",
+    btn_web: "<i class="fas fa-globe"></i> Visit oltani.com",
+    ft_company: "Open Link Technologies &amp; Artificial Network Intelligence",
+    ft_confidential: "Confidential proposal prepared exclusively for AG Technology Systems (AGS) · July 2026",
+    wa_float_text: "Let's Talk Now"
+  },
+  ar: {
+    meta_title: "عرض النمو الرقمي | AGS × OLTANI",
+    hdr_tagline: "شريكك الرقمي المتكامل",
+    hdr_date: "يوليو 2026",
+    hdr_badge: "عرض سعر #AGS-2026",
+    meta_prepared: "إعداد: <strong>أولتاني (OLTANI)</strong>",
+    meta_client: "العميل: <strong>إيه جي تكنولوجي سيستمز (AGS)</strong>",
+    meta_scope: "النطاق: <strong>مصر والأسواق العالمية</strong>",
+    meta_validity: "الصلاحية: <strong>30 يوماً</strong>",
+    hero_tag: "⚡ عرض نمو رقمي سري وموثق",
+    hero_title: "تحويل شركة <span class="ct">AGS</span><br/>إلى العلامة الأولى لتكنولوجيا المعلومات في مصر",
+    hero_sub: "خطة تحول رقمي متكاملة مدعومة بالذكاء الاصطناعي — صُممت خصيصاً لشركة AG Technology Systems للهيمنة على سوق حلول تكنولوجيا المعلومات وجذب عملاء كبار محلياً وعالمياً.",
+    btn_explore: "<i class="fas fa-rocket"></i> استكشف الخطة",
+    btn_discuss: "<i class="fab fa-whatsapp"></i> ناقش معنا الآن",
+    stat_packages: "الباقات المطروحة",
+    stat_audience: "+400 ألف جمهور",
+    stat_posts: "13 منشوراً / الشهر",
+    stat_videos: "8 فيديوهات ذكاء اصطناعي",
+    scroll_text: "مرر للأسفل للاستكشاف",
+    brief_tag: "الملخص",
+    brief_title: "فهم <span style="color:var(--o)">رؤيتكم ومستقبلكم</span>",
+    brief_sub: "عزيزنا المهندس أشرف — لقد قمنا بتحليل ملخصكم التسويقي بدقة وحددنا كل فرصة لتسريع نمو وتواجد شركة AGS.",
+    card1_title: "3 أهداف استراتيجية رئيسية",
+    card1_desc: "إعادة تصميم موقعكم الإلكتروني ليكون ثنائي اللغة، وترقية وتطوير جميع حسابات التواصل الاجتماعي، وإطلاق حملات إعلانية مدفوعة ومستهدفة بدقة في مصر وعالمياً — مع التركيز على جذب العملاء الكبار من المصانع والشركات.",
+    card2_title: "ميزتكم التنافسية الكبرى",
+    card2_desc: "تمتلك AGS ميزة فريدة نادرة للغاية: <strong style="color:var(--o)">تأجير كبائن الخوادم المتنقلة (Mobile Rack)</strong> — بنية تحتية متكاملة وقابلة للتشغيل الفوري على عجلات مع دعم 24/7. لا يوجد منافس في مصر يقدم هذا الخدمة. هذا هو سلاحكم التسويقي الأقوى.",
+    card3_title: "السوق المستهدف بدقة",
+    card3_desc: "المصانع المصرية، المؤسسات الصناعية الكبرى، الشركات الصغيرة والمتوسطة، والشركات التي تتطلب بنية تحتية متكاملة لتكنولوجيا المعلومات دون التزام برأس مال تأسيسي (CAPEX). العملاء الدوليون المهتمون بالحلول المدارة.",
+    card4_title: "الذكاء الاصطناعي في الصميم",
+    card4_desc: "كل تسليم معزز بالذكاء الاصطناعي — بدءاً من محتوى الفيديو المولد بالذكاء الاصطناعي والكتابة الإعلانية الذكية إلى بوت واتساب يقوم بتأهيل العملاء وحجز المواعيد على مدار الساعة دون تدخل بشري.",
+    ub_title: "العرض الذي لا يمكن لأي منافس مضاهاته في السوق",
+    ub_desc: "بينما تبيع أو تثبت شركات تكنولوجيا المعلومات الأخرى المعدات فحسب — تقدم AGS بنية تحتية متكاملة وقابلة للتشغيل الفوري على عجلات. كبائن خوادم محملة بأجهزة وحلول برمجية مهيأة مسبقاً، شبكة متكاملة، وعقد دعم فني مخصص — كل ذلك تحت رسوم إيجار شهرية موحدة. يمكن للمصنع أن ينتقل من الصفر إلى التشغيل الكامل للبنية التحتية في أقل من 24 ساعة. هذا العرض سيكون حجر الأساس لكل حملة نبنيها معاً.",
+    pain_tag: "التحديات الحالية",
+    pain_title: "ما الذي يعيق تقدم <span style="color:var(--o)">وتواجد AGS</span>",
+    pain_sub: "كشف تدقيقنا لتواجدكم الرقمي الحالي عن فجوات حرجة تفقدكم عملاء كبار ومصانع بشكل يومي.",
+    pain1_title: "موقع إلكتروني بطيء وضعيف الأداء",
+    pain1_desc: "يواجه ag-techsystem.com الحالي مشاكل أداء حرجة، محتوى قديم وضعف كامل في التوافق مع الهواتف — مما يفشل في تحويل الزوار إلى طلبات تعاقد واستفسارات.",
+    pain1_sol: "<i class="fas fa-arrow-right"></i> مخطط لإعادة هيكلة وتطوير شامل للموقع",
+    pain2_title: "معدل جذب عملاء B2B منخفض",
+    pain2_desc: "لا توجد قناة رقمية مهيكلة لجذب العملاء والشركات المهتمة. العملاء المحتملون في القطاعات الصناعية المستهدفة ليسوا على دراية بخدمة تأجير الكبائن المتنقلة الفريدة.",
+    pain2_sol: "<i class="fas fa-arrow-right"></i> حملات جذب عملاء مدعومة بالذكاء الاصطناعي",
+    pain3_title: "تواجد ضعيف على وسائل التواصل",
+    pain3_desc: "تفتقر صفحات التواصل الاجتماعي إلى التناسق البصري، واستراتيجية النشر والتفاعل القوي — مما يجعلها غير مرئية لأكثر من 400 ألف من صناع القرار في تكنولوجيا المعلومات.",
+    pain3_sol: "<i class="fas fa-arrow-right"></i> إعادة بناء وتصميم كامل لصفحات التواصل",
+    pain4_title: "لا توجد أتمتة أو نظام استجابة سريع",
+    pain4_desc: "العملاء يبرد اهتمامهم بسبب تأخر الاستجابة اليدوية. لا يوجد نظام CRM لتتبع العملاء من الاستفسار إلى التعاقد. المتابعة اليدوية تضيع الكثير من الصفقات والفرص.",
+    pain4_sol: "<i class="fas fa-arrow-right"></i> بوت واتساب ذكاء اصطناعي 24/7 + نظام CRM للمبيعات",
+    sol_tag: "الحل المتكامل",
+    sol_title: "7 باقات نمو متكاملة ومترابطة",
+    sol_sub: "خريطة طريق شاملة ومرتبة للتحول الرقمي — تم تصميم وهندسة كل باقة لتحقيق أقصى عائد على الاستثمار (ROI).",
+    s1_label: "الباقة التأسيسية",
+    s1_title: "إعادة هيكلة التواجد الرقمي: الموقع الإلكتروني + تحسين محركات البحث (SEO) + المتجر + الهوية البصرية",
+    s1_desc: "إعادة بناء كاملة لموقع ag-techsystem.com ليصبح منصة ثنائية اللغة، عالية الأداء، ومتوافقة مع محركات البحث مع متجر متكامل — بالإضافة إلى إعادة تصميم شعار AGS بشكل عصري جديد.",
+    s1_f1: "موقع إلكتروني ثنائي اللغة (عربي + إنجليزي) بأداء فائق السرعة وتوافق تام",
+    s1_f2: "متجر متكامل لعرض وحجز الخدمات، المنتجات، والحلول البرمجية",
+    s1_f3: "تسجيل وتأكيد الموقع في Google Search Console و Google My Business لظهور محلي مميز",
+    s1_f4: "تحسين محركات البحث الداخلي للكلمات الأكثر طلباً في مصر وعالمياً",
+    s1_f5: "إعادة تصميم شعار AGS بالكامل وتوفير كتيب إرشادات الهوية البصرية",
+    lbl_invest: "الاستثمار المطلوب",
+    s1_price: "<sup>جنية مصري </sup>20 ألف",
+    lbl_onetime: "دفعة واحدة",
+    s2_label: "باقة تحديث الهوية الاجتماعية",
+    s2_title: "إعادة بناء منصات التواصل الاجتماعي بالكامل: فيسبوك · لينكد إن · إنستغرام · إكس",
+    s2_desc: "تحديث بصري واستراتيجي شامل لجميع حسابات AGS الاجتماعية — هوية تجارية جديدة، تحسين البيانات الوصفية والاتصال، وصفحات مهيأة لزيادة التحويل وجذب العملاء لبوت الواتساب.",
+    s2_f1: "تصميم أغلفة، صور شخصية، ونصوص تعريفية (Bio) جديدة واحترافية لجميع المنصات",
+    s2_f2: "نصوص تعريفية ومعلومات اتصال محسنة بكلمات بحثية مفتاحية للوصول الأسرع",
+    s2_f3: "ربط أزرار اتخاذ القرار (CTA) مباشرة ببوت الواتساب لبدء محادثات بيعية فورية",
+    s2_f4: "تهيئة وإعداد مقاطع الريلز المميزة والمحتوى المثبت لتعريف العملاء بالخدمات فوراً",
+    s2_f5: "تسليم وثيقة استراتيجية النمو والتفاعل المخصصة لكل منصة اجتماعية",
+    s2_price: "<sup>جنية مصري </sup>7 آلاف",
+    s3_label: "إنتاج المحتوى بالفيديو",
+    s3_title: "8 فيديوهات احترافية بالذكاء الاصطناعي: 4 إعلانات ترويجية + 4 مقاطع ريلز سريعة التأثير",
+    s3_desc: "محتوى فيديو احترافي مصمم بأحدث أدوات الإنتاج والذكاء الاصطناعي (Veo &amp; Gen-3). فيديوهات إعلانية كاملة ومقاطع ريلز قصيرة مصممة للانتشار وجذب الانتباه.",
+    s3_f1: "4 فيديوهات ترويجية — بجودة سينمائية ممتازة وسيناريوهات مكتوبة بأساليب إقناع قوية",
+    s3_f2: "4 فيديوهات ريلز تشويقية — سريعة ومثيرة للانتباه ومناسبة للتصفح السريع على الموبايل",
+    s3_f3: "تعليق صوتي احترافي بالذكاء الاصطناعي + رسوم متحركة + ترجمة وعناوين ثنائية اللغة",
+    s3_f4: "تحسين وتهيئة الفيديوهات للنشر على فيسبوك، لينكد إن، إنستغرام، ويوتيوب",
+    s3_price: "<sup>جنية مصري </sup>26 ألف",
+    s3_note: "4 ترويجي × 4 آلاف + 4 ريلز × 2.5 ألف",
+    cal_title: "جدول تنظيم المحتوى",
+    cal_legend: "أيام النشر (13 منشوراً في الشهر)",
+    s4_label: "باقة الاشتراك الشهري",
+    s4_title: "المحتوى الاجتماعي المستمر: 13 منشوراً مصمماً شهرياً مع تعليقات ذكاء اصطناعي",
+    s4_desc: "3 منشورات مصممة باحترافية وجاذبية أسبوعياً (13 منشوراً شهرياً) — كل منشور مصحوب بتعليق كاتب إعلانات ذكي يستهدف أصحاب المصانع، مديري المشتريات، ومسؤولي الـ IT.",
+    s4_f1: "13 منشوراً مرئياً مصمماً باحترافية وهدف تسويقي كل شهر",
+    s4_f2: "تعليقات عربية وإيجليزية محسنة بالذكاء الاصطناعي + استراتيجية الهاشتاج الفعالة",
+    s4_f3: "تسليم جدول المحتوى الشهري لمراجعته واعتماده في بداية كل شهر",
+    s4_f4: "جدولة ونشر تلقائي على منصات فيسبوك، لينكد إن، وإنستغرام",
+    s4_f5: "تقرير تحليل أداء شهري يوضح نسب الوصول والتفاعل وحجم التطور",
+    lbl_monthly_invest: "الاستثمار الشهري",
+    s4_price: "<sup>جنية مصري </sup>6 آلاف",
+    lbl_monthly: "/ شهرياً",
+    s5_label: "أداة تسريع النمو",
+    s5_title: "نمو سريع ومستهدف للجمهور: جذب 13,000 متابع مصري حقيقي خلال أسبوعين",
+    s5_desc: "حملة نمو مكثفة على 3 مراحل لبناء جمهور حقيقي ومتفاعل من المتخصصين ومديري الشركات في مصر — لخلق ثقة ومصداقية تسرع مبيعاتكم.",
+    s5_f1: "المرحلة 1: بناء المصداقية الأساسية والاجتماعية بـ 3,000 متابع حقيقي متخصص في المجال",
+    s5_f2: "المرحلة 2: استهداف مديري المشتريات وأصحاب الشركات والمصانع عبر إعلانات ممولة متخصصة",
+    s5_f3: "المرحلة 3: توسيع النطاق لجذب 10,000 متابع إضافي من المشترين المحتملين والمهتمين بالـ B2B",
+    s5_price: "<sup>جنية مصري </sup>5.2 ألف",
+    art6_title: "المجتمع المستهدف",
+    art6_lbl: "أعضاء متخصصين",
+    art6_badge: "منشور ممول ومثبت",
+    s6_label: "الإعلان المستهدف المباشر",
+    s6_title: "إعلان ممول بمجتمعات الـ IT: الوصول لأكثر من 400,000 متخصص مصري",
+    s6_desc: "نشر إعلان الفيديو الخاص بكم وتثبيته في أعلى أكبر مجموعة دعم تكنولوجيا معلومات في مصر — لبناء مرجعية وقوة للعلامة التجارية وجذب استفسارات الشركات مباشرة.",
+    s6_f1: "منشور ممول مثبت في أعلى المجموعة لمدة 4 أيام متتالية لضمان أعلى مشاهدة",
+    s6_f2: "ظهور مباشر لأكثر من 400,000 مهندس ومدير وصانع قرار في تكنولوجيا المعلومات بمصر",
+    s6_f3: "توصية ذات مصداقية بالغة: مرشح وموصى به من إدارة ومؤسسي المجموعة مباشرة",
+    s6_f4: "جذب فوري لعملاء الشركات B2B عبر رابط مباشر لبوت الواتساب الخاص بكم للحجز والاستفسار",
+    s6_price: "<sup>جنية مصري </sup>1.2 ألف",
+    s7_label: "أتمتة المبيعات والخدمة",
+    s7_title: "بوت واتساب بالذكاء الاصطناعي + نظام CRM متكامل للشركات + لوحة تحكم إدارية",
+    s7_desc: "نظام أتمتة ومتابعة متكامل. يقوم بوت الواتساب بتأهيل العملاء وحجز المواعيد وتوجيه المهتمين لهاتفكم مباشرة، بينما يخزن نظام CRM كل عقد وترخيص وتفاعل للعملاء بدقة.",
+    s7_f1: "بوت واتساب ذكاء اصطناعي 24/7: تأهيل الاستفسارات، حجز المواعيد، وتوجيه العملاء تلقائياً",
+    s7_f2: "نظام CRM مخصص للشركات والمصانع: قاعدة بيانات العملاء، قنوات المبيعات وسجل الأنشطة والمتابعة",
+    s7_f3: "لوحة تحكم إدارية متكاملة: تحليلات حية وفورية للمبيعات، إدارة الموظفين، وأدوار المستخدمين",
+    s7_f4: "إعداد السيرفر: تهيئة وتثبيت على سيرفر VPS قابل للتوسع (تكلفة السيرفر منفصلة بسعر السوق)",
+    s7_price: "<sup>جنية مصري </sup>12 ألف",
+    v_tag: "معرض الأعمال المرئية",
+    v_title: "معرض فيديوهات الذكاء الاصطناعي: <span style="color:var(--o)">Veo &amp; Gen-3</span>",
+    v_sub: "إعلانات فيديو مميزة وفائقة الواقعية تم إنشاؤها وتصميمها بأحدث نماذج الذكاء الاصطناعي التوليدي لبناء هيبة قوية للعلامة التجارية.",
+    v1_badge: "فيديو ترويجي",
+    v1_title: "إعلان أزمة تكنولوجيا المعلومات (منتصف الليل)",
+    v1_hook: "<span class="hk">الخطاف الإعلاني:</span> "الساعة 2 صباحاً. المصنع انقطع عنه الاتصال تماماً — الخوادم تعطلت، الإنتاج توقف. ماذا لو لم يتكرر هذا مطلقاً؟"",
+    v2_badge: "فيديو ترويجي",
+    v2_title: "إعلان خوادم وكبائن AGS المتنقلة",
+    v2_hook: "<span class="hk">الخطاف الإعلاني:</span> "لماذا تشتري أجهزة ومعدات تفقد قيمتها كل عام؟ استأجر غرفة سيرفر متكاملة على عجلات مع AGS."",
+    v3_badge: "ريلز قصير",
+    v3_title: "إعداد وتشغيل مصنع خلال 24 ساعة",
+    v3_hook: "<span class="hk">الخطاف الإعلاني:</span> "67% من الشركات المصرية خسرت أرباحاً بسبب تعطل الـ IT. قمنا بتأسيس بنية تحتية كاملة لمصنع في 24 ساعة فقط."",
+    v4_badge: "ريلز قصير",
+    v4_title: "لماذا تقتل التكاليف التأسيسية الـ IT لديك؟",
+    v4_hook: "<span class="hk">الخطاف الإعلاني:</span> "هل ما زلت تدفع الملايين مقدماً لإنشاء خوادم؟ لنتحدث عن نظام التأجير الشهري الموفر بنسبة 40%."",
+    p_tag: "تفاصيل الاستثمار",
+    p_title: "هيكل <span style="color:var(--o)">تسعير شفاف وواضح</span>",
+    p_sub: "باقات واضحة وبسيطة دون أي تكاليف خفية. ادفع مقابل ما تحتاجه فقط، وتوسع تدريجياً.",
+    th_service: "الخدمة / المخرج التسويقي",
+    th_type: "التصنيف",
+    th_invest: "قيمة الاستثمار (جنية مصري)",
+    tbl_s1_name: "إعادة بناء الموقع الإلكتروني + SEO + المتجر + الشعار الجديد",
+    tbl_s1_desc: "موقع ثنائي اللغة، متجر منتجات وحلول برمجية، تسجيل بجوجل، هوية بصرية جديدة لشركة AGS",
+    tbl_s1_type: "تأسيس",
+    tbl_s1_price: "20 ألف",
+    tbl_s2_name: "تجديد وتنسيق صفحات التواصل الاجتماعي بالكامل",
+    tbl_s2_desc: "فيسبوك، لينكد إن، إنستغرام، إكس — تحديث شامل للهوية البصرية والبيانات وأزرار الاتصال بالبوت",
+    tbl_s2_type: "هوية",
+    tbl_s2_price: "7 آلاف",
+    tbl_s3a_name: "إنتاج 4 فيديوهات ترويجية بالذكاء الاصطناعي",
+    tbl_s3a_desc: "جودة سينمائية ممتازة، سيناريوهات مكتوبة بأساليب إقناع قوية، تعليق صوتي بالذكاء الاصطناعي",
+    tbl_s3a_type: "محتوى",
+    tbl_s3a_price: "16 ألف",
+    tbl_s3b_name: "إنتاج 4 فيديوهات ريلز تشويقية قصيرة",
+    tbl_s3b_desc: "مقاطع ريلز قصيرة مصممة للتصفح السريع والانتشار على فيسبوك وإنستغرام ولينكد إن",
+    tbl_s3b_type: "محتوى",
+    tbl_s3b_price: "10 آلاف",
+    tbl_s4_name: "إدارة المحتوى المستمر — 13 منشوراً شهرياً",
+    tbl_s4_desc: "3 منشورات أسبوعياً، تصاميم احترافية عصرية + نصوص محسنة بالذكاء الاصطناعي وجدولة كاملة",
+    tbl_s4_type: "اشتراك",
+    tbl_s4_price: "6 آلاف<span style="font-size:12px;color:var(--t)">/شهرياً</span>",
+    tbl_s5_name: "تسريع النمو: جذب 13,000 متابع حقيقي مستهدف",
+    tbl_s5_desc: "المرحلة الأولى: 3 آلاف + إعلانات لمدة أسبوع + المرحلة الثالثة: جذب 10 آلاف متابع B2B مهتم",
+    tbl_s5_type: "نمو للجمهور",
+    tbl_s5_price: "5.2 ألف",
+    tbl_s6_name: "إعلان ممول ومثبت في مجتمع الـ IT — لمدة 4 أيام",
+    tbl_s6_desc: "إعلان فيديو مثبت في أعلى أكبر مجتمع تكنولوجيا معلومات بمصر (+400 ألف عضو)",
+    tbl_s6_type: "إعلانات ممولة",
+    tbl_s6_price: "1.2 ألف",
+    tbl_s7_name: "بوت واتساب بالذكاء الاصطناعي + نظام CRM مخصص للمبيعات",
+    tbl_s7_desc: "بوت محادثة ذكي + لوحة تحكم إدارية كاملة + نظام تتبع العقود والمتابعات. سيرفر الـ VPS مستقل.",
+    tbl_s7_type: "أتمتة المبيعات",
+    tbl_s7_price: "12 ألف",
+    tbl_t_label: "إجمالي الاستثمار المطلوب لمرة واحدة<small>+ 6 آلاف جنية شهرياً لإدارة المحتوى والمنشورات بدءاً من الشهر الثاني</small>",
+    tbl_t_value: "71.4 ألف<small>جنية مصري لمرة واحدة</small>",
+    price_note: "جميع الأسعار بالجنيه المصري (EGP). يبدأ الاشتراك الشهري للمحتوى (6 آلاف) من الشهر الثاني. سيرفر الـ VPS لنظام الأتمتة يُحسب بسعر السوق الفعلي دون إضافة هامش ربح. يتوفر نظام سداد على مراحل عند الطلب.",
+    road_tag: "خريطة طريق التنفيذ والعمل",
+    road_title: "من البداية إلى <span style="color:var(--o)">الهيمنة على السوق</span>",
+    road_sub: "خطة تنفيذ منظمة ومكثفة على مدار 6 أسابيع مصممة للسرعة وتحقيق النتائج.",
+    w1_tag: "الأسبوع 1",
+    w1_title: "🚀 انطلاق العمل وتأسيس الهوية",
+    w1_desc: "جلسة العصف الاستراتيجي، بدء تصميم شعار AGS الجديد، تحديث حسابات التواصل الاجتماعي بالهوية الجديدة، واعتماد الهيكل التنظيمي للموقع.",
+    w2_tag: "الأسبوع 2",
+    w2_title: "🌐 تطوير الموقع الإلكتروني + إنتاج الفيديوهات",
+    w2_desc: "البدء في تطوير وبرمجة الموقع ثنائي اللغة. إعداد واعتماد سيناريوهات الفيديوهات. إطلاق المرحلة الأولى لنمو الحسابات: بدء جذب 3,000 متابع.",
+    w3_tag: "الأسبوع 3",
+    w3_title: "📱 إطلاق الموقع الإلكتروني + الحملة الإعلانية الأولى",
+    w3_desc: "إطلاق الموقع الجديد رسمياً وتسجيله في محركات بحث جوجل. بدء الحملة الإعلانية الموجهة لمدة أسبوع. تسليم ونشر أول فيديوهات ترويجية.",
+    w4_tag: "الأسبوع 4",
+    w4_title: "🤖 تشغيل البوت الذكي والـ CRM + بدء المحتوى المستمر",
+    w4_desc: "تنصيب وتشغيل بوت الواتساب ونظام الـ CRM لمبيعاتكم. بدء نشر جدول محتوى الشهر الأول للمنشورات. تسليم باقي الفيديوهات (إعلانات وريلز).",
+    w5_tag: "الأسبوع 5-6",
+    w5_title: "📢 إعلان مجتمعات الـ IT + مرحلة النمو الكبرى لـ 10K",
+    w5_desc: "إطلاق مرحلة النمو الكبرى لجذب 10,000 متابع إضافي. نشر وتثبيت الفيديو الإعلاني في مجتمع الـ IT الكبير (+400 ألف عضو). تحليل أداء شامل وتحسين.",
+    scr_tag: "استراتيجية المحتوى",
+    scr_title: "نماذج سيناريوهات <span style="color:var(--o)">عالية التأثير</span>",
+    scr_sub: "نماذج خطافات إعلانية مصممة خصيصاً لـ AGS — ومصممة خصيصاً لجذب انتباه صناع القرار وحثهم على التعاقد الفوري.",
+    scr1_label: "فيديو ترويجي إعلاني",
+    scr1_hook_lbl: "<i class="fas fa-bolt"></i> الخطاف الإعلاني",
+    scr1_title: "سيناريو كارثة الـ IT (منتصف الليل)",
+    scr1_desc: "<span class="hk">"الساعة 2 صباحاً. المصنع انقطع عنه الاتصال تماماً — الخوادم تعطلت، الإنتاج توقف."</span><br/><br/>كل دقيقة تمر تكلفك آلاف الجنيهات. مسؤول الدعم الفني لديك لا يجيب، وفريقك يقف عاجزاً.<br/><br/><em>ماذا لو لم يتكرر هذا مجدداً؟</em><br/><br/>AGS لا تقوم بحل المشاكل فحسب — بل نمنع حدوثها تماماً. كابينة خوادم متكاملة ومجهزة بكل ما يحتاجه عملك، تُثبت في منشأتك، ومدعومة بدعم فني على مدار الساعة. <span class="hk">بنية تحتية متكاملة للـ IT — بشروطك الخاصة.</span>",
+    scr2_label: "ريلز اجتماعي فيروسي",
+    scr2_hook_lbl: "<i class="fas fa-bolt"></i> الخطاف الإعلاني",
+    scr2_title: "سيناريو التحول الشامل خلال 24 ساعة",
+    scr2_desc: "<span class="hk">"67% من الشركات المصرية خسرت أرباحاً العام الماضي بسبب تعطل أنظمة الـ IT. هل ما زلت تعتمد على جهاز كمبيوتر واحد ومحاولات عشوائية؟"</span><br/><br/>[لقطة سريعة: مكتب فارغ &larr; وصول فريق AGS &larr; تركيب الكابينة &larr; الأنظمة تعمل بالكامل]<br/><br/>24 ساعة فقط. هذا كل ما يتطلبه الأمر. بنية خوادم كاملة. عتاد وبرمجيات مهيأة. دعم مستمر دون توقف.<br/><br/><span class="hk">AGS — قسم تكنولوجيا معلومات كامل يتم تسليمه إليك.</span>",
+    scr3_label: "منشور سلطة ومصداقية (لينكد إن)",
+    scr3_hook_lbl: "<i class="fas fa-bolt"></i> الخطاف الإعلاني",
+    scr3_title: "منشور موجه لصناع القرار بالشركات",
+    scr3_desc: "<span class="hk">"ماذا لو كان بإمكانك تشغيل بنية تحتية للـ IT تضاهي كبرى الشركات العالمية بمصنعك — بحلول الغد؟"</span><br/><br/>هذا ليس مجرد كلام تسويقي. هذا ما تفعله AGS أسبوعياً للمنشآت المصرية التي سئمت من:<br/>❌ استشاريي الـ IT ذوي التكاليف المبالغ فيها والذين يختفون بعد التركيب<br/>❌ تعطل الأجهزة فجأة دون وجود نسخ احتياطية فورية<br/>❌ كوابيس ترخيص البرامج والأنظمة<br/><br/>بدلاً من ذلك، يقومون باستئجار بنية تحتية متكاملة — تحت مظلة عقد شهري موحد.<br/><span class="hk">تكلفة تأسيسية صفر. تشغيل مستمر 100%. وراحة بال تامة لعملك.</span>",
+    why_tag: "لماذا أولتاني (OLTANI)",
+    why_title: "شريكك الاستراتيجي <span style="color:var(--o)">لتحقيق النمو</span>",
+    why_sub: "أولتاني ليست مجرد وكالة تسويق تقليدية — نحن شريك نمو تقني نتحدث لغة الـ IT بطلاقة ونحقق نتائج ملموسة وواضحة لعملك.",
+    why1_title: "تنفيذ يعتمد على الذكاء الاصطناعي",
+    why1_desc: "كل قطعة محتوى، إعلان، واستجابة معززة بأحدث تقنيات الذكاء الاصطناعي — لسرعة إنتاج وتوجيه أدق ونتائج بيعية قابلة للقياس.",
+    why2_title: "فهم تقني كامل (صميم الـ IT)",
+    why2_desc: "نفهم تفاصيل البنية التحتية للخوادم والحلول البرمجية للشركات — نتحدث لغة جمهورك المستهدف بطلاقة ونقنعهم بخدماتك.",
+    why3_title: "استراتيجية قائمة على الأرقام",
+    why3_desc: "كل قرار نتخذه مدعوم بالبيانات والتحليلات. تقارير أداء شهرية واضحة توضح حجم التحول والاستفسارات المحققة.",
+    why4_title: "تغطية محلية وعالمية",
+    why4_desc: "فهم عميق لسوق الأعمال B2B المصري، إلى جانب تطبيق أفضل الممارسات الرقمية العالمية المعتمدة.",
+    why5_title: "مسؤولية كاملة والتزام تام",
+    why5_desc: "مخرجات تسويقية واضحة، مواعيد تسليم محددة بدقة، وتنفيذ مضمون بالكامل. ترى تطور العمل ونتائجه أسبوعاً بعد أسبوع.",
+    why6_title: "دعم فني مخصص وسريع",
+    why6_desc: "خط اتصال مباشر على الواتساب مع مدير حسابك التسويقي. استجابة سريعة، تواصل فعال ومستمر، وتجنب تام للبيروقراطية.",
+    sum_tag: "إجمالي الاستثمار",
+    sum_title: "باقة نمو وتواجد شركة <span style="color:var(--o)">AGS المتكاملة</span>",
+    sum_o_lbl: "إجمالي الاستثمار لمرة واحدة",
+    sum_o_val: "71.4 ألف جنيه",
+    sum_o_desc: "تغطي الباقات السبعة بالكامل — الموقع، تطوير الصفحات، الفيديوهات، المحتوى، النمو، أتمتة المبيعات والـ CRM",
+    sum_m_lbl: "الاشتراك الشهري لإدارة المحتوى (بدءاً من الشهر الثاني)",
+    sum_m_val: "6 آلاف جنيه",
+    sum_m_desc: "تصميم وجدولة 13 منشوراً شهرياً وكتابة التعليقات بالذكاء الاصطناعي مع تقرير الأداء",
+    sum_vps_lbl: "سيرفر Windows VPS للبوت والـ CRM (اختياري)",
+    sum_vps_val: "بسعر السوق الفعلي",
+    sum_vps_desc: "لتشغيل البوت والـ CRM على مدار الساعة — دون إضافة أي هامش ربح من طرفنا",
+    sum_time_lbl: "الجدول الزمني للتسليم الكامل",
+    sum_time_val: "6 أسابيع",
+    sum_time_desc: "بدءاً من توقيع العقد وحتى إطلاق كافة الأنظمة والأتمتة ونشر أول محتوى",
+    sum_valid: "هذا العرض التقديمي صالح لمدة <strong>30 يوماً</strong> من تاريخ 3 يوليو 2026",
+    btn_accept: "<i class="fab fa-whatsapp"></i> وافق وابدأ التنفيذ الآن",
+    cta_tag: "هل أنت مستعد للانطلاق؟",
+    cta_title: "دعنا نبني <span style="color:var(--o)">مستقبل</span> شركة AGS معاً",
+    cta_desc: "مهندس أشرف، سوق تكنولوجيا المعلومات المصري يتحرك بسرعة بالغة. كل يوم يمر دون تواجد رقمي قوي هو فرصة ذهبية يقتنصها منافسوك. دعنا نتحدث — نحن جاهزون للبدء فوراً.",
+    btn_wa: "<i class="fab fa-whatsapp fa-lg"></i> راسلنا عبر واتساب الآن",
+    btn_web: "<i class="fas fa-globe"></i> قم بزيارة موقعنا oltani.com",
+    ft_company: "أولتاني — شريكك المتكامل لتكنولوجيا المعلومات والذكاء الاصطناعي الشبكي",
+    ft_confidential: "عرض تقديمي سري مخصص حصرياً لشركة AG Technology Systems (AGS) · يوليو 2026",
+    wa_float_text: "تواصل معنا الآن بيسر"
+  }
+};
+
+let currentLang = "en";
+
+function updateContent() {
+  const t = translations[currentLang];
+  
+  // Set text/HTML of elements with data-t
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const key = el.getAttribute("data-t");
+    if (t[key]) {
+      // If it contains html tags, use innerHTML, otherwise textContent
+      if (t[key].includes("<") || t[key].includes("&amp;")) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+
+  // Toggle direction & fonts
+  const htmlEl = document.documentElement;
+  if (currentLang === "ar") {
+    htmlEl.setAttribute("dir", "rtl");
+    htmlEl.setAttribute("lang", "ar");
+    document.getElementById("langBtn").querySelector("span").textContent = "English";
+  } else {
+    htmlEl.setAttribute("dir", "ltr");
+    htmlEl.setAttribute("lang", "en");
+    document.getElementById("langBtn").querySelector("span").textContent = "العربية";
+  }
+}
+
+function toggleLang() {
+  currentLang = currentLang === "en" ? "ar" : "en";
+  localStorage.setItem("selectedLang", currentLang);
+  updateContent();
+}
+
+// Load initial language on startup
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("selectedLang");
+  if (saved && (saved === "en" || saved === "ar")) {
+    currentLang = saved;
+  }
+  updateContent();
+});
 </script>
 </body>
 </html>
